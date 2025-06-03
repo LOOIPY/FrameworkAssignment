@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking List</title>
+    <link rel="stylesheet" href="{% static 'main/style.css' %}">
+</head>
+<body>
+<h5 style="text-align:center;">Booking List</h5>
+<table border="1" style="margin:auto; border-collapse: collapse;">
+    <tr>
+        <th>Property Name</th>
+        <th>Total Payment</th>
+        <th>Date</th>
+        <th>Status</th>
+    </tr>
+    {% for b in bookings %}
+    <tr>
+        <td>{{ b.property.name }}</td>
+        <td>RM {{ b.total_payment|floatformat:2 }}</td>
+        <td>{{ b.date|date:"Y-m-d H:i" }}</td>
+        <td>{{ b.status }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<a href="{% url 'home' %}" class="button-back">← Back to Home</a>
+
+</body>
+</html>

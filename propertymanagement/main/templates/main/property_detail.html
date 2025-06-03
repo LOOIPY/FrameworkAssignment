@@ -1,0 +1,239 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ property.name }}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'loan_calculator/style.css' %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}">
+</head>
+
+<body>
+
+<h1>{{ property.name }}</h1>
+<p>Type: {{ property.type }}</p>
+<p>Cost: RM{{ property.cost }}</p>
+
+<!-- SECTION: Loan Calculator -->
+{% if property.type == 'sale' %}
+<div class="container">
+    <div class="card">
+        <h1>Loan Calculator</h1>
+        <form id="loanForm">
+            {% csrf_token %}
+            <input type="hidden" name="property" value="{{ property.id }}">
+
+            <!-- Loan Percentage -->
+            <label for="id_loan_percentage">Loan Percentage:
+                <span id="loan_percentage_output">{{ form.data.loan_percentage|default:70 }}</span>%
+            </label>
+            <input type="range" name="loan_percentage" id="id_loan_percentage"
+                   min="0" max="100" step="5"
+                   value="{{ form.data.loan_percentage|default:70 }}"
+                   oninput="loan_percentage_output.textContent = this.value">
+
+            <!-- Loan Tenure -->
+            <label for="id_loan_years">Loan Tenure:
+                <span id="loan_years_output">{{ form.data.loan_years|default:30 }}</span> years
+            </label>
+            <input type="range" name="loan_years" id="id_loan_years"
+                   min="1" max="35" step="1"
+                   value="{{ form.data.loan_years|default:30 }}"
+                   oninput="loan_years_output.textContent = this.value">
+
+            <!-- Interest Rate -->
+            <label for="id_interest_rate">Interest Rate (%):</label>
+            <input type="number" name="interest_rate" id="id_interest_rate"
+                   value="{{ form.data.interest_rate|default:3 }}"
+                   step="0.01" min="0" max="100">
+
+            <!--<button type="submit" class="button-reset">Calculate</button> -->
+        </form>
+    </div>
+
+
+    <div class="card result-section" id="result-section">
+        <h3>{{ result.property }}</h3>
+        <div class="circular-chart">
+            RM {{ result.monthly_payment }}
+        </div>
+        <p class="result">Principal: <span class="highlight">RM {{ result.principal }}</span></p>
+        <p class="result">Interest: <span class="highlight">RM {{ result.interest }}</span></p>
+        <p class="result">Monthly Repayment: <span class="highlight">RM {{ result.monthly_payment }}</span></p>
+        <button type="button" class="button-reset" onclick="resetLoanCalculator()">Reset</button>
+    </div>
+
+</div>
+{% endif %}
+
+<!-- SECTION: Payment Info (ALWAYS VISIBLE) -->
+<div class="container">
+    <div class="card">
+        <h2>Payment Info</h2>
+        <p>{{ payment_info.label }}: <strong>RM {{ payment_info.amount|floatformat:2 }}</strong></p>
+
+        <button id="proceedBtn" class="button-reset">Proceed to Payment</button>
+
+        <div id="paymentMethods" style="display: none; margin-top: 20px;">
+            <h3>Select your payment method:</h3>
+
+            <!-- Credit Card -->
+            <h4>Credit Card</h4>
+            <div class="payment-method">
+                <a href="{% url 'credit_card_payment' property.id %}">
+                    <img src="{% static 'main/images/visa.png' %}" alt="Visa" class="payment-icon" style="cursor: pointer;">
+                </a>
+                <a href="{% url 'credit_card_payment' property.id %}">
+                    <img src="{% static 'main/images/mastercard.png' %}" alt="MasterCard" class="payment-icon" style="cursor: pointer;">
+                </a>
+            </div>
+
+            <!-- Online Banking -->
+            <h4>Online Banking</h4>
+            <div class="payment-method">
+                <img src="{% static 'main/images/fpx.png' %}" alt="FPX" class="payment-icon" id="fpxIcon" style="cursor: pointer;">
+            </div>
+
+            <div id="bankOptions" style="display: none; margin-top: 10px;">
+                <a href="{% url 'online_banking_login' 'maybank' property.id %}">
+                    <img src="{% static 'main/images/maybank.png' %}" alt="Maybank" class="payment-logo">
+                </a>
+                <a href="{% url 'online_banking_login' 'rhb' property.id %}">
+                    <img src="{% static 'main/images/rhb.png' %}" alt="RHB" class="payment-bank">
+                </a>
+            </div>
+
+            <!-- E-Wallet -->
+            <h4>E-Wallet</h4>
+            <div class="payment-method">
+                <a href="{% url 'e_wallet_payment' property.id 'grabpay' %}">
+                    <img src="{% static 'main/images/grabpay.png' %}" alt="GrabPay" class="payment-icon">
+                </a>
+                <a href="{% url 'e_wallet_payment' property.id 'touchngo' %}">
+                    <img src="{% static 'main/images/touchngo.png' %}" alt="Touch 'n Go" class="payment-icon">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script>
+
+    document.getElementById("fpxIcon").addEventListener("click", () => {
+        const bankOptions = document.getElementById("bankOptions");
+        bankOptions.style.display = bankOptions.style.display === "none" ? "block" : "none";
+    });
+
+
+    document.getElementById("proceedBtn").addEventListener("click", () => {
+        document.getElementById("paymentMethods").style.display = "block";
+        document.getElementById("proceedBtn").style.display = "none";
+    });
+
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const loanPercentage = document.getElementById('id_loan_percentage');
+        const loanYears = document.getElementById('id_loan_years');
+        if (loanPercentage && loanYears) {
+            document.getElementById('loan_percentage_output').textContent = loanPercentage.value;
+            document.getElementById('loan_years_output').textContent = loanYears.value;
+        }
+    });
+
+    function resetLoanCalculator() {
+    // Clear inputs
+    document.getElementById('id_loan_percentage').value = 70;
+    document.getElementById('loan_percentage_output').textContent = 70;
+
+    document.getElementById('id_loan_years').value = 30;
+    document.getElementById('loan_years_output').textContent = 30;
+
+    document.getElementById('id_interest_rate').value = '3';
+
+    calculateLoan();
+    // Hide result section
+    //const resultSection = document.getElementById('result-section');
+    //if (resultSection) {
+    //    resultSection.style.display = 'none';
+    //}
+}
+
+    // Optional: hide result if not recalculated
+    document.addEventListener("DOMContentLoaded", () => {
+        if (!{{ result|yesno:"true,false" }}) {
+            const resultSection = document.getElementById('result-section');
+            if (resultSection) resultSection.style.display = 'none';
+        }
+    });
+</script>
+
+<script>
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
+function calculateLoan() {
+    const propertyId = "{{ property.id }}";
+    const loanPercentage = document.getElementById('id_loan_percentage').value;
+    const loanYears = document.getElementById('id_loan_years').value;
+    const interestRate = document.getElementById('id_interest_rate').value;
+
+    fetch("{% url 'calculate_loan_api' %}", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "X-CSRFToken": getCookie('csrftoken')
+        },
+        body: JSON.stringify({
+            property_id: propertyId,
+            loan_percentage: loanPercentage,
+            loan_years: loanYears,
+            interest_rate: interestRate
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.error) {
+            alert(data.error);
+            return;
+        }
+
+        document.querySelector('.circular-chart').textContent = 'RM ' + data.monthly_payment;
+        document.querySelector('.result-section').style.display = 'block';
+        document.querySelector('.result-section h3').textContent = data.property;
+        document.querySelector('.result-section .result:nth-of-type(1) .highlight').textContent = 'RM ' + data.principal;
+        document.querySelector('.result-section .result:nth-of-type(2) .highlight').textContent = 'RM ' + data.interest;
+        document.querySelector('.result-section .result:nth-of-type(3) .highlight').textContent = 'RM ' + data.monthly_payment;
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+// Attach input listeners
+document.addEventListener("DOMContentLoaded", () => {
+    const inputs = ['id_loan_percentage', 'id_loan_years', 'id_interest_rate'];
+    inputs.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+            el.addEventListener('input', calculateLoan);
+        }
+    });
+
+    // Auto-load once on page load
+    calculateLoan();
+});
+</script>
