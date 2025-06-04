@@ -1,0 +1,239 @@
+{# app/templates/property_detail.html #}
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ property.title }} – 房源详情</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <style>
+    /* 你原先写的一些局部样式可以保留在这里 */
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f3f5f7;
+      font-family: "Inter", "Noto Sans SC", sans-serif;
+      color: #333;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .detail-container {
+      max-width: 1000px;
+      margin: 32px auto;
+      padding: 0 16px;
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 16px;
+      color: #393280;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+    .back-link:hover {
+      color: #2f2f7d;
+    }
+    .detail-top-card {
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+    .top-image-wrapper {
+      position: relative;
+    }
+    .main-image {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      height: 500px;
+    }
+    .map-image {
+      width: 30%;
+      display: block;
+      margin-top: 10px;
+      border-top: 1px solid #e0e0e0;
+      object-fit: cover;
+      height: 180px;
+    }
+    .top-info {
+      padding: 24px 32px;
+    }
+    .top-info h1 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 600;
+      color: #2f2f7d;
+    }
+    .top-info .price {
+      margin: 12px 0;
+      font-size: 22px;
+      font-weight: 600;
+      color: #e64c3c;
+    }
+    .top-info .address {
+      margin: 0;
+      font-size: 16px;
+      color: #555;
+    }
+    .top-info .short-desc {
+      margin-top: 16px;
+      font-size: 16px;
+      color: #444;
+    }
+    .detail-info-card {
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      padding: 24px 32px;
+      margin-bottom: 24px;
+    }
+    .detail-info-card h2 {
+      margin-top: 0;
+      margin-bottom: 16px;
+      font-size: 24px;
+      color: #2f2f7d;
+      border-left: 4px solid #e64c3c;
+      padding-left: 12px;
+    }
+    .detail-info-card .detail-list {
+      list-style: disc;
+      padding-left: 20px;
+      color: #333;
+      font-size: 16px;
+    }
+    .detail-info-card .detail-list li {
+      margin-bottom: 8px;
+    }
+    .detail-gallery-card {
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      padding: 20px 24px;
+      margin: 40px auto;
+      max-width: 1000px;
+    }
+    .detail-gallery {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      gap: 12px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .detail-gallery::-webkit-scrollbar {
+      height: 0;
+    }
+    .gallery-item {
+      flex: 0 0 auto;
+      width: 280px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 6px;
+      background: #f0f0f0;
+    }
+    .gallery-item img {
+      display: block;
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      transition: transform 0.3s ease, filter 0.3s ease;
+      filter: brightness(0.95);
+    }
+    .gallery-item img:hover {
+      transform: scale(1.05);
+      filter: brightness(1);
+    }
+    .gallery-item .caption {
+      position: absolute;
+      bottom: 8px;
+      left: 8px;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 14px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    @media (max-width: 600px) {
+      .gallery-item {
+        width: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="detail-container">
+
+    <!-- —— 1. “返回列表” 链接 —— -->
+    <a href="{% url 'property-list' %}" class="back-link">« BACK TO LIST</a>
+
+    <!-- —— 2. 详情页顶部卡片：主图 + 地图 + 基本信息 —— -->
+    <div class="detail-top-card">
+      {% if property.image %}
+        <div class="top-image-wrapper">
+          <img src="{{ property.image.url }}" alt="{{ property.title }}" class="main-image">
+          <!-- 这里插入一个“地图占位图” -->
+          <img src="{% static 'images/map_placeholder.jpeg' %}" alt="地图定位示意" class="map-image">
+        </div>
+      {% else %}
+        <div class="top-image-wrapper">
+          <div style="width:100%; height:450px; background:#ddd;"></div>
+          <img src="{% static 'images/map_placeholder.jpeg' %}" alt="地图定位示意" class="map-image">
+        </div>
+      {% endif %}
+
+      <div class="top-info">
+        <h1>{{ property.title }}</h1>
+        <p class="price">RM {{ property.price|floatformat:2 }}</p>
+        <!-- 这里假设你在模型里为 Property 添加了一个 address 字段 -->
+        {% if property.address %}
+          <p class="address">{{ property.address }}</p>
+        {% endif %}
+        <p class="short-desc">{{ property.description }}</p>
+      </div>
+    </div>  {# .detail-top-card 结束 #}
+
+    <!-- —— 3. 详细信息卡片 —— -->
+    <div class="detail-info-card">
+      <h2>DETAILS</h2>
+
+      {% if property.detail %}
+        <ul class="detail-list">
+          {% for line in property.detail.splitlines %}
+            {% if line %}
+              <li>{{ line }}</li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p style="color:#777;">暂无详细信息。</p>
+      {% endif %}
+    </div>  {# .detail-info-card 结束 #}
+
+    <!-- —— 4. “更多图片” 画廊卡片 —— -->
+    <div class="detail-gallery-card">
+      <h2>MORE PICTURES</h2>
+      <div class="detail-gallery">
+        {% for img in property.extra_images.all %}
+          <div class="gallery-item">
+            <img src="{{ img.image.url }}" alt="{{ img.caption }}">
+            {% if img.caption %}
+              <div class="caption">{{ img.caption }}</div>
+            {% endif %}
+          </div>
+        {% endfor %}
+        {% if not property.extra_images.all %}
+          <p style="color:#777;">暂无附加图片。</p>
+        {% endif %}
+      </div>
+    </div>  {# .detail-gallery-card 结束 #}
+
+  </div>  {# .detail-container 结束 #}
+</body>
+</html>
