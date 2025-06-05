@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Checklist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9;
+            padding: 20px;
+        }
+        .checklist-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .checklist-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .checklist-input {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .checklist-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .checklist-input button {
+            padding: 10px 20px;
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .checklist-input button:hover {
+            background-color: #2563eb;
+        }
+        .checklist-items {
+            list-style: none;
+            padding: 0;
+        }
+        .checklist-items li {
+            background-color: white;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .checklist-text {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .checklist-text i {
+            color: #10b981;
+        }
+        .checklist-text.completed {
+            text-decoration: line-through;
+            color: #9ca3af;
+        }
+        .task-actions button {
+            margin-left: 5px;
+            padding: 4px 8px;
+            font-size: 0.8rem;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .complete-btn {
+            background-color: #10b981;
+            color: white;
+        }
+        .pending-btn {
+            background-color: #f59e0b;
+            color: white;
+        }
+        .delete-btn {
+            background-color: #ef4444;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="checklist-container">
+        <h2><i class="fas fa-clipboard-list"></i> Checklist</h2>
+        <div class="checklist-input">
+            <input type="text" id="taskInput" placeholder="Enter a new task">
+            <button onclick="addTask()">Add</button>
+        </div>
+        <ul id="taskList" class="checklist-items">
+            <!-- Tasks will appear here -->
+        </ul>
+    </div>
+
+    <script>
+        function addTask() {
+            const taskInput = document.getElementById('taskInput');
+            const taskText = taskInput.value.trim();
+            if (taskText === '') return;
+
+            const li = document.createElement('li');
+
+            const textDiv = document.createElement('div');
+            textDiv.className = 'checklist-text';
+            textDiv.innerHTML = `<i class="fas fa-check-circle"></i> <span>${taskText}</span>`;
+
+            const actionsDiv = document.createElement('div');
+            actionsDiv.className = 'task-actions';
+
+            const completeBtn = document.createElement('button');
+            completeBtn.className = 'complete-btn';
+            completeBtn.innerText = 'Complete';
+            completeBtn.onclick = () => {
+                textDiv.classList.add('completed');
+            };
+
+            const pendingBtn = document.createElement('button');
+            pendingBtn.className = 'pending-btn';
+            pendingBtn.innerText = 'Pending';
+            pendingBtn.onclick = () => {
+                textDiv.classList.remove('completed');
+            };
+
+            const deleteBtn = document.createElement('button');
+            deleteBtn.className = 'delete-btn';
+            deleteBtn.innerText = 'Delete';
+            deleteBtn.onclick = () => {
+                li.remove();
+            };
+
+            actionsDiv.appendChild(completeBtn);
+            actionsDiv.appendChild(pendingBtn);
+            actionsDiv.appendChild(deleteBtn);
+
+            li.appendChild(textDiv);
+            li.appendChild(actionsDiv);
+
+            document.getElementById('taskList').appendChild(li);
+            taskInput.value = '';
+        }
+    </script>
+</body>
+</html>
