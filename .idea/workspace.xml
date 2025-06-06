@@ -1,8 +1,200 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="fbe879b4-7f3a-4d43-8c08-0bbe4a7aaa96" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/dashboard/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/dashboard/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/dashboard/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/dashboard/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/dashboard/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/dashboard/static/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/dashboard/static/images/avatar.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/dashboard/templates/dashboard/checklist.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/dashboard/templates/dashboard/home.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/dashboard/templates/dashboard/invoice.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/dashboard/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/dashboard/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/dashboard/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/manage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/node_modules/tailwindcss/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/node_modules/tailwindcss/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/node_modules/tailwindcss/dist/chunk-FEUCFEMW.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/node_modules/tailwindcss/dist/chunk-HTB5LLOP.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/node_modules/tailwindcss/dist/chunk-P5FH2LZE.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/node_modules/tailwindcss/dist/colors-b_6i0Oi7.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/node_modules/tailwindcss/dist/colors.d.mts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/node_modules/tailwindcss/dist/colors.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/node_modules/tailwindcss/dist/colors.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/node_modules/tailwindcss/dist/colors.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/node_modules/tailwindcss/dist/default-theme.d.mts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/node_modules/tailwindcss/dist/default-theme.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/node_modules/tailwindcss/dist/default-theme.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/node_modules/tailwindcss/dist/default-theme.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/node_modules/tailwindcss/dist/flatten-color-palette.d.mts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/node_modules/tailwindcss/dist/flatten-color-palette.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/node_modules/tailwindcss/dist/flatten-color-palette.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/node_modules/tailwindcss/dist/flatten-color-palette.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/node_modules/tailwindcss/dist/lib.d.mts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/node_modules/tailwindcss/dist/lib.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/node_modules/tailwindcss/dist/lib.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/node_modules/tailwindcss/dist/lib.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/node_modules/tailwindcss/dist/plugin.d.mts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/node_modules/tailwindcss/dist/plugin.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/node_modules/tailwindcss/dist/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/node_modules/tailwindcss/dist/plugin.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/node_modules/tailwindcss/dist/resolve-config-BIFUA2FY.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/node_modules/tailwindcss/dist/resolve-config-QUZ9b-Gn.d.mts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/node_modules/tailwindcss/dist/types-B254mqw1.d.mts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/node_modules/tailwindcss/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/node_modules/tailwindcss/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/node_modules/tailwindcss/preflight.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/node_modules/tailwindcss/theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/node_modules/tailwindcss/utilities.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/property_mgmt/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/property_mgmt/asgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/property_mgmt/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/property_mgmt/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homepage-feature-homepage-homepage/property_mgmt/wsgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/loan_calculator/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/loan_calculator/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/loan_calculator/api_views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/loan_calculator/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/loan_calculator/forms.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/loan_calculator/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/loan_calculator/migrations/0002_property_type.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/loan_calculator/migrations/0003_property_is_booked.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/loan_calculator/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/loan_calculator/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/loan_calculator/static/loan_calculator/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/loan_calculator/templates/loan_calculator/calculator.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/loan_calculator/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/loan_calculator/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/loan_calculator/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/main/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/main/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/main/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/main/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/main/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/main/static/main/images/fpx.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/main/static/main/images/grabpay.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/main/static/main/images/mastercard.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/main/static/main/images/maybank.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/main/static/main/images/rhb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/main/static/main/images/touchngo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/main/static/main/images/visa.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/main/static/main/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/main/templates/main/home.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/main/templates/main/property_detail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/main/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/main/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/main/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/manage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/payment/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/payment/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/payment/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/payment/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/payment/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/payment/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/payment/templates/payment/booking_list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/payment/templates/payment/credit_card_payment.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/payment/templates/payment/e_wallet_payment.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/payment/templates/payment/fpx_confirmation.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/payment/templates/payment/loading.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/payment/templates/payment/online_banking_login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/payment/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/payment/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/payment/utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/payment/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/propertymanagement/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/propertymanagement/asgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/propertymanagement/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/propertymanagement/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/propertymanagement/wsgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/media/property_images/320d0a9680a875b6a321eaf1b0c0308e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/media/property_images/bungalow-taynton-view-garden.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/media/property_images/details/2818a615ab822454db8232a5bc24ec47.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/media/property_images/details/3-storey-bungalow-house-start-from-empty-land.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/media/property_images/details/OIP.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/media/property_images/details/OIP_1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/media/property_images/details/OIP_1_Tf5vvRd.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/media/property_images/details/OIP_1_cnjKaUA.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/media/property_images/details/OIP_2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/media/property_images/details/OIP_3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/media/property_images/details/OIP_9CjMXfy.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/media/property_images/details/OIP_Bmr9dvE.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/media/property_images/details/image3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/media/property_images/details/image4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/media/property_images/details/project-build-design-interior-in-panderosa-house.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/media/property_images/details/th.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/media/property_images/details/th_1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/media/property_images/details/th_1_ALDFqxO.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/media/property_images/details/th_1_TCLrVpy.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/media/property_images/details/th_1_yL0uo8t.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/media/property_images/details/th_2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/media/property_images/details/th_2_VnIS77S.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/media/property_images/details/th_2_WxYWshH.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/media/property_images/details/th_3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/media/property_images/details/th_3_P4JYN7K.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/media/property_images/details/th_3_mqBjhR9.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/media/property_images/details/th_BZ6G1C6.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/media/property_images/details/th_TmAnbC9.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/media/property_images/details/th_lZppLCp.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/media/property_images/details/th_rMzAjAs.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/media/property_images/details/th_zXpSEfP.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/media/property_images/image3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/media/property_images/image3_P2fh52L.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/media/property_images/image4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/media/property_images/image4_pqAzPld.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/media/property_images/image5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/media/property_images/image5_E9nPdZs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/media/property_images/nusa-duta-bunalow.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/media/property_images/project-build-design-interior-in-panderosa-house.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/static/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/static/css/vars.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/static/images/apartment-10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/static/images/book-3-40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/static/images/book-5-40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/static/images/icon0.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/static/images/image-80.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/static/images/image-90.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/static/images/image20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/static/images/image21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/static/images/image3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/static/images/image4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/static/images/image5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/static/images/image6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/static/images/image7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/static/images/image8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/static/images/map_placeholder.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/static/images/static1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/static/images/static2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/static/images/static3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/static/images/vector-70.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/static/images/vector-80.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/static/images/vector0.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/static/images/vector1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/static/images/vector2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/static/images/vector3.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/static/images/vector4.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/static/images/vector5.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/templates/property_detail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/templates/property_list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/proplistpage/views.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,18 +204,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Desmondyapp"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Desmondyapp&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/LOOIPY/FrameworkAssignment.git",
-    "accountId": "adf67d25-66fa-4ce9-9a31-2b71d7b8138a"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/LOOIPY/FrameworkAssignment.git&quot;,
+    &quot;accountId&quot;: &quot;e6967aa4-5716-464a-a178-ccc6b80b75e9&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -33,15 +225,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "desmond",
-    "last_opened_file_path": "C:/Users/DESMOND YAP WEN XUAN/FrameworkAssignment",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Pei-Yi&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/DESMOND YAP WEN XUAN/FrameworkAssignment&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
