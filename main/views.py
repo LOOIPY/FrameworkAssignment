@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from loan_calculator.models import Property
+from proplistpage.models import Property
 from payment.utils import calculate_payment
 from loan_calculator.forms import LoanCalculatorForm
 from decimal import Decimal, ROUND_HALF_UP

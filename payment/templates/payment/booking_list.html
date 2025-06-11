@@ -16,7 +16,7 @@
     </tr>
     {% for b in bookings %}
     <tr>
-        <td>{{ b.property.name }}</td>
+        <td>{{ b.property.title }}</td>
         <td>RM {{ b.total_payment|floatformat:2 }}</td>
         <td>{{ b.date|date:"Y-m-d H:i" }}</td>
         <td>{{ b.status }}</td>
@@ -24,7 +24,7 @@
     {% endfor %}
 </table>
 
-<a href="{% url 'home' %}" class="button-back">← Back to Home</a>
+<a href="{% url 'proplistpage:property-list' %}" class="button-back">← Back to Home</a>
 
 </body>
 </html>

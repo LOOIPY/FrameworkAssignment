@@ -1,5 +1,5 @@
 from django import forms
-from .models import Property
+from proplistpage.models import Property
 
 class LoanCalculatorForm(forms.Form):
     property = forms.ModelChoiceField(
