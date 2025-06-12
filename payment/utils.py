@@ -4,10 +4,10 @@ def calculate_payment(property_obj):
     if property_obj.type == 'rent':
         return {
             'label': 'Total Payment',
-            'amount': property_obj.cost,
+            'amount': property_obj.price,
         }
     elif property_obj.type == 'sale':
-        deposit = property_obj.cost * Decimal('0.02')
+        deposit = property_obj.price * Decimal('0.02')
         return {
             'label': 'Earnest Deposit (2%)',
             'amount': deposit,

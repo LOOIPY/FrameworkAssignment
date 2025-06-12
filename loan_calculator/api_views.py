@@ -1,7 +1,7 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from decimal import Decimal, ROUND_HALF_UP
-from loan_calculator.models import Property
+from proplistpage.models import Property
 
 @api_view(['POST'])
 def calculate_loan_api(request):
@@ -15,7 +15,7 @@ def calculate_loan_api(request):
     except Property.DoesNotExist:
         return Response({'error': 'Property not found'}, status=404)
 
-    loan_amount = property.cost * (loan_percentage / Decimal("100"))
+    loan_amount = property.price * (loan_percentage / Decimal("100"))
     monthly_interest = (interest_rate / Decimal("100")) / Decimal("12")
     number_of_months = loan_years * Decimal("12")
 
@@ -28,7 +28,7 @@ def calculate_loan_api(request):
     total_interest = total_payment - loan_amount
 
     result = {
-        'property': property.name,
+        'property': property.title,
         'principal': str(loan_amount.quantize(Decimal('0.01'), ROUND_HALF_UP)),
         'interest': str(total_interest.quantize(Decimal('0.01'), ROUND_HALF_UP)),
         'monthly_payment': str(monthly_payment.quantize(Decimal('0.01'), ROUND_HALF_UP)),

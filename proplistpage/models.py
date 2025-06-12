@@ -15,6 +15,13 @@ class Property(models.Model):
     address = models.CharField(max_length=200, blank=True)  # 具体地址
     detail = models.TextField(blank=True)  # 房屋详情
     image = models.ImageField(upload_to='property_images/')
+    #desmond part
+    PROPERTY_TYPE_CHOICES = [
+        ('sale', 'For Sale'),
+        ('rent', 'For Rent'),
+    ]
+    type = models.CharField(max_length=10, choices=PROPERTY_TYPE_CHOICES, default='sale')
+    is_booked = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.title} - {self.location}"

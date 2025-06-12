@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .forms import LoanCalculatorForm
-from .models import Property  # Make sure this is correct
+from proplistpage.models import Property
 from decimal import Decimal, ROUND_HALF_UP
 
 def loan_calculator(request):

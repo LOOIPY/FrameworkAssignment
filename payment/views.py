@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.utils import timezone
 from .models import Booking
-from loan_calculator.models import Property
+from proplistpage.models import Property
 from payment.utils import calculate_payment
 from django.urls import reverse
 import qrcode

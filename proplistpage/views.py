@@ -6,6 +6,8 @@ from django.shortcuts import render, get_object_or_404
 from django.db.models import Q
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from .models import Property
+from loan_calculator.forms import LoanCalculatorForm
+from payment.utils import calculate_payment
 
 def property_list(request):
     """
@@ -88,4 +90,20 @@ def property_detail(request, pk):
     print(f"*** property_detail 被调用，pk = {pk} ***")
     property_obj = get_object_or_404(Property, pk=pk)
     print(f"*** 成功拿到 Property：{property_obj.title} ***")
-    return render(request, 'property_detail.html', {'property': property_obj})
+
+    #desmond part
+    form = LoanCalculatorForm(initial={'property': property_obj})
+    result = None
+
+    if request.method == 'POST':
+        form = LoanCalculatorForm(request.POST)
+        if form.is_valid():
+            result = form.calculate()  # Assuming your form has a `.calculate()` method that returns the result
+    return render(request, 'property_detail.html',
+                  {'property': property_obj,
+                   'form': form,
+                   'result': result,
+                   'payment_info': calculate_payment(property_obj),
+
+
+                   })

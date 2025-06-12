@@ -1,6 +1,6 @@
 # payment/models.py
 from django.db import models
-from loan_calculator.models import Property
+from proplistpage.models import Property
 
 class Booking(models.Model):
     property = models.ForeignKey(Property, on_delete=models.CASCADE)
