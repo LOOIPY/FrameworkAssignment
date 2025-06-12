@@ -3,13 +3,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Property Listing</title>
+  <title>Rent Property Listing</title>
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
 {% load static %}
-
-
 
 <div class="ellipse-6"></div>
 
@@ -50,14 +48,14 @@
 <div class="buy-rent-new-launches-transations-advertise-guies-insights-events">
 <span>
 <span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span">
-          <a href="{% url 'proplistpage:property-list' %}">Buy</a>
-        </span>
+  <a href="{% url 'proplistpage:property-list' %}" style="color: inherit; text-decoration: none;">Buy</a>
+</span>
 <span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span2"></span>
 <span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span3">
           |
         </span>
-<span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span2">
-          <a href="{% url 'rentlistpage:rent-list' %}">Rent</a>
+<span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span2" style="color: #e64c3c; font-weight: bold;">
+          Rent
         </span>
 <span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span3">
           |
@@ -99,21 +97,16 @@
   <div class="banner-text">
 
 <div class="rectangle-660"></div>
-<div class="look-for-something">Look For Something</div>
-<div class="find-malaysia-property-for-sale">
-    Find Malaysia property for sale
-</div>
-
+<div class="look-for-something">Look For Something to Rent</div>
 
 <section class="search-section" style="padding: 20px 16px; background: #ffffff;">
 <form method="get" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 16px;">
   <select name="price_order" class="price-select" onchange="this.form.submit()">
         style="padding: 10px 12px; border-radius: 6px; border: 1px solid #ccc; font-size: 14px; color: #393280;">
-  <option value="" disabled selected>PRICE</option>
+  <option value="" disabled selected>RENT PRICE</option>
   <option value="asc" {% if selected_price_order == 'asc' %}selected{% endif %}>Low to High</option>
   <option value="desc" {% if selected_price_order == 'desc' %}selected{% endif %}>High to Low</option>
   </select>
-
 
   <select name="location" class="location-select"
         style="padding: 10px 12px; border-radius: 6px; border: 1px solid #ccc; min-width: 150px;"
@@ -129,19 +122,14 @@
         type="text"
         name="search"
         class="search-input"
-        placeholder="Search by Title / Location / Price"
+        placeholder="Search by Title / Location / Rent Price"
         value="{{ selected_search }}"
         onkeypress="if(event.keyCode==13){ this.form.submit(); }"
       />
 
-      <!-- ④ 提交按钮（当用户只想点击按钮时提交） -->
       <button type="submit" class="search-btn">SEARCH</button>
     </form>
   </section>
-
-
-
-
 
 <div class="group-307">
 <div class="group-271">
@@ -161,44 +149,34 @@
 
 <section class="cards-section" style="background: #f8f8f8; padding: 24px 0;">
 <div class="property-container">
-    {# properties 列表里应该至少有 6 条，如果不足，模板会少渲染几张；若想强制始终显示 6 张，可在 View 里先填充空对象，或在这里做判断后补占位 #}
-
     {% for property in properties %}
-
-      <a href="{% url 'proplistpage:property-detail' property.id %}" class="property-card" style="text-decoration: none; color: inherit;">
-        {# 1. 图片部分，如果你的模型里有 ImageField，可以直接用 property.image.url，否则用占位div 或者删掉这个 img-wrapper 区块 #}
+      <a href="{% url 'rentlistpage:rent-detail' property.id %}" class="property-card" style="text-decoration: none; color: inherit;">
         <div class="img-wrapper">
           {% if property.image %}
             <img src="{{ property.image.url }}" alt="{{ property.title }}" />
           {% else %}
-            <!-- 占位背景：可以替换成静态占位图 -->
             <div style="width:100%; height:180px; background: #f0f0f0;"></div>
           {% endif %}
         </div>
 
-        {# 2. 标题：动态获取 property.title #}
         <h3 class="title">{{ property.title }}</h3>
 
-        {# 3. 描述 + 位置：动态获取 property.description 和 property.location #}
         <p class="description">
-          {{ property.description|truncatewords:20 }}  <!-- 可选：截取前 20 个词 -->
+          {{ property.description|truncatewords:20 }}
           <br/>
           POSITION：{{ property.location }}
         </p>
 
-        {# 4. 价格：动态获取 property.price #}
-        <div class="price">RM {{ property.price|floatformat:2 }}</div>
+        <div class="price">RM {{ property.price|floatformat:2 }}/month</div>
 
-        {# 5. “Details” 文本保持一致（可选：也可以把它变成按钮或链接） #}
         <div class="details">Details</div>
       </a>
      {% empty %}
         <p style="grid-column: 1 / -1; text-align:center; color:#666;">
-          There are no eligible listings at this time
+          There are no rent properties available at this time
         </p>
     {% endfor %}
 </div>
-<div>
 
 <div class="pagination-wrapper">
      {% if page_obj.has_other_pages %}
@@ -236,13 +214,13 @@
  </div>
 </section>
 
-<<!-- 推荐区开始 -->
+<!-- Recommended Rent Properties -->
 <div class="recommend-wrapper">
-  <div class="recommend-overlay"></div> <!-- 半透明背景遮罩，可去掉或改为渐变 -->
-  <h2 class="recommend-title">recommend</h2>
+  <div class="recommend-overlay"></div>
+  <h2 class="recommend-title">Recommended Rentals</h2>
   <div class="recommend-container">
     {% for rec in recommended %}
-      <a href="{% url 'proplistpage:property-detail' rec.id %}" class="recommend-card-link">
+      <a href="{% url 'rentlistpage:rent-detail' rec.id %}" class="recommend-card-link">
         <div class="recommend-card">
           {% if rec.image %}
             <img src="{{ rec.image.url }}" alt="{{ rec.title }}" class="recommend-image" />
@@ -251,53 +229,29 @@
           {% endif %}
           <div class="recommend-footer">
             <span class="recommend-name">{{ rec.title }}</span>
-            <span class="recommend-price">RM {{ rec.price|floatformat:2 }}</span>
+            <span class="recommend-price">RM {{ rec.price|floatformat:2 }}/month</span>
           </div>
         </div>
       </a>
     {% endfor %}
   </div>
 </div>
-<!-- 推荐区结束 -->
-
-
-<!--<div class="group-307">
-<div class="group-271">
-<div class="group-258">
-
-<div class="rectangle-125"></div>
-<div class="rectangle-134"></div>
-
-<div class="rectangle-126"></div>
-<div class="rectangle-135"></div>
-
-<div class="rectangle-127"></div>
-<div class="rectangle-136"></div>
-</div>
-</div>
-</div>    -->
 
  <div class="frame-238">
     <div class="frame-100">
-      <!-- 1. 底色：渐变叠加透明遮罩 -->
       <div class="rectangle-3"></div>
-
-      <!-- 2. 模块内容组 -->
       <div class="group-89">
-        <!-- 2.1 欢迎文案 -->
         <div class="welcome-we-reach-out-to-the-right-property-seekers-for-you">
-          Welcome. We reach out to the right property seekers for you.
+          Welcome. We reach out to the right property renters for you.
         </div>
-        <!-- 2.2 左侧菜单项 -->
         <div class="company">Company</div>
         <div class="latest-news">Latest news</div>
 
-        <!-- 2.3 导航行：Buy / Rent / New Launches / … -->
         <div class="buy-rent-new-launches-transations-advertise-guies-insights-events1">
           <span>
-            <span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span">Buy<br></span>
+            <span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span">Rent<br></span>
             <span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span2">
-              Rent<br>
+              Buy<br>
               New Launches<br>
               transations<br>
               Advertise<br>
@@ -307,25 +261,22 @@
           </span>
         </div>
 
-        <!-- 2.4 左下角卡片（样例中两个大卡片） -->
         <div class="group-51">
-          <!-- 卡片1：LoanCare -->
           <div class="group-49">
-            <img class="image" src="{% static 'images/image20.png' %}" alt="LoanCare">
+            <img class="image" src="{% static 'images/image20.png' %}" alt="RentCare">
             <div class="group-48">
-              <div class="loan-care">LoanCare</div>
+              <div class="loan-care">RentCare</div>
               <div class="know-your-home-loan-eligibility-with-up-to-17-banks-try-now">
-                Know your home loan eligibility with up to 17 banks<br>Try now
+                Find your perfect rental with trusted landlords<br>Try now
               </div>
             </div>
           </div>
-          <!-- 卡片2：Transactions Data -->
           <div class="group-50">
-            <img class="image2" src="{% static 'images/image21.png' %}" alt="Transactions Data">
+            <img class="image2" src="{% static 'images/image21.png' %}" alt="Rental Data">
             <div class="group-482">
-              <div class="transactions-data">Transactions Data</div>
+              <div class="transactions-data">Rental Market Data</div>
               <div class="obtain-the-latest-subsale-property-transaction-data-prices-discover-now">
-                Obtain the latest subsale property transaction data &amp; prices<br>Discover now
+                Get the latest rental market data &amp; pricing trends<br>Discover now
               </div>
               <div class="group-47">
                 <div class="_15-april-2022">15 April 2022</div>
@@ -339,7 +290,6 @@
           </div>
         </div>
 
-        <!-- 2.5 最下方版权等信息 -->
         <div class="_2022-arihant-all-rights-reserved-privacy-terms-of-service">
           <span>
             <span class="_2022-arihant-all-rights-reserved-privacy-terms-of-service-span">
@@ -354,13 +304,10 @@
           </span>
         </div>
 
-        <!-- 2.6 右侧大图标（可能是LOGO什么的） -->
         <img class="icon" src="{% static 'images/icon0.svg' %}" alt="Icon">
       </div>
     </div>
   </div>
-  <!-- —————— 尾页模块结束 —————— -->
-
 
 <div class="rectangle-82"></div>
 <div class="view-more">View more</div>

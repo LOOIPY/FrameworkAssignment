@@ -4,32 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fbe879b4-7f3a-4d43-8c08-0bbe4a7aaa96" name="Changes" comment="Merge pull request #5 from LOOIPY/Linlin-homepage-dashboard&#10;&#10;Merge pull request #4 from LOOIPY/Pei-Yi">
-      <change afterPath="$PROJECT_DIR$/.idea/LoginSignUp.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/static/main/images/ambank.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/static/main/images/cimb.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/static/main/images/ocbc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/static/main/images/publicbank.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/static/main/images/uob.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment/migrations/0002_alter_booking_property.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proplistpage/migrations/0002_property_is_booked_property_type.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="fbe879b4-7f3a-4d43-8c08-0bbe4a7aaa96" name="Changes" comment="Merge branch PeiYi">
+      <change afterPath="$PROJECT_DIR$/rentlistpage/templates/rent_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rentlistpage/templates/rent_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loan_calculator/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/loan_calculator/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loan_calculator/api_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/loan_calculator/api_views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loan_calculator/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/loan_calculator/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loan_calculator/static/loan_calculator/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/loan_calculator/static/loan_calculator/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loan_calculator/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/loan_calculator/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/payment/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment/templates/payment/booking_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/payment/templates/payment/booking_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/payment/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/payment/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proplistpage/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/proplistpage/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proplistpage/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/proplistpage/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proplistpage/templates/property_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/proplistpage/templates/property_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proplistpage/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/proplistpage/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/propertymanagement/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/propertymanagement/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proplistpage/templates/property_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/proplistpage/templates/property_list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +51,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Merging Pei-Yi",
+    "git-widget-placeholder": "Pei-Yi",
     "last_opened_file_path": "C:/Users/DESMOND YAP WEN XUAN/FrameworkAssignment",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
@@ -114,12 +96,21 @@
       <option name="project" value="LOCAL" />
       <updated>1749713928325</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Merge branch PeiYi">
+      <option name="closed" value="true" />
+      <created>1749715998667</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1749715998667</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merge pull request #5 from LOOIPY/Linlin-homepage-dashboard&#10;&#10;Merge pull request #4 from LOOIPY/Pei-Yi" />
     <MESSAGE value="Merge remote-tracking branch 'origin/Pei-Yi' into Pei-Yi" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/Pei-Yi' into Pei-Yi" />
+    <MESSAGE value="Merge branch PeiYi" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch PeiYi" />
   </component>
 </project>

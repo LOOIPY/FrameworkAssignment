@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'main',
     'payment',
     'proplistpage',
+    'rentlistpage',
     'rest_framework',
 ]
 

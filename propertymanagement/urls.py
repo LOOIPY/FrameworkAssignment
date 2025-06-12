@@ -24,6 +24,7 @@ urlpatterns = [
     path('', include('proplistpage.urls')),  # Homepage and property views
     path('loan-calculator/', include('loan_calculator.urls')),
     path('payment/', include('payment.urls')),
+    path('rent/', include('rentlistpage.urls')),
 ]
 
 if settings.DEBUG:
