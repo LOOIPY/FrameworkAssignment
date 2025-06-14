@@ -1,0 +1,150 @@
+/* Reset some basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #333;
+    padding: 20px;
+}
+
+/* Top nav or header */
+.header {
+    background-color: #3b2e83;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+.container {
+    max-width: 400px;
+    margin: 60px auto;
+    padding: 30px;
+    text-align: center;
+}
+
+.container h2 {
+    font-size: 36px;
+    color: #3b2e83;
+    margin-bottom: 30px;
+}
+
+.input-field {
+    background-color: #e6e6e6;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    font-size: 16px;
+}
+
+.login-btn {
+    background-color: #f04e30;
+    color: white;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #d94128;
+}
+
+.forgot {
+    text-align: right;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.separator {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+    color: #999;
+}
+
+.separator::before,
+.separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #ccc;
+}
+
+.separator:not(:empty)::before {
+    margin-right: .5em;
+}
+
+.separator:not(:empty)::after {
+    margin-left: .5em;
+}
+
+.social-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.google-btn {
+    background-color: #f04e30;
+}
+
+.facebook-btn {
+    background-color: #3b5998;
+}
+
+.social-btn img {
+    height: 20px;
+    margin-right: 10px;
+}
+
+.signup {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.signup a {
+    color: #3b2e83;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.messages {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+}
+.messages li {
+    padding: 10px;
+    background-color: #ffdede;
+    color: #b30000;
+    border: 1px solid #ffaaaa;
+    border-radius: 5px;
+}
