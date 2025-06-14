@@ -1,6 +1,10 @@
 # views.py
 
+<<<<<<< HEAD
 # proplistpage/views.py
+=======
+# app/views.py
+>>>>>>> 3324ed9d86d7086a6b8d2ccef3d10699c42793ac
 
 from django.shortcuts import render, get_object_or_404
 from django.db.models import Q

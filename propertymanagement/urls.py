@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+<<<<<<< HEAD
 from userAccount.views import user_signup,user_login,social_redirect_view,profile_view,change_password,verify_otp,resend_otp
 from userAccount.views import my_properties,add_my_property,edit_my_property,delete_my_property
 from django.contrib.auth.views import LogoutView
@@ -35,14 +36,22 @@ urlpatterns = [
     path('resend-otp/', resend_otp, name='resend_otp'),
     path('social-auth/', include('social_django.urls', namespace='social')),
     path('redirect-after-social-login/', social_redirect_view, name='social_redirect'),
+=======
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+>>>>>>> 3324ed9d86d7086a6b8d2ccef3d10699c42793ac
     path('', include('proplistpage.urls')),  # Homepage and property views
     path('loan-calculator/', include('loan_calculator.urls')),
     path('payment/', include('payment.urls')),
     path('rent/', include('rentlistpage.urls')),
+<<<<<<< HEAD
     path('my-properties/', my_properties, name='my_properties'),
     path('property/add/', add_my_property, name='add_my_property'),
     path('property/<int:pk>/edit/', edit_my_property, name='edit_my_property'),
     path('property/<int:pk>/delete/', delete_my_property, name='delete_my_property'),
+=======
+>>>>>>> 3324ed9d86d7086a6b8d2ccef3d10699c42793ac
 ]
 
 if settings.DEBUG:

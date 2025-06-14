@@ -37,13 +37,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+<<<<<<< HEAD
     'social_django',
+=======
+>>>>>>> 3324ed9d86d7086a6b8d2ccef3d10699c42793ac
     'loan_calculator',
     'main',
     'payment',
     'proplistpage',
     'rentlistpage',
     'rest_framework',
+<<<<<<< HEAD
     'userAccount'
 ]
 
@@ -52,6 +56,8 @@ AUTHENTICATION_BACKENDS = [
     'social_core.backends.github.GithubOAuth2',
     'django.contrib.auth.backends.ModelBackend',
     'userAccount.backends.EmailOrUsernameModelBackend'
+=======
+>>>>>>> 3324ed9d86d7086a6b8d2ccef3d10699c42793ac
 ]
 
 MIDDLEWARE = [
@@ -59,11 +65,17 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+<<<<<<< HEAD
     'userAccount.middleware.SaveNextMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'social_django.middleware.SocialAuthExceptionMiddleware'
+=======
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+>>>>>>> 3324ed9d86d7086a6b8d2ccef3d10699c42793ac
 ]
 
 ROOT_URLCONF = 'propertymanagement.urls'
@@ -78,8 +90,11 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+<<<<<<< HEAD
                 'social_django.context_processors.backends',
                 'social_django.context_processors.login_redirect'
+=======
+>>>>>>> 3324ed9d86d7086a6b8d2ccef3d10699c42793ac
             ],
         },
     },
@@ -87,6 +102,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'propertymanagement.wsgi.application'
 
+<<<<<<< HEAD
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
@@ -106,6 +122,9 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_EXTRA_ARGUMENTS = {
     'access_type': 'offline',
     'prompt': 'select_account',
 }
+=======
+
+>>>>>>> 3324ed9d86d7086a6b8d2ccef3d10699c42793ac
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 

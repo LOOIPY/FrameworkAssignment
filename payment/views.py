@@ -8,9 +8,13 @@ from django.urls import reverse
 import qrcode
 import base64
 from io import BytesIO
+<<<<<<< HEAD
 from django.contrib.auth.decorators import login_required
 
 @login_required
+=======
+
+>>>>>>> 3324ed9d86d7086a6b8d2ccef3d10699c42793ac
 def credit_card_payment(request, property_id):
     property = Property.objects.get(id=property_id)
     payment_info = calculate_payment(property)  # use the utility
@@ -51,13 +55,19 @@ def credit_card_payment(request, property_id):
 
     return render(request, 'payment/credit_card_payment.html', {'property': property, 'amount': amount})
 
+<<<<<<< HEAD
 @login_required
+=======
+>>>>>>> 3324ed9d86d7086a6b8d2ccef3d10699c42793ac
 def booking_list(request):
     bookings = Booking.objects.all()
     return render(request, 'payment/booking_list.html', {'bookings': bookings})
 
 
+<<<<<<< HEAD
 @login_required
+=======
+>>>>>>> 3324ed9d86d7086a6b8d2ccef3d10699c42793ac
 def online_banking_login(request, bank_name, property_id):
     if request.method == 'POST':
         return redirect('fpx_confirmation', bank_name=bank_name, property_id=property_id)
@@ -67,7 +77,10 @@ def online_banking_login(request, bank_name, property_id):
         'property_id': property_id
     })
 
+<<<<<<< HEAD
 @login_required
+=======
+>>>>>>> 3324ed9d86d7086a6b8d2ccef3d10699c42793ac
 def fpx_confirmation(request, bank_name, property_id):
     try:
         property_obj = Property.objects.get(id=property_id)
@@ -94,7 +107,10 @@ def fpx_confirmation(request, bank_name, property_id):
         'property_id': property_id
     })
 
+<<<<<<< HEAD
 @login_required
+=======
+>>>>>>> 3324ed9d86d7086a6b8d2ccef3d10699c42793ac
 def e_wallet_payment(request, property_id, wallet_name):
     try:
         property_obj = Property.objects.get(id=property_id)
