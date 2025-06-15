@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Verify OTP</title>
+    <link rel="stylesheet" href="{% static 'css/verify_otp.css' %}">
+
+</head>
+<body>
+   <div class="container">
+        <h2>Enter OTP to Verify</h2>
+
+        <form method="post">
+            {% csrf_token %}
+            <label for="otp">Verification Code</label>
+            <input type="text" name="otp" id="otp" placeholder="Enter your OTP here" required>
+            <button type="submit">Verify</button>
+        </form>
+        <br>
+        <div class="countdown">
+            OTP expires in: <span id="timer">02:00</span> <a href="{% url 'resend_otp' %}" id="resendLink" class="resend disabled">Resend OTP</a>
+        </div>
+
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li class="{{ message.tags }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+
+    <script>
+        let seconds = 120;
+        const timerSpan = document.getElementById('timer');
+        const resendLink = document.getElementById('resendLink');
+
+        const interval = setInterval(() => {
+            seconds--;
+
+            const minutesPart = String(Math.floor(seconds / 60)).padStart(2, '0');
+            const secondsPart = String(seconds % 60).padStart(2, '0');
+            timerSpan.textContent = `${minutesPart}:${secondsPart}`;
+
+            if (seconds <= 0) {
+                clearInterval(interval);
+                resendLink.classList.remove("disabled");
+                resendLink.textContent = "Resend OTP";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

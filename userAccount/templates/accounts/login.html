@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li class="{{ message.tags }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <form method="POST" action="{% url 'login' %}?next={{ next }}">
+            {% csrf_token %}
+            <input type="text" name="username" class="input-field" placeholder="Username or Email" required>
+            <input type="password" name="password" class="input-field" placeholder="Password" required>
+            <div class="forgot"><a href="{% url 'password_reset' %}">Forget Password?</a></div>
+            <input type="hidden" name="next" value="{{ next }}">
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+
+        <div class="separator">Or</div>
+         <a href="{% url 'social:begin' 'google-oauth2' %}?next={{ next|urlencode }}"
+            style="text-decoration: none;">
+            <button class="social-btn google-btn">
+                <img src="{% static 'img/google.png' %}" alt="Google">
+               Login with Google
+            </button>
+         </a>
+        <a href="{% url 'social:begin' 'github' %}?next={{  next|urlencode }} "
+           >
+            <button class="social-btn github-btn" style="color:black;">
+                <img src="{% static 'img/github.png' %}" alt="Github">
+                Login with Github
+            </button>
+        </a>
+        <div class="signup">
+            New user? <a href="{% url 'signup' %}">Sign Up</a>
+        </div>
+    </div>
+</body>
+</html>
