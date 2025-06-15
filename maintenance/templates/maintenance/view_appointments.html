@@ -1,0 +1,13 @@
+
+<h2>Appointments</h2>
+<table>
+  <tr><th>Request</th><th>Staff</th><th>Date</th><th>Status</th></tr>
+  {% for a in appointments %}
+    <tr>
+      <td>{{ a.request.title }}</td>
+      <td>{{ a.staff_assigned }}</td>
+      <td>{{ a.appointment_date }}</td>
+      <td>{{ a.status }}</td>
+    </tr>
+  {% endfor %}
+</table>
