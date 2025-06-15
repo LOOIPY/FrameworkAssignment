@@ -1,0 +1,358 @@
+
+<!-- property_list.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Property Listing</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+{% load static %}
+
+<div class="frame-229">
+<div class="rectangle-645"></div>
+    <div class="cart-0" > <img src="{% static 'images/vector1.svg' %}"/> Cart:(0$)</div>
+    <div class="navbar">
+      <div class="account">
+          <img src="{% static 'images/vector2.svg' %}"/>
+        {% if user.is_authenticated %}
+          <div class="dropdown">
+            <button class="dropbtn">{{ user.username }}</button>
+            <div class="dropdown-content">
+              <a href="{% url 'my_properties' %}">My Properties</a>
+              <a href="{% url 'profile' %}">Profile</a>
+              <a href="{% url 'logout' %}">Logout</a>
+            </div>
+          </div>
+        {% else %}
+            <a href="{% url 'login' %}"><span>Account</span></a>
+        {% endif %}
+      </div>
+    </div>
+    <div class="wishlist"><img src="{% static 'images/vector3.svg' %}"/> Wishlist</div>
+
+    <div class="rectangle-7"></div>
+
+<div class="buy-rent-new-launches-transations-advertise-guies-insights-events">
+<span>
+<span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span">
+          <a href="{% url 'proplistpage:property-list' %}" style="text-decoration:none">Buy</a>
+        </span>
+<span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span2"></span>
+<span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span3">
+          |
+        </span>
+<span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span2">
+          <a href="{% url 'rentlistpage:rent-list' %}" style="text-decoration:none; color: #111111;
+          font-family: Inter-Medium, sans-serif;font-weight: 500">Rent</a>
+
+        </span>
+<span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span3">
+          |
+        </span>
+<span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span2">
+          New Launches
+        </span>
+<span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span3">
+          |
+        </span>
+<span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span2">
+          transations
+        </span>
+<span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span3">
+          |
+        </span>
+<span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span2">
+          Advertise
+        </span>
+<span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span3">
+          |
+        </span>
+<span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span2">
+          Guides&amp;insights
+        </span>
+<span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span3">
+          |
+        </span>
+<span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span2">
+          events
+        </span>
+</span>
+</div>
+</div>
+
+<img class="apartment-1" src="{% static 'images/apartment-10.png' %}"/>
+<div class="banner-overlay"></div>
+<div class="banner-text"></div>
+
+<div class="look-for-something">Look For Something</div>
+<div class="find-malaysia-property-for-sale">
+    Find Malaysia property for sale
+</div>
+
+<section class="search-section" style="padding: 20px 16px; background: #ffffff;">
+<form method="get" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 16px;">
+  <select name="price_order" class="price-select" onchange="this.form.submit()">
+        style="padding: 10px 12px; border-radius: 6px; border: 1px solid #ccc; font-size: 14px; color: #393280;">
+  <option value="" disabled selected>PRICE</option>
+  <option value="asc" {% if selected_price_order == 'asc' %}selected{% endif %}>Low to High</option>
+  <option value="desc" {% if selected_price_order == 'desc' %}selected{% endif %}>High to Low</option>
+  </select>
+
+
+  <select name="location" class="location-select"
+        style="padding: 10px 12px; border-radius: 6px; border: 1px solid #ccc; min-width: 150px;"
+        onchange="this.form.submit()">
+    <option value="" {% if not selected_location %}selected{% endif %}>All Locations</option>
+    <option value="KUALA LUMPUR" {% if selected_location == 'KUALA LUMPUR' %}selected{% endif %}>KUALA LUMPUR</option>
+    <option value="SELANGOR" {% if selected_location == 'SELANGOR' %}selected{% endif %}>SELANGOR</option>
+    <option value="PENANG" {% if selected_location == 'PENANG' %}selected{% endif %}>PENANG</option>
+    <option value="OTHERS" {% if selected_location == 'OTHERS' %}selected{% endif %}>OTHERS</option>
+</select>
+
+<input
+        type="text"
+        name="search"
+        class="search-input"
+        placeholder="Search by Title / Location / Price"
+        value="{{ selected_search }}"
+        onkeypress="if(event.keyCode==13){ this.form.submit(); }"
+      />
+
+      <!-- ④ 提交按钮（当用户只想点击按钮时提交） -->
+      <button type="submit" class="search-btn">SEARCH</button>
+    </form>
+  </section>
+
+
+
+
+
+<div class="group-307">
+<div class="group-271">
+<div class="group-258">
+
+<div class="rectangle-122"></div>
+<div class="rectangle-13"></div>
+
+<div class="rectangle-123"></div>
+<div class="rectangle-132"></div>
+
+<div class="rectangle-124"></div>
+<div class="rectangle-133"></div>
+</div>
+</div>
+</div>
+
+<section class="cards-section" style="background: #f8f8f8; padding: 24px 0;">
+<div class="property-container">
+    {# properties 列表里应该至少有 6 条，如果不足，模板会少渲染几张；若想强制始终显示 6 张，可在 View 里先填充空对象，或在这里做判断后补占位 #}
+
+    {% for property in properties %}
+
+      <a href="{% url 'proplistpage:property-detail' property.id %}" class="property-card" style="text-decoration: none; color: inherit;">
+        {# 1. 图片部分，如果你的模型里有 ImageField，可以直接用 property.image.url，否则用占位div 或者删掉这个 img-wrapper 区块 #}
+        <div class="img-wrapper">
+          {% if property.image %}
+            <img src="{{ property.image.url }}" alt="{{ property.title }}" />
+          {% else %}
+            <!-- 占位背景：可以替换成静态占位图 -->
+            <div style="width:100%; height:180px; background: #f0f0f0;"></div>
+          {% endif %}
+        </div>
+
+        {# 2. 标题：动态获取 property.title #}
+        <h3 class="title">{{ property.title }}</h3>
+
+        {# 3. 描述 + 位置：动态获取 property.description 和 property.location #}
+        <p class="description">
+          {{ property.description|truncatewords:20 }}  <!-- 可选：截取前 20 个词 -->
+          <br/>
+          POSITION：{{ property.location }}
+        </p>
+
+        {# 4. 价格：动态获取 property.price #}
+        <div class="price">RM {{ property.price|floatformat:2 }}</div>
+
+        {# 5. “Details” 文本保持一致（可选：也可以把它变成按钮或链接） #}
+        <div class="details">Details</div>
+      </a>
+     {% empty %}
+        <p style="grid-column: 1 / -1; text-align:center; color:#666;">
+          There are no eligible listings at this time
+        </p>
+    {% endfor %}
+</div>
+<div>
+
+<div class="pagination-wrapper">
+     {% if page_obj.has_other_pages %}
+  <div class="pagination">
+    {% if page_obj.has_previous %}
+      <a
+        href="?page={{ page_obj.previous_page_number }}{% if selected_price_order %}&price_order={{ selected_price_order }}{% endif %}{% if selected_location %}&location={{ selected_location }}{% endif %}{% if selected_search %}&search={{ selected_search }}{% endif %}"
+        class="page-link prev"
+      >&laquo; Previous</a>
+    {% else %}
+      <span class="page-link disabled prev">&laquo; Previous</span>
+    {% endif %}
+
+    {% for num in page_obj.paginator.page_range %}
+      {% if num == page_obj.number %}
+        <span class="page-link current">{{ num }}</span>
+      {% else %}
+        <a
+          href="?page={{ num }}{% if selected_price_order %}&price_order={{ selected_price_order }}{% endif %}{% if selected_location %}&location={{ selected_location }}{% endif %}{% if selected_search %}&search={{ selected_search }}{% endif %}"
+          class="page-link"
+        >{{ num }}</a>
+      {% endif %}
+    {% endfor %}
+
+    {% if page_obj.has_next %}
+      <a
+        href="?page={{ page_obj.next_page_number }}{% if selected_price_order %}&price_order={{ selected_price_order }}{% endif %}{% if selected_location %}&location={{ selected_location }}{% endif %}{% if selected_search %}&search={{ selected_search }}{% endif %}"
+        class="page-link next"
+      >Next &raquo;</a>
+    {% else %}
+      <span class="page-link disabled next">Next &raquo;</span>
+    {% endif %}
+  </div>
+{% endif %}
+ </div>
+</section>
+
+<<!-- 推荐区开始 -->
+<div class="recommend-wrapper">
+  <div class="recommend-overlay"></div> <!-- 半透明背景遮罩，可去掉或改为渐变 -->
+  <h2 class="recommend-title">recommend</h2>
+  <div class="recommend-container">
+    {% for rec in recommended %}
+      <a href="{% url 'proplistpage:property-detail' rec.id %}" class="recommend-card-link">
+        <div class="recommend-card">
+          {% if rec.image %}
+            <img src="{{ rec.image.url }}" alt="{{ rec.title }}" class="recommend-image" />
+          {% else %}
+            <div class="recommend-placeholder"></div>
+          {% endif %}
+          <div class="recommend-footer">
+            <span class="recommend-name">{{ rec.title }}</span>
+            <span class="recommend-price">RM {{ rec.price|floatformat:2 }}</span>
+          </div>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+</div>
+<!-- 推荐区结束 -->
+
+
+<!--<div class="group-307">
+<div class="group-271">
+<div class="group-258">
+
+<div class="rectangle-125"></div>
+<div class="rectangle-134"></div>
+
+<div class="rectangle-126"></div>
+<div class="rectangle-135"></div>
+
+<div class="rectangle-127"></div>
+<div class="rectangle-136"></div>
+</div>
+</div>
+</div>    -->
+
+ <div class="frame-238">
+    <div class="frame-100">
+      <!-- 1. 底色：渐变叠加透明遮罩 -->
+      <div class="rectangle-3"></div>
+
+      <!-- 2. 模块内容组 -->
+      <div class="group-89">
+        <!-- 2.1 欢迎文案 -->
+        <div class="welcome-we-reach-out-to-the-right-property-seekers-for-you">
+          Welcome. We reach out to the right property seekers for you.
+        </div>
+        <!-- 2.2 左侧菜单项 -->
+        <div class="company">Company</div>
+        <div class="latest-news">Latest news</div>
+
+        <!-- 2.3 导航行：Buy / Rent / New Launches / … -->
+        <div class="buy-rent-new-launches-transations-advertise-guies-insights-events1">
+          <span>
+            <span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span">
+                <a href="{% url 'proplistpage:property-list' %}" style="text-decoration:none; color: #ed553b;">Buy</a><br><br></span>
+            <span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span2">
+                <a href="{% url 'rentlistpage:rent-list' %}" style="text-decoration:none; color: #000000;">Rent</a><br><br>
+              New Launches<br><br>
+              transations<br><br>
+              Advertise<br><br>
+              Guies&amp;insights<br><br>
+              events
+            </span>
+          </span>
+        </div>
+
+        <!-- 2.4 左下角卡片（样例中两个大卡片） -->
+        <div class="group-51">
+          <!-- 卡片1：LoanCare -->
+          <div class="group-49">
+            <img class="image" src="{% static 'images/image20.png' %}" alt="LoanCare">
+            <div class="group-48">
+              <div class="loan-care">LoanCare</div>
+              <div class="know-your-home-loan-eligibility-with-up-to-17-banks-try-now">
+                Know your home loan eligibility with up to 17 banks<br>Try now
+              </div>
+            </div>
+          </div>
+          <!-- 卡片2：Transactions Data -->
+          <div class="group-50">
+            <img class="image2" src="{% static 'images/image21.png' %}" alt="Transactions Data">
+            <div class="group-482">
+              <div class="transactions-data">Transactions Data</div>
+              <div class="obtain-the-latest-subsale-property-transaction-data-prices-discover-now">
+                Obtain the latest subsale property transaction data &amp; prices<br>Discover now
+              </div>
+              <div class="group-47">
+                <div class="_15-april-2022">15 April 2022</div>
+                <div class="ellipse-1"></div>
+              </div>
+              <div class="group-483">
+                <div class="_15-april-20222">15 April 2022</div>
+                <div class="ellipse-12"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2.5 最下方版权等信息 -->
+        <div class="_2022-arihant-all-rights-reserved-privacy-terms-of-service">
+          <span>
+            <span class="_2022-arihant-all-rights-reserved-privacy-terms-of-service-span">
+              © 2022 Arihant. All Rights Reserved.
+            </span>
+            <span class="_2022-arihant-all-rights-reserved-privacy-terms-of-service-span2">
+              Privacy
+            </span>
+            <span class="_2022-arihant-all-rights-reserved-privacy-terms-of-service-span">
+              | Terms of Service
+            </span>
+          </span>
+        </div>
+
+        <!-- 2.6 右侧大图标（可能是LOGO什么的） -->
+        <img class="icon" src="{% static 'images/icon0.svg' %}" alt="Icon">
+      </div>
+    </div>
+  </div>
+  <!-- —————— 尾页模块结束 —————— -->
+
+
+<div class="rectangle-82"></div>
+<div class="view-more">View more</div>
+<img class="vector6" src="{% static 'images/vector5.svg' %}"/>
+
+</body>
+</html>

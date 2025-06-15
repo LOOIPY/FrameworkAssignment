@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>phone reviews</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <header>
+      <div class="logo-container">
+        <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo" />
+        <h1>phone reviews</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">main</a></li>
+          <li><a href="#">phone</a></li>
+          <li><a href="#">review</a></li>
+          <li><a href="#">aboutUs</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="featured-phones">
+        <h2>popular phones</h2>
+        <div class="phone-grid">
+          {% for phone in phones %}
+          <div class="phone-card">
+            {% if phone.image %}
+            <img src="{{ phone.image.url }}" alt="{{ phone.name }}" />
+            {% else %}
+            <div class="no-image">无图片</div>
+            {% endif %}
+            <h3>{{ phone.brand }} {{ phone.name }}</h3>
+            <p class="price">¥{{ phone.price }}</p>
+            <p class="release-date">
+              release date: {{ phone.release_date|date:"Y-m-d" }}
+            </p>
+          </div>
+          {% empty %}
+          <p>no phone data available</p>
+          {% endfor %}
+        </div>
+      </section>
+
+      <section class="latest-reviews">
+        <h2>latest reviews</h2>
+        <div class="review-list">
+          {% for review in reviews %}
+          <div class="review-card">
+            <h3>{{ review.phone.brand }} {{ review.phone.name }}</h3>
+            <div class="rating">
+              {% for i in "12345" %} {% if forloop.counter <= review.rating %}
+              <span class="star filled">★</span>
+              {% else %}
+              <span class="star">☆</span>
+              {% endif %} {% endfor %}
+            </div>
+            <p class="reviewer">evalutor: {{ review.reviewer_name }}</p>
+            <p class="comment">{{ review.comment }}</p>
+            <p class="date">{{ review.date_posted|date:"Y-m-d H:i" }}</p>
+          </div>
+          {% empty %}
+          <p>no review data available</p>
+          {% endfor %}
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy;</p>
+    </footer>
+  </body>
+</html>
