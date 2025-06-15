@@ -6,6 +6,8 @@ pip install django
 pip install -r requirements.txt 
 python -m pip install Pillow  
 pip install social-auth-app-django 
+pip install djangorestframework
+pip install qrcode
 python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver
