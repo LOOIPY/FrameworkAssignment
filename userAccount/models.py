@@ -2,10 +2,13 @@
 from django.contrib.auth.models import User
 from django.db import models
 import random
+from proplistpage.models import Property
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
     phone_number = models.CharField(max_length=15, blank=True)
+
+    favorites = models.ManyToManyField(Property, related_name='favorited_by', blank=True)
 
 class EmailOTP(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)

@@ -5,12 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbe879b4-7f3a-4d43-8c08-0bbe4a7aaa96" name="Changes" comment="Merge branch PeiYi">
+      <change afterPath="$PROJECT_DIR$/userAccount/static/css/saved_property.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/userAccount/templates/accounts/saved_properties.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/propertymanagement/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proplistpage/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/proplistpage/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proplistpage/templates/property_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/proplistpage/templates/property_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proplistpage/templates/property_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/proplistpage/templates/property_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rentlistpage/templates/rent_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/rentlistpage/templates/rent_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rentlistpage/templates/rent_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/rentlistpage/templates/rent_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userAccount/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/userAccount/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userAccount/static/css/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/userAccount/static/css/profile.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userAccount/templates/accounts/add_my_property.html" beforeDir="false" afterPath="$PROJECT_DIR$/userAccount/templates/accounts/add_my_property.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userAccount/templates/accounts/edit_my_property.html" beforeDir="false" afterPath="$PROJECT_DIR$/userAccount/templates/accounts/edit_my_property.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userAccount/templates/accounts/my_properties.html" beforeDir="false" afterPath="$PROJECT_DIR$/userAccount/templates/accounts/my_properties.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userAccount/templates/accounts/password_change.html" beforeDir="false" afterPath="$PROJECT_DIR$/userAccount/templates/accounts/password_change.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userAccount/templates/accounts/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/userAccount/templates/accounts/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userAccount/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/userAccount/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userAccount/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/userAccount/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -21,15 +46,24 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
+  &quot;history&quot;: [
+    {
+      &quot;state&quot;: &quot;OPEN&quot;
+    },
+    {
+      &quot;state&quot;: &quot;OPEN&quot;,
+      &quot;author&quot;: &quot;LOOIPY&quot;
+    }
+  ],
   &quot;lastFilter&quot;: {
     &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;Desmondyapp&quot;
+    &quot;author&quot;: &quot;LOOIPY&quot;
   }
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/LOOIPY/FrameworkAssignment.git&quot;,
-    &quot;accountId&quot;: &quot;adf67d25-66fa-4ce9-9a31-2b71d7b8138a&quot;
+    &quot;accountId&quot;: &quot;1329c35a-cb07-40d7-b897-bca89e1cedca&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -43,6 +77,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
@@ -50,6 +85,11 @@
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\FrameworkAssignment-Pei-Yi\proplistpage\templates" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -98,7 +138,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749715998667</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Merge branch PeiYi">
+      <option name="closed" value="true" />
+      <created>1749947591990</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1749947591990</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

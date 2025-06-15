@@ -5,18 +5,19 @@
     <meta charset="UTF-8">
     <title>Your Profile</title>
     <link rel="stylesheet" href="{% static 'css/profile.css' %}">
-
 </head>
 <body>
+<div class="layout-wrapper">
+    <main class="layout-content">
     <div class="rectangle-645"></div>
     <div class="container">
         <!-- Sidebar -->
         <div class="sidebar">
-            <br><a href="{% url 'proplistpage:property-list' %}" >« BACK</a><br>
+            <br><a href="{{ referer }}">« BACK</a><br>
 
             <img src="{% static 'img/profile.png' %}" alt="Profile Image"><br>
             <a href="{% url 'my_properties' %}">My Properties</a><br>
-            <a href="#">Favorite Properties</a><br>
+            <a href="{% url 'saved_properties' %}">Saved Properties</a><br>
             <a href="{% url 'password_change' %}">Change Password</a><br>
             <a href="{% url 'logout' %}">Logout</a>
        </div>
@@ -41,89 +42,49 @@
             </form>
         </div>
     </div>
-   <div class="frame-238">
-    <div class="frame-100">
-      <!-- 1. 底色：渐变叠加透明遮罩 -->
-      <div class="rectangle-3"></div>
+    </main>
+   <footer class="site-footer">
+  <div class="footer-container">
 
-      <!-- 2. 模块内容组 -->
-      <div class="group-89">
-        <!-- 2.1 欢迎文案 -->
-        <div class="welcome-we-reach-out-to-the-right-property-seekers-for-you">
-          Welcome. We reach out to the right property seekers for you.
+    <div class="footer-column left">
+      <p class="footer-title">Welcome.</p>
+      <p class="footer-subtitle">We reach out to the right property seekers for you.</p>
+        <p>© 2022 Arihant. All Rights Reserved.</p> <p style="text-decoration:underline">Privacy | Terms of Service</p>
+    <img src="{% static 'images/icon0.svg' %}" alt="Logo" class="footer-logo">
+    </div>
+
+    <div class="footer-column middle">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="{% url 'proplistpage:property-list' %}">Buy</a></li>
+        <li><a href="{% url 'rentlistpage:rent-list' %}">Rent</a></li>
+        <li>New Launches</li>
+        <li>Transactions</li>
+        <li>Advertise</li>
+        <li>Guides & Insights</li>
+        <li>Events</li>
+      </ul>
+    </div>
+
+    <div class="footer-column right">
+      <div class="card">
+        <img src="{% static 'images/image20.png' %}" alt="LoanCare">
+        <div>
+          <p class="card-title">LoanCare</p>
+          <p>Know your home loan eligibility with up to 17 banks. Try now</p>
         </div>
-        <!-- 2.2 左侧菜单项 -->
-        <div class="company">Company</div>
-        <div class="latest-news">Latest news</div>
-
-        <!-- 2.3 导航行：Buy / Rent / New Launches / … -->
-        <div class="buy-rent-new-launches-transations-advertise-guies-insights-events1">
-          <span>
-            <span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span">
-          <span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span2">
-                <a href="{% url 'rentlistpage:rent-list' %}" style="text-decoration:none; color: #000000;">Rent</a><br><br>
-              New Launches<br><br>
-              transations<br><br>
-              Advertise<br><br>
-              Guies&amp;insights<br><br>
-              events
-            </span>
-          </span>
+      </div>
+      <div class="card">
+        <img src="{% static 'images/image21.png' %}" alt="Transactions">
+        <div>
+          <p class="card-title">Transactions Data</p>
+          <p>Obtain the latest subsale transaction data & prices. Discover now</p>
         </div>
-
-        <!-- 2.4 左下角卡片（样例中两个大卡片） -->
-        <div class="group-51">
-          <!-- 卡片1：LoanCare -->
-          <div class="group-49">
-            <img class="image" src="{% static 'images/image20.png' %}" alt="LoanCare">
-            <div class="group-48">
-              <div class="loan-care">LoanCare</div>
-              <div class="know-your-home-loan-eligibility-with-up-to-17-banks-try-now">
-                Know your home loan eligibility with up to 17 banks<br>Try now
-              </div>
-            </div>
-          </div>
-          <!-- 卡片2：Transactions Data -->
-          <div class="group-50">
-            <img class="image2" src="{% static 'images/image21.png' %}" alt="Transactions Data">
-            <div class="group-482">
-              <div class="transactions-data">Transactions Data</div>
-              <div class="obtain-the-latest-subsale-property-transaction-data-prices-discover-now">
-                Obtain the latest subsale property transaction data &amp; prices<br>Discover now
-              </div>
-              <div class="group-47">
-                <div class="_15-april-2022">15 April 2022</div>
-                <div class="ellipse-1"></div>
-              </div>
-              <div class="group-483">
-                <div class="_15-april-20222">15 April 2022</div>
-                <div class="ellipse-12"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 2.5 最下方版权等信息 -->
-        <div class="_2022-arihant-all-rights-reserved-privacy-terms-of-service">
-          <span>
-            <span class="_2022-arihant-all-rights-reserved-privacy-terms-of-service-span">
-              © 2022 Arihant. All Rights Reserved.
-            </span>
-            <span class="_2022-arihant-all-rights-reserved-privacy-terms-of-service-span2">
-              Privacy
-            </span>
-            <span class="_2022-arihant-all-rights-reserved-privacy-terms-of-service-span">
-              | Terms of Service
-            </span>
-          </span>
-        </div>
-
-        <!-- 2.6 右侧大图标（可能是LOGO什么的） -->
-        <img class="icon" src="{% static 'images/icon0.svg' %}" alt="Icon">
       </div>
     </div>
   </div>
-
+</footer>
+</div>
     <script>
         const editBtn = document.getElementById('editBtn');
         const saveBtn = document.getElementById('saveBtn');

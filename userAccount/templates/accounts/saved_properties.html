@@ -1,0 +1,261 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Saved Properties</title>
+  <link rel="stylesheet" href="{% static 'css/saved_property.css' %}">
+    <style>
+        .site-footer {
+          background: linear-gradient(90deg,
+            rgba(255, 229, 229, 0.52),
+            rgba(245, 255, 254, 0.52) 20%,
+            rgba(252, 243, 255, 0.52) 60%,
+            rgba(255, 244, 229, 0.52) 100%);
+          padding: 40px 20px 20px;
+          font-family: "Inter", sans-serif;
+          color: #011627;
+        }
+
+        .footer-container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          max-width: 1200px;
+          margin: auto;
+          gap: 40px;
+        }
+
+        .footer-column {
+          flex: 1;
+          min-width: 250px;
+        }
+
+        .footer-column h4 {
+          color: #ed553b;
+          font-size: 20px;
+          margin-bottom: 10px;
+        }
+
+        .footer-column ul {
+          list-style: none;
+          padding: 0;
+        }
+
+        .footer-column ul li a {
+          color: #111;
+          text-decoration: none;
+          line-height: 1.8;
+          font-size: 16px;
+        }
+
+        .footer-column.left .footer-title {
+          font-size: 22px;
+          font-weight: 600;
+          color: #ed553b;
+        }
+
+        .footer-column.left .footer-subtitle {
+          font-size: 16px;
+          margin-top: 10px;
+        }
+
+        .footer-column.right .card {
+          display: flex;
+          gap: 12px;
+          margin-bottom: 20px;
+        }
+
+        .footer-column.right .card img {
+          width: 60px;
+          height: 60px;
+          border-radius: 6px;
+          object-fit: cover;
+        }
+
+        .card-title {
+          font-weight: 600;
+          color: #ed553b;
+        }
+
+        .footer-bottom {
+          text-align: center;
+          margin-top: 30px;
+          font-size: 14px;
+          color: #011627;
+          border-top: 1px solid #ccc;
+          padding-top: 15px;
+          position: relative;
+        }
+
+        .footer-bottom a {
+          color: #ed553b;
+          text-decoration: none;
+          margin: 0 5px;
+        }
+
+        .footer-logo {
+          width: 180px;
+          margin-top: 10px;
+        }
+        .layout-wrapper {
+          display: flex;
+          flex-direction: column;
+          min-height: 100vh;
+        }
+
+        .layout-content {
+          flex: 1;
+        }
+    </style>
+</head>
+<body>
+<div class="layout-wrapper">
+<main class="layout-content">
+<div class="frame-229">
+<div class="rectangle-645"></div>
+    <div class="cart-0" > <img src="{% static 'images/vector1.svg' %}"/> Cart:(0$)</div>
+    <div class="navbar">
+      <div class="account">
+          <img src="{% static 'images/vector2.svg' %}"/>
+        {% if user.is_authenticated %}
+          <div class="dropdown">
+            <button class="dropbtn"><span style="padding:40px 0px 30px 0px;">{{ user.username }}</span></button>
+            <div class="dropdown-content">
+              <a href="{% url 'my_properties' %}">My Properties</a>
+              <a href="{% url 'profile' %}">Profile</a>
+              <a href="{% url 'logout' %}">Logout</a>
+            </div>
+          </div>
+        {% else %}
+            <a href="{% url 'login' %}"><span>Account</span></a>
+        {% endif %}
+      </div>
+    </div>
+   <a href="{% url 'saved_properties' %}" style="text-decoration:none;padding:40px 0px 30px 0px;">
+        <div class="wishlist"><img src="{% static 'images/vector3.svg' %}"/>
+         Wishlist</div>
+        </a>
+
+    <div class="rectangle-7"></div>
+
+    <div class="buy-rent-new-launches-transations-advertise-guies-insights-events">
+    <span>
+    <span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span">
+              <a href="{% url 'proplistpage:property-list' %}" style="text-decoration:none">Buy</a>
+            </span>
+    <span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span2"></span>
+    <span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span3">
+              |
+            </span>
+    <span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span2">
+              <a href="{% url 'rentlistpage:rent-list' %}" style="text-decoration:none; color: #111111;
+              font-family: Inter-Medium, sans-serif;font-weight: 500">Rent</a>
+            </span>
+    <span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span3">
+              |
+            </span>
+    <span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span2">
+              New Launches
+            </span>
+    <span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span3">
+              |
+            </span>
+    <span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span2">
+              transations
+            </span>
+    <span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span3">
+              |
+            </span>
+    <span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span2">
+              Advertise
+            </span>
+    <span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span3">
+              |
+            </span>
+    <span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span2">
+              Guides&amp;insights
+            </span>
+    <span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span3">
+              |
+            </span>
+    <span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span2">
+              events
+            </span>
+    </span>
+    </div>
+    </div>
+  <div class="saved-container">
+    <h2 style="font-size: 28px;
+            color: #3f3d9c;
+            margin-top: 110px;">Saved Properties</h2>
+
+    {% for property in saved_properties %}
+      <div class="property-card">
+        <img src="{{ property.image.url }}" alt="{{ property.title }}">
+
+        <div class="property-info">
+          <h3>{{ property.title }}</h3>
+          <p>{{ property.location }}</p>
+          <p>RM {{ property.price|floatformat:2 }}</p>
+
+          <div class="property-actions">
+            <a href="{% url 'proplistpage:property-detail' property.id %}" class="btn-view">View</a>
+
+            <form method="post" action="{% url 'userAccount:toggle_favorite' property.id %}?next={% url 'saved_properties' %}" style="display:inline;">
+              {% csrf_token %}
+              <button type="submit" class="btn-remove">Remove</button>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    {% empty %}
+      <p>No saved properties yet.</p>
+    {% endfor %}
+  </div>
+</main>
+  <footer class="site-footer">
+  <div class="footer-container">
+
+    <div class="footer-column left">
+      <p class="footer-title">Welcome.</p>
+      <p class="footer-subtitle">We reach out to the right property seekers for you.</p>
+        <p>© 2022 Arihant. All Rights Reserved.</p> <p style="text-decoration:underline">Privacy | Terms of Service</p>
+    <img src="{% static 'images/icon0.svg' %}" alt="Logo" class="footer-logo">
+    </div>
+
+    <div class="footer-column middle">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="{% url 'proplistpage:property-list' %}">Buy</a></li>
+        <li><a href="{% url 'rentlistpage:rent-list' %}">Rent</a></li>
+        <li>New Launches</li>
+        <li>Transactions</li>
+        <li>Advertise</li>
+        <li>Guides & Insights</li>
+        <li>Events</li>
+      </ul>
+    </div>
+
+    <div class="footer-column right">
+      <div class="card">
+        <img src="{% static 'images/image20.png' %}" alt="LoanCare">
+        <div>
+          <p class="card-title">LoanCare</p>
+          <p>Know your home loan eligibility with up to 17 banks. Try now</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="{% static 'images/image21.png' %}" alt="Transactions">
+        <div>
+          <p class="card-title">Transactions Data</p>
+          <p>Obtain the latest subsale transaction data & prices. Discover now</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
+</body>
+</html>

@@ -3,7 +3,110 @@ body {
     margin: 0;
     background: #fff;
     overflow-x: hidden;
+}
 
+.site-footer {
+  background: linear-gradient(90deg,
+    rgba(255, 229, 229, 0.52),
+    rgba(245, 255, 254, 0.52) 20%,
+    rgba(252, 243, 255, 0.52) 60%,
+    rgba(255, 244, 229, 0.52) 100%);
+  padding: 40px 20px 20px;
+  font-family: "Inter", sans-serif;
+  color: #011627;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  gap: 40px;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-column h4 {
+  color: #ed553b;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li a {
+  color: #111;
+  text-decoration: none;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+.footer-column.left .footer-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #ed553b;
+}
+
+.footer-column.left .footer-subtitle {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.footer-column.right .card {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.footer-column.right .card img {
+  width: 60px;
+  height: 60px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.card-title {
+  font-weight: 600;
+  color: #ed553b;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  color: #011627;
+  border-top: 1px solid #ccc;
+  padding-top: 15px;
+  position: relative;
+}
+
+.footer-bottom a {
+  color: #ed553b;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.footer-logo {
+  width: 180px;
+  margin-top: 10px;
+}
+
+.layout-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.layout-content {
+  flex: 1;
+}
 .container {
     display: flex;
     min-height: 100vh;
@@ -113,6 +216,7 @@ input[readonly] {
   position: absolute;
   right: 170px;
   top: 85px;
+  padding: 10px 10px 10px 10px;
 }
 
 .account {
@@ -126,8 +230,12 @@ input[readonly] {
   position: absolute;
   right: 20px;
   top: 85px;
+  cursor: pointer;
 }
 
+.account:hover {
+  background-color: #f0f0f5;
+}
 .navbar {
   display: flex;
   justify-content: space-between;  /* or center, or flex-start */
@@ -151,6 +259,8 @@ input[readonly] {
   letter-spacing: 0.12em;
   font-weight: 600;
   text-transform: uppercase;
+  padding: 10px 10px 10px 10px;
+
 }
 
 .dropdown-content {
@@ -189,285 +299,10 @@ input[readonly] {
   position: absolute;
   right: 300px;
   top: 85px;
+  padding: 10px 10px 10px 10px;
+  cursor: pointer;
 }
 
-.buy-rent-new-launches-transations-advertise-guies-insights-events {
-  text-align: left;
-  font-family: "-", sans-serif;
-  font-size: 18px;
-  letter-spacing: 0.12em;
-  font-weight: 400;
-  position: relative;
-  top: 80px;
-  left: 30px;
-}
-.buy-rent-new-launches-transations-advertise-guies-insights-events-span {
-  color: #ed553b;
-  font-family: "Inter-Medium", sans-serif;
-  font-weight: 500;
-}
-.buy-rent-new-launches-transations-advertise-guies-insights-events-span2 {
-  color: #111111;
-  font-family: "Inter-Medium", sans-serif;
-  font-weight: 500;
-}
-.buy-rent-new-launches-transations-advertise-guies-insights-events-span3 {
-  color: #d1d1d1;
-  font-family: "Inter-Medium", sans-serif;
-  font-weight: 500;
-}
-.frame-238,
-.frame-238 * {
-  box-sizing: border-box;
-}
-.frame-238 {
-  height: 596px;
-  position: relative;
-}
-.frame-100 {
-  width: 1440px;
-  height: 596px;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-}
-.group-90 {
-  position: absolute;
-  inset: 0;
-}
-.rectangle-3 {
-  background: linear-gradient(
-    90deg,
-    rgba(255, 229, 229, 0.52) 0%,
-    rgba(245, 255, 254, 0.52) 13.333320617675781%,
-    rgba(252, 243, 255, 0.52) 54.58333492279053%,
-    rgba(255, 244, 229, 0.52) 99.86110925674438%
-  );
-  width: 1600px;
-  height: 596px;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-}
-.group-89 {
-  width: 1235px;
-  height: 394px;
-  position: static;
-}
-.welcome-we-reach-out-to-the-right-property-seekers-for-you {
-  color: #011627;
-  text-align: left;
-  font-family: "Inter-Regular", sans-serif;
-  font-size: 18px;
-  line-height: 34px;
-  letter-spacing: 0.02em;
-  font-weight: 400;
-  position: absolute;
-  left: 150px;
-  top: 174px;
-  width: 368px;
-  height: 99px;
-}
-.company {
-  color: #ed553b;
-  text-align: left;
-  font-family: "Inter-SemiBold", sans-serif;
-  font-size: 24px;
-  letter-spacing: 0.02em;
-  font-weight: 600;
-  text-transform: uppercase;
-  position: absolute;
-  left: 633px;
-  top: 101px;
-}
-.latest-news {
-  color: #ed553b;
-  text-align: left;
-  font-family: "Inter-SemiBold", sans-serif;
-  font-size: 24px;
-  letter-spacing: 0.02em;
-  font-weight: 600;
-  text-transform: uppercase;
-  position: absolute;
-  left: 925px;
-  top: 101px;
-}
-.buy-rent-new-launches-transations-advertise-guies-insights-events1 {
-  text-align: left;
-  font-family: "-", sans-serif;
-  font-size: 18px;
-  letter-spacing: 0.12em;
-  font-weight: 400;
-  position: absolute;
-  left: 633px;
-  top: 169px;
-}
-.buy-rent-new-launches-transations-advertise-guies-insights-events-span {
-  color: #ed553b;
-  font-family: "Inter-Medium", sans-serif;
-  font-weight: 500;
-}
-.buy-rent-new-launches-transations-advertise-guies-insights-events-span2 {
-  color: #111111;
-  font-family: "Inter-Medium", sans-serif;
-  font-weight: 500;
-}
-.group-51 {
-  width: 460px;
-  height: 218px;
-  position: static;
-}
-.group-49 {
-  width: 410px;
-  height: 100px;
-  position: static;
-}
-.image {
-  background: linear-gradient(to left, #d9d9d9, #d9d9d9);
-  border-radius: 7px;
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  left: 925px;
-  top: 169px;
-  object-fit: cover;
-}
-.group-48 {
-  width: 289px;
-  height: 66px;
-  position: static;
-}
-.loan-care {
-  color: #ed553b;
-  text-align: left;
-  font-family: "Inter-Medium", sans-serif;
-  font-size: 18px;
-  font-weight: 500;
-  position: absolute;
-  left: 1046px;
-  top: 173px;
-}
-.know-your-home-loan-eligibility-with-up-to-17-banks-try-now {
-  color: #011627;
-  text-align: left;
-  font-family: "Inter-Regular", sans-serif;
-  font-size: 12px;
-  font-weight: 400;
-  position: absolute;
-  left: 1046px;
-  top: 203px;
-}
-.group-50 {
-  width: 460px;
-  height: 132px;
-  position: static;
-}
-.image2 {
-  background: linear-gradient(to left, #d9d9d9, #d9d9d9);
-  border-radius: 7px;
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  left: 925px;
-  top: 287px;
-  object-fit: cover;
-}
-.group-482 {
-  width: 339px;
-  height: 128px;
-  position: static;
-}
-.transactions-data {
-  color: #ed553b;
-  text-align: left;
-  font-family: "Inter-Medium", sans-serif;
-  font-size: 18px;
-  font-weight: 500;
-  position: absolute;
-  left: 1046px;
-  top: 291px;
-}
-.obtain-the-latest-subsale-property-transaction-data-prices-discover-now {
-  color: #011627;
-  text-align: left;
-  font-family: "Inter-Regular", sans-serif;
-  font-size: 12px;
-  font-weight: 400;
-  position: absolute;
-  left: 1046px;
-  top: 321px;
-}
-.group-47 {
-  width: 86px;
-  height: 12px;
-  position: static;
-}
-._15-april-2022 {
-  color: #f6d55c;
-  text-align: left;
-  font-family: "Inter-Regular", sans-serif;
-  font-size: 10px;
-  letter-spacing: 0.055em;
-  font-weight: 400;
-  position: absolute;
-  left: 1063px;
-  top: 371px;
-}
-.ellipse-1 {
-  background: #f6d55c;
-  border-radius: 50%;
-  width: 6px;
-  height: 6px;
-  position: absolute;
-  left: 1046px;
-  top: 374px;
-}
-.group-483 {
-  width: 86px;
-  height: 12px;
-  position: static;
-}
-._15-april-20222 {
-  color: #f6d55c;
-  text-align: left;
-  font-family: "Inter-Regular", sans-serif;
-  font-size: 10px;
-  letter-spacing: 0.055em;
-  font-weight: 400;
-  position: absolute;
-  left: 1065px;
-  top: 255px;
-}
-.ellipse-12 {
-  background: #f6d55c;
-  border-radius: 50%;
-  width: 6px;
-  height: 6px;
-  position: absolute;
-  left: 1048px;
-  top: 258px;
-}
-._2022-arihant-all-rights-reserved-privacy-terms-of-service {
-  text-align: left;
-  font-family: "Inter-Regular", sans-serif;
-  font-size: 18px;
-  letter-spacing: 0.02em;
-  font-weight: 400;
-  position: absolute;
-  left: 150px;
-  top: 473px;
-}
-._2022-arihant-all-rights-reserved-privacy-terms-of-service-span {
-  color: #011627;
-}
-._2022-arihant-all-rights-reserved-privacy-terms-of-service-span2 {
-  color: #ed553b;
-}
-.icon {
-  width: 366px;
-  height: 44.17px;
-  position: absolute;
-  left: 150px;
-  top: 308.41px;
-  overflow: visible;
+.wishlist:hover {
+  background-color: #f0f0f5;
 }

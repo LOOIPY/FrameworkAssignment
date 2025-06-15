@@ -230,6 +230,98 @@
         grid-template-columns: repeat(2, 1fr);
       }
     }
+    .site-footer {
+      background: linear-gradient(90deg,
+        rgba(255, 229, 229, 0.52),
+        rgba(245, 255, 254, 0.52) 20%,
+        rgba(252, 243, 255, 0.52) 60%,
+        rgba(255, 244, 229, 0.52) 100%);
+      padding: 40px 20px 20px;
+      font-family: "Inter", sans-serif;
+      color: #011627;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: auto;
+      gap: 40px;
+    }
+
+    .footer-column {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .footer-column h4 {
+      color: #ed553b;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-column ul li a {
+      color: #111;
+      text-decoration: none;
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    .footer-column.left .footer-title {
+      font-size: 22px;
+      font-weight: 600;
+      color: #ed553b;
+    }
+
+    .footer-column.left .footer-subtitle {
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    .footer-column.right .card {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .footer-column.right .card img {
+      width: 60px;
+      height: 60px;
+      border-radius: 6px;
+      object-fit: cover;
+    }
+
+    .card-title {
+      font-weight: 600;
+      color: #ed553b;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 14px;
+      color: #011627;
+      border-top: 1px solid #ccc;
+      padding-top: 15px;
+      position: relative;
+    }
+
+    .footer-bottom a {
+      color: #ed553b;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    .footer-logo {
+      width: 180px;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
@@ -407,6 +499,50 @@
     </div>
 
   </div>  {# .detail-container ends #}
+<footer class="site-footer">
+  <div class="footer-container">
+
+    <div class="footer-column left">
+      <p class="footer-title">Welcome.</p>
+      <p class="footer-subtitle">We reach out to the right property seekers for you.</p>
+    </div>
+
+    <div class="footer-column middle">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="{% url 'proplistpage:property-list' %}">Buy</a></li>
+        <li><a href="{% url 'rentlistpage:rent-list' %}">Rent</a></li>
+        <li><a href="#">New Launches</a></li>
+        <li><a href="#">Transactions</a></li>
+        <li><a href="#">Advertise</a></li>
+        <li><a href="#">Guides & Insights</a></li>
+        <li><a href="#">Events</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column right">
+      <div class="card">
+        <img src="{% static 'images/image20.png' %}" alt="LoanCare">
+        <div>
+          <p class="card-title">LoanCare</p>
+          <p>Know your home loan eligibility with up to 17 banks. Try now</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="{% static 'images/image21.png' %}" alt="Transactions">
+        <div>
+          <p class="card-title">Transactions Data</p>
+          <p>Obtain the latest subsale transaction data & prices. Discover now</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2022 Arihant. All Rights Reserved. <a href="#">Privacy</a> | <a href="#">Terms of Service</a></p>
+    <img src="{% static 'images/icon0.svg' %}" alt="Logo" class="footer-logo">
+  </div>
+</footer>
 
 <script>
 

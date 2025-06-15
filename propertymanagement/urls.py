@@ -19,7 +19,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from userAccount.views import user_signup,user_login,social_redirect_view,profile_view,change_password,verify_otp,resend_otp
-from userAccount.views import my_properties,add_my_property,edit_my_property,delete_my_property
+from userAccount.views import my_properties,add_my_property,edit_my_property,delete_my_property,toggle_favorite,saved_properties,ajax_toggle_favorite
 from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
@@ -44,6 +44,9 @@ urlpatterns = [
     path('property/add/', add_my_property, name='add_my_property'),
     path('property/<int:pk>/edit/', edit_my_property, name='edit_my_property'),
     path('property/<int:pk>/delete/', delete_my_property, name='delete_my_property'),
+    path('property/<int:property_id>/toggle_favorite/', toggle_favorite, name='toggle_favorite'),
+    path('saved/', saved_properties, name='saved_properties'),
+    path('ajax/toggle-favorite/', ajax_toggle_favorite, name='ajax_toggle_favorite'),
 ]
 
 if settings.DEBUG:

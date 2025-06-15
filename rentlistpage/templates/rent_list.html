@@ -5,6 +5,100 @@
   <meta charset="UTF-8">
   <title>Rent Property Listing</title>
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        .site-footer {
+              background: linear-gradient(90deg,
+                rgba(255, 229, 229, 0.52),
+                rgba(245, 255, 254, 0.52) 20%,
+                rgba(252, 243, 255, 0.52) 60%,
+                rgba(255, 244, 229, 0.52) 100%);
+              padding: 40px 20px 20px;
+              font-family: "Inter", sans-serif;
+              color: #011627;
+            }
+
+            .footer-container {
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: space-between;
+              max-width: 1200px;
+              margin: auto;
+              gap: 40px;
+            }
+
+            .footer-column {
+              flex: 1;
+              min-width: 250px;
+            }
+
+            .footer-column h4 {
+              color: #ed553b;
+              font-size: 20px;
+              margin-bottom: 10px;
+            }
+
+            .footer-column ul {
+              list-style: none;
+              padding: 0;
+            }
+
+            .footer-column ul li a {
+              color: #111;
+              text-decoration: none;
+              line-height: 1.8;
+              font-size: 16px;
+            }
+
+            .footer-column.left .footer-title {
+              font-size: 22px;
+              font-weight: 600;
+              color: #ed553b;
+            }
+
+            .footer-column.left .footer-subtitle {
+              font-size: 16px;
+              margin-top: 10px;
+            }
+
+            .footer-column.right .card {
+              display: flex;
+              gap: 12px;
+              margin-bottom: 20px;
+            }
+
+            .footer-column.right .card img {
+              width: 60px;
+              height: 60px;
+              border-radius: 6px;
+              object-fit: cover;
+            }
+
+            .card-title {
+              font-weight: 600;
+              color: #ed553b;
+            }
+
+            .footer-bottom {
+              text-align: center;
+              margin-top: 30px;
+              font-size: 14px;
+              color: #011627;
+              border-top: 1px solid #ccc;
+              padding-top: 15px;
+              position: relative;
+            }
+
+            .footer-bottom a {
+              color: #ed553b;
+              text-decoration: none;
+              margin: 0 5px;
+            }
+
+            .footer-logo {
+              width: 180px;
+              margin-top: 10px;
+            }
+    </style>
 </head>
 <body>
 {% load static %}
@@ -237,81 +331,51 @@
   </div>
 </div>
 
- <div class="frame-238">
-    <div class="frame-100">
-      <div class="rectangle-3"></div>
-      <div class="group-89">
-        <div class="welcome-we-reach-out-to-the-right-property-seekers-for-you">
-          Welcome. We reach out to the right property renters for you.
-        </div>
-        <div class="company">Company</div>
-        <div class="latest-news">Latest news</div>
+ <footer class="site-footer">
+  <div class="footer-container">
 
-        <div class="buy-rent-new-launches-transations-advertise-guies-insights-events1">
-          <span>
-            <span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span">Rent<br></span>
-            <span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span2">
-              Buy<br>
-              New Launches<br>
-              transations<br>
-              Advertise<br>
-              Guies&amp;insights<br>
-              events
-            </span>
-          </span>
-        </div>
+    <div class="footer-column left">
+      <p class="footer-title">Welcome.</p>
+      <p class="footer-subtitle">We reach out to the right property seekers for you.</p>
+    </div>
 
-        <div class="group-51">
-          <div class="group-49">
-            <img class="image" src="{% static 'images/image20.png' %}" alt="RentCare">
-            <div class="group-48">
-              <div class="loan-care">RentCare</div>
-              <div class="know-your-home-loan-eligibility-with-up-to-17-banks-try-now">
-                Find your perfect rental with trusted landlords<br>Try now
-              </div>
-            </div>
-          </div>
-          <div class="group-50">
-            <img class="image2" src="{% static 'images/image21.png' %}" alt="Rental Data">
-            <div class="group-482">
-              <div class="transactions-data">Rental Market Data</div>
-              <div class="obtain-the-latest-subsale-property-transaction-data-prices-discover-now">
-                Get the latest rental market data &amp; pricing trends<br>Discover now
-              </div>
-              <div class="group-47">
-                <div class="_15-april-2022">15 April 2022</div>
-                <div class="ellipse-1"></div>
-              </div>
-              <div class="group-483">
-                <div class="_15-april-20222">15 April 2022</div>
-                <div class="ellipse-12"></div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div class="footer-column middle">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="{% url 'proplistpage:property-list' %}">Buy</a></li>
+        <li><a href="{% url 'rentlistpage:rent-list' %}">Rent</a></li>
+        <li><a href="#">New Launches</a></li>
+        <li><a href="#">Transactions</a></li>
+        <li><a href="#">Advertise</a></li>
+        <li><a href="#">Guides & Insights</a></li>
+        <li><a href="#">Events</a></li>
+      </ul>
+    </div>
 
-        <div class="_2022-arihant-all-rights-reserved-privacy-terms-of-service">
-          <span>
-            <span class="_2022-arihant-all-rights-reserved-privacy-terms-of-service-span">
-              © 2022 Arihant. All Rights Reserved.
-            </span>
-            <span class="_2022-arihant-all-rights-reserved-privacy-terms-of-service-span2">
-              Privacy
-            </span>
-            <span class="_2022-arihant-all-rights-reserved-privacy-terms-of-service-span">
-              | Terms of Service
-            </span>
-          </span>
+    <div class="footer-column right">
+      <div class="card">
+        <img src="{% static 'images/image20.png' %}" alt="LoanCare">
+        <div>
+          <p class="card-title">LoanCare</p>
+          <p>Know your home loan eligibility with up to 17 banks. Try now</p>
         </div>
-
-        <img class="icon" src="{% static 'images/icon0.svg' %}" alt="Icon">
+      </div>
+      <div class="card">
+        <img src="{% static 'images/image21.png' %}" alt="Transactions">
+        <div>
+          <p class="card-title">Transactions Data</p>
+          <p>Obtain the latest subsale transaction data & prices. Discover now</p>
+        </div>
       </div>
     </div>
   </div>
 
-<div class="rectangle-82"></div>
-<div class="view-more">View more</div>
-<img class="vector6" src="{% static 'images/vector5.svg' %}"/>
+  <div class="footer-bottom">
+    <p>© 2022 Arihant. All Rights Reserved. <a href="#">Privacy</a> | <a href="#">Terms of Service</a></p>
+    <img src="{% static 'images/icon0.svg' %}" alt="Logo" class="footer-logo">
+  </div>
+</footer>
+
 
 </body>
 </html>
