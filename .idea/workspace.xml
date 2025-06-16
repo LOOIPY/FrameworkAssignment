@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fbe879b4-7f3a-4d43-8c08-0bbe4a7aaa96" name="Changes" comment="Added Saved Property page which is the wishlist" />
+    <list default="true" id="fbe879b4-7f3a-4d43-8c08-0bbe4a7aaa96" name="Changes" comment="Added Saved Property page which is the wishlist">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/propertymanagement/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/propertymanagement/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/propertymanagement/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proplistpage/templates/property_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/proplistpage/templates/property_list.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,7 +66,7 @@
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "Pei-Yi",
     "last_opened_file_path": "C:/Users/DESMOND YAP WEN XUAN/FrameworkAssignment",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }

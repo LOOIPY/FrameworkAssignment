@@ -24,6 +24,7 @@ from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('proplistpage.urls')),  # Homepage and property views
     path('accounts/',include('userAccount.urls')),
     path('accounts/login/', user_login, name='login'),
     path('accounts/signup/', user_signup, name='signup'),
@@ -35,8 +36,6 @@ urlpatterns = [
     path('resend-otp/', resend_otp, name='resend_otp'),
     path('social-auth/', include('social_django.urls', namespace='social')),
     path('redirect-after-social-login/', social_redirect_view, name='social_redirect'),
-    path('admin/', admin.site.urls),
-    path('', include('proplistpage.urls')),  # Homepage and property views
     path('loan-calculator/', include('loan_calculator.urls')),
     path('payment/', include('payment.urls')),
     path('rent/', include('rentlistpage.urls')),

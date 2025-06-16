@@ -57,8 +57,8 @@
           position: absolute;
           right: 20px;
           top: 85px;
-          padding: 10px 10px 10px 10px;
-
+          padding: 10px 10px 20px 10px;
+          z-index: 100;
         }
 
         .account:hover {
@@ -155,7 +155,7 @@
             </div>
           </div>
         {% else %}
-            <a href="{% url 'login' %}" style="text-decoration:none"><span >Account</span></a>
+         <a href="{% url 'login' %}"  style="padding:500px 0px 500px 0px;text-decoration:none" class="login-link">Account</a>
         {% endif %}
       </div>
     </div>
@@ -163,7 +163,6 @@
         <div class="wishlist"><img src="{% static 'images/vector3.svg' %}"/>
          Wishlist</div>
         </a>
-
     <div class="rectangle-7"></div>
 
 <div class="buy-rent-new-launches-transations-advertise-guies-insights-events">
