@@ -14,8 +14,13 @@
         <!-- Sidebar -->
         <div class="sidebar">
             <br><a href="{{ referer }}">« BACK</a><br>
-
-            <img src="{% static 'img/profile.png' %}" alt="Profile Image"><br>
+            {% if user.is_authenticated and user.profile and user.profile.profile_picture %}
+                <img src="{{ user.profile.profile_picture.url }}" alt="Profile Image">
+            <br>
+            {% else %}
+                <img src="{% static 'img/profile.png' %}" alt="Default Profile Image">
+            {% endif %}
+            <br>
             <a href="{% url 'my_properties' %}">My Properties</a><br>
             <a href="{% url 'saved_properties' %}">Saved Properties</a><br>
             <a href="{% url 'password_change' %}">Change Password</a><br>
@@ -25,8 +30,19 @@
         <!-- Profile Form -->
         <div class="main-content">
             <h2>Profile Information</h2>
-            <form method="POST" id="profileForm">
+            <form method="POST" enctype="multipart/form-data" id="profileForm">
                 {% csrf_token %}
+                <!-- Profile Picture Upload -->
+                <label for="id_profile_picture">Profile Picture</label>
+                {% if profile_form.profile_picture.value %}
+                    <img src="{{ profile_form.profile_picture.value.url }}" alt="Current Picture" style="width: 120px; height: 120px; object-fit: cover;"><br>
+                    <div id="removePicContainer" class="hidden">
+                        <input type="checkbox" name="remove_picture" id="remove_picture">Remove Profile Picture
+
+                    </div>
+                {% endif %}
+
+                <input type="file" name="profile_picture" id="id_profile_picture" accept="image/*" class="file-input" hidden>
 
                 <label for="username">Name</label>
                 <input type="text" id="username" value="{{ request.user.username }}" readonly>
@@ -85,20 +101,30 @@
   </div>
 </footer>
 </div>
-    <script>
-        const editBtn = document.getElementById('editBtn');
-        const saveBtn = document.getElementById('saveBtn');
-        const inputs = document.querySelectorAll('#profileForm input');
+<script>
+    const editBtn = document.getElementById('editBtn');
+    const saveBtn = document.getElementById('saveBtn');
+    const inputs = document.querySelectorAll('#profileForm input');
+    const removePicContainer = document.getElementById('removePicContainer');
+    const profilePicInput = document.getElementById('id_profile_picture');
 
-        editBtn.addEventListener('click', function () {
-            inputs.forEach(input => {
-                if (input.name !== "csrfmiddlewaretoken" && input.id !== "username") {
-                    input.removeAttribute('readonly');
-                }
-            });
-            editBtn.classList.add('hidden');
-            saveBtn.classList.remove('hidden');
+    editBtn.addEventListener('click', function () {
+        inputs.forEach(input => {
+            if (input.name !== "csrfmiddlewaretoken" && input.id !== "username") {
+                input.removeAttribute('readonly');
+                input.removeAttribute('hidden');
+            }
         });
-    </script>
+        if (removePicContainer) {
+            removePicContainer.classList.remove('hidden');
+        }
+        if (profilePicInput) {
+            profilePicInput.removeAttribute('disabled');
+        }
+        editBtn.classList.add('hidden');
+        saveBtn.classList.remove('hidden');
+    });
+</script>
+
 </body>
 </html>

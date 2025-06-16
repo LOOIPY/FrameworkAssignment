@@ -4,12 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fbe879b4-7f3a-4d43-8c08-0bbe4a7aaa96" name="Changes" comment="Added Saved Property page which is the wishlist">
+    <list default="true" id="fbe879b4-7f3a-4d43-8c08-0bbe4a7aaa96" name="Changes" comment="Fix Account bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/propertymanagement/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/propertymanagement/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/propertymanagement/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/propertymanagement/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proplistpage/templates/property_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/proplistpage/templates/property_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userAccount/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/userAccount/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userAccount/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/userAccount/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userAccount/signals.py" beforeDir="false" afterPath="$PROJECT_DIR$/userAccount/signals.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userAccount/templates/accounts/add_my_property.html" beforeDir="false" afterPath="$PROJECT_DIR$/userAccount/templates/accounts/add_my_property.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userAccount/templates/accounts/edit_my_property.html" beforeDir="false" afterPath="$PROJECT_DIR$/userAccount/templates/accounts/edit_my_property.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userAccount/templates/accounts/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/userAccount/templates/accounts/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userAccount/templates/accounts/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/userAccount/templates/accounts/signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userAccount/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/userAccount/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +147,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750031928268</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Fix Account bug">
+      <option name="closed" value="true" />
+      <created>1750051432312</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1750051432312</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -159,6 +174,7 @@
     <MESSAGE value="Merge remote-tracking branch 'origin/Pei-Yi' into Pei-Yi" />
     <MESSAGE value="Merge branch PeiYi" />
     <MESSAGE value="Added Saved Property page which is the wishlist" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Saved Property page which is the wishlist" />
+    <MESSAGE value="Fix Account bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix Account bug" />
   </component>
 </project>

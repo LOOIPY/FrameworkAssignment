@@ -46,7 +46,7 @@ urlpatterns = [
     path('property/<int:property_id>/toggle_favorite/', toggle_favorite, name='toggle_favorite'),
     path('saved/', saved_properties, name='saved_properties'),
     path('ajax/toggle-favorite/', ajax_toggle_favorite, name='ajax_toggle_favorite'),
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -21,7 +21,10 @@
               <!-- Property Main Fields -->
               {{ form.as_p }}
 
-              <h4>Additional Images</h4>
+              <h4>
+                  Additional Images
+                <button type="button" id="add-image-btn" class="add-img-btn">+ Add More Images</button>
+              </h4>
                 <div id="image-formset">
                   {{ formset.management_form }}
                   {% for subform in formset %}
@@ -34,57 +37,51 @@
                     </div>
                   {% endfor %}
                 </div>
-
-                <button type="button" id="add-image-btn">+ Add More Images</button>
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="submit-btn ">Submit</button>
             </form>
         </div>
         </main>
+<footer class="site-footer">
+  <div class="footer-container">
 
-        <footer class="site-footer">
-          <div class="footer-container">
+    <div class="footer-column left">
+      <p class="footer-title">Welcome.</p>
+      <p class="footer-subtitle">We reach out to the right property seekers for you.</p>
+        <p>© 2022 Arihant. All Rights Reserved.</p> <p style="text-decoration:underline">Privacy | Terms of Service</p>
+    <img src="{% static 'images/icon0.svg' %}" alt="Logo" class="footer-logo">
+    </div>
 
-            <div class="footer-column left">
-              <p class="footer-title">Welcome.</p>
-              <p class="footer-subtitle">We reach out to the right property seekers for you.</p>
-            </div>
+    <div class="footer-column middle">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="{% url 'proplistpage:property-list' %}">Buy</a></li>
+        <li><a href="{% url 'rentlistpage:rent-list' %}">Rent</a></li>
+        <li>New Launches</li>
+        <li>Transactions</li>
+        <li>Advertise</li>
+        <li>Guides & Insights</li>
+        <li>Events</li>
+      </ul>
+    </div>
 
-            <div class="footer-column middle">
-              <h4>Company</h4>
-              <ul>
-                <li><a href="{% url 'proplistpage:property-list' %}">Buy</a></li>
-                <li><a href="{% url 'rentlistpage:rent-list' %}">Rent</a></li>
-                <li>New Launches</li>
-                <li>Transactions</li>
-                <li>Advertise</li>
-                <li>Guides & Insights</li>
-                <li>Events</li>
-              </ul>
-            </div>
-
-            <div class="footer-column right">
-              <div class="card">
-                <img src="{% static 'images/image20.png' %}" alt="LoanCare">
-                <div>
-                  <p class="card-title">LoanCare</p>
-                  <p>Know your home loan eligibility with up to 17 banks. Try now</p>
-                </div>
-              </div>
-              <div class="card">
-                <img src="{% static 'images/image21.png' %}" alt="Transactions">
-                <div>
-                  <p class="card-title">Transactions Data</p>
-                  <p>Obtain the latest subsale transaction data & prices. Discover now</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="footer-bottom">
-            <p>© 2022 Arihant. All Rights Reserved. <a href="#">Privacy</a> | <a href="#">Terms of Service</a></p>
-            <img src="{% static 'images/icon0.svg' %}" alt="Logo" class="footer-logo">
-          </div>
-    </footer>
+    <div class="footer-column right">
+      <div class="card">
+        <img src="{% static 'images/image20.png' %}" alt="LoanCare">
+        <div>
+          <p class="card-title">LoanCare</p>
+          <p>Know your home loan eligibility with up to 17 banks. Try now</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="{% static 'images/image21.png' %}" alt="Transactions">
+        <div>
+          <p class="card-title">Transactions Data</p>
+          <p>Obtain the latest subsale transaction data & prices. Discover now</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
         </div>
     <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -180,6 +177,22 @@ body {
 .layout-content {
   flex: 1;
 }
+.add-img-btn {
+    font-size: 12px;
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+ }
+.submit-btn {
+    font-size: 14px;
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+ }
 .site-footer {
   background: linear-gradient(90deg,
     rgba(255, 229, 229, 0.52),

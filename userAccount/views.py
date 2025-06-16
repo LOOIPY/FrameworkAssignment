@@ -22,13 +22,28 @@ def user_login(request):
         username = request.POST.get("username", "").strip()
         password = request.POST.get("password", "").strip()
 
+        # Check if user exists first
+        try:
+            user_obj = User.objects.get(username=username)
+        except User.DoesNotExist:
+            messages.error(request, "Invalid username or password.")
+            return render(request, "accounts/login.html", {
+                'next': request.GET.get('next', '')
+            })
+
+        if not user_obj.has_usable_password():
+            messages.error(request, "This account uses Google login. Please sign in using Google.")
+            return render(request, "accounts/login.html", {
+                'next': request.GET.get('next', '')
+            })
+
+        # Proceed with password authentication
         user = authenticate(request, username=username, password=password)
         if user is not None:
-            # Step 1: Generate or update OTP
+            # ✅ OTP logic here
             otp_obj, _ = EmailOTP.objects.get_or_create(user=user)
             otp_obj.generate_code()
 
-            # Step 2: Send OTP to user's email
             send_mail(
                 subject="Your verification code",
                 message=f"Hi {user.username},\n\nYour verification code is: {otp_obj.code}",
@@ -37,16 +52,13 @@ def user_login(request):
                 fail_silently=False,
             )
 
-            # Step 3: Store temporary login state
             request.session['pre_2fa_user_id'] = user.id
             request.session['pre_otp_user_id'] = user.id
             request.session['next'] = request.POST.get("next") or request.GET.get("next", "")
-
             return redirect('verify_otp')
         else:
             messages.error(request, "Invalid username or password.")
 
-    # ✅ This line must always be present outside the POST block
     return render(request, "accounts/login.html", {
         'next': request.GET.get('next', '')
     })
@@ -108,6 +120,8 @@ def user_signup(request):
         email = request.POST.get('email')
         password1 = request.POST.get('password1')
         password2 = request.POST.get('password2')
+        phone_number = request.POST.get('phone_number')
+        profile_picture = request.FILES.get('profile_picture')
 
         if password1 != password2:
             messages.error(request, "Passwords do not match.")
@@ -118,8 +132,17 @@ def user_signup(request):
             return render(request, 'accounts/signup.html')
 
         user = User.objects.create_user(username=username, email=email, password=password1)
+        user.set_unusable_password()
+        user.save()
         user.backend = 'django.contrib.auth.backends.ModelBackend'
         login(request, user)
+
+        # Update profile
+        profile = user.profile
+        profile.phone_number = phone_number
+        if profile_picture:
+            profile.profile_picture = profile_picture
+        profile.save()
 
         next_url = request.POST.get('next') or '/'
         return redirect(next_url)
@@ -132,22 +155,33 @@ def social_redirect_view(request):
 
 @login_required
 def profile_view(request):
+    profile = request.user.profile
+
     if request.method == 'POST':
         user_form = UserUpdateForm(request.POST, instance=request.user)
-        profile_form = ProfileUpdateForm(request.POST, instance=request.user.profile)
+        profile_form = ProfileUpdateForm(request.POST, request.FILES, instance=profile)
+
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
+
+            # If checkbox was checked, remove the profile picture
+            if request.POST.get('remove_picture') == 'on':
+                if profile.profile_picture:
+                    profile.profile_picture.delete(save=False)
+                    profile.profile_picture = None
+                    profile.save()
+
             return redirect('profile')
+
     else:
         user_form = UserUpdateForm(instance=request.user)
-        profile_form = ProfileUpdateForm(instance=request.user.profile)
+        profile_form = ProfileUpdateForm(instance=profile)
 
     referer = request.META.get('HTTP_REFERER')
-
     fallback_url = reverse('proplistpage:property-list')
 
-    if referer and 'password_change' not in referer:
+    if referer and 'password_change' not in referer and 'profile' not in referer:
         safe_referer = referer
     else:
         safe_referer = fallback_url

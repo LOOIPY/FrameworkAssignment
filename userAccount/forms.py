@@ -11,7 +11,7 @@ class UserUpdateForm(forms.ModelForm):
 class ProfileUpdateForm(forms.ModelForm):
     class Meta:
         model = UserProfile
-        fields = ['phone_number']
+        fields = ['phone_number','profile_picture']
 
 class PropertyForm(forms.ModelForm):
     class Meta:
