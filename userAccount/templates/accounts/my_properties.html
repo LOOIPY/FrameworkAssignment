@@ -188,7 +188,7 @@
           font-weight: 600;
           text-transform: uppercase;
           position: absolute;
-          right: 300px;
+          right: 330px;
           top: 85px;
           padding: 10px 10px 10px 10px;
           cursor: pointer;
@@ -315,6 +315,25 @@
           width: 180px;
           margin-top: 10px;
         }
+
+                 .bookinglist {
+          color: #393280;
+          text-align: left;
+          font-family: "Inter-SemiBold", sans-serif;
+          font-size: 14px;
+          letter-spacing: 0.12em;
+          font-weight: 600;
+          text-transform: uppercase;
+          position: absolute;
+          right: 170px;
+          top: 85px;
+          padding: 10px 10px 30px 10px;
+          cursor: pointer;
+        }
+
+        .bookinglist:hover {
+          background-color: #f0f0f5;
+        }
     </style>
 </head>
 <body>
@@ -322,7 +341,10 @@
     <main class="layout-content">
 <div class="frame-229">
 <div class="rectangle-645"></div>
-    <div class="cart-0" > <img src="{% static 'images/vector1.svg' %}"/> Cart:(0$)</div>
+   <a href="{% url 'booking_list' %}" style="padding:500px 0px 500px 0px;text-decoration:none">
+        <div class="bookinglist"><img src="{% static 'images/vector1.svg' %}"/>
+         BookingList</div>
+        </a>
     <div class="navbar">
       <div class="account">
           <img src="{% static 'images/vector2.svg' %}"/>
