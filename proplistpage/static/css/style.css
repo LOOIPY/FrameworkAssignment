@@ -1840,3 +1840,96 @@ body {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+ .site-footer {
+      background: linear-gradient(90deg,
+        rgba(255, 229, 229, 0.52),
+        rgba(245, 255, 254, 0.52) 20%,
+        rgba(252, 243, 255, 0.52) 60%,
+        rgba(255, 244, 229, 0.52) 100%);
+      padding: 40px 20px 20px;
+      font-family: "Inter", sans-serif;
+      color: #011627;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: auto;
+      gap: 40px;
+    }
+
+    .footer-column {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .footer-column h4 {
+      color: #ed553b;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-column ul li a {
+      color: #111;
+      text-decoration: none;
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    .footer-column.left .footer-title {
+      font-size: 22px;
+      font-weight: 600;
+      color: #ed553b;
+    }
+
+    .footer-column.left .footer-subtitle {
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    .footer-column.right .card {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .footer-column.right .card img {
+      width: 60px;
+      height: 60px;
+      border-radius: 6px;
+      object-fit: cover;
+    }
+
+    .card-title {
+      font-weight: 600;
+      color: #ed553b;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 14px;
+      color: #011627;
+      border-top: 1px solid #ccc;
+      padding-top: 15px;
+      position: relative;
+    }
+
+    .footer-bottom a {
+      color: #ed553b;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    .footer-logo {
+      width: 180px;
+      margin-top: 10px;
+    }

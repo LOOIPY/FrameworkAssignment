@@ -1,0 +1,52 @@
+{% load static %}
+<div class="frame-229">
+  <div class="rectangle-645"></div>
+
+  <a href="{% url 'booking_list' %}" style="text-decoration:none">
+    <div class="bookinglist">
+      <img src="{% static 'images/vector1.svg' %}" alt="Booking Icon" />
+      BookingList
+    </div>
+  </a>
+
+  <div class="navbar">
+    <div class="account">
+      <img src="{% static 'images/vector2.svg' %}" alt="Account Icon" />
+      {% if user.is_authenticated %}
+        <div class="dropdown">
+          <button class="dropbtn">{{ user.username }}</button>
+          <div class="dropdown-content">
+            <a href="{% url 'my_properties' %}">My Properties</a>
+            <a href="{% url 'profile' %}">Profile</a>
+            <a href="{% url 'logout' %}">Logout</a>
+          </div>
+        </div>
+      {% else %}
+        <a href="{% url 'login' %}" class="login-link">Account</a>
+      {% endif %}
+    </div>
+  </div>
+
+  <a href="{% url 'saved_properties' %}" style="text-decoration:none">
+    <div class="wishlist">
+      <img src="{% static 'images/vector3.svg' %}" alt="Wishlist Icon" />
+      Wishlist
+    </div>
+  </a>
+
+  <div class="rectangle-7"></div>
+
+  <div class="buy-rent-new-launches-transations-advertise-guies-insights-events">
+    <span>
+      <a href="{% url 'proplistpage:property-list' %}" style="text-decoration:none">Buy</a>
+      |
+      <a href="{% url 'rentlistpage:rent-list' %}" style="text-decoration:none; color: #111111;">Rent</a>
+      |
+      New Launches |
+      transations |
+      Advertise |
+      Guides&amp;insights |
+      events
+    </span>
+  </div>
+</div>

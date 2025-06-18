@@ -10,7 +10,7 @@ app_name = 'rentlistpage'
 
 urlpatterns = [
     path('', views.rent_list, name='rent-list'),
-#path('property/<int:pk>/', views.rent_detail, name='rent-detail'),
+    path('property/<int:property_id>/', views.rent_detail, name='rent-detail'),
 ]
 
 # Add media static file support (only in DEBUG mode)
