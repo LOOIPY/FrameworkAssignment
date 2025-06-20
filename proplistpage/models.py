@@ -24,17 +24,10 @@ class Property(models.Model):
     address = models.CharField(max_length=200, blank=True)
     detail = models.TextField(blank=True)
     image = models.ImageField(upload_to='property_images/')
-    address = models.CharField(max_length=200, blank=True)  # 具体地址
-    detail = models.TextField(blank=True)  # 房屋详情
-    image = models.ImageField(upload_to='property_images/')
-    #desmond part
-    PROPERTY_TYPE_CHOICES = [
-        ('sale', 'For Sale'),
-        ('rent', 'For Rent'),
-    ]
+
     type = models.CharField(max_length=10, choices=PROPERTY_TYPE_CHOICES, default='sale')
     is_booked = models.BooleanField(default=False)
-
+    created_at = models.DateTimeField(auto_now_add=True)
     def __str__(self):
         return f"{self.title} - {self.location}"
 
@@ -44,6 +37,7 @@ class PropertyImage(models.Model):
     property = models.ForeignKey(Property, related_name='extra_images', on_delete=models.CASCADE)
     image    = models.ImageField(upload_to='property_images/details/')
     caption  = models.CharField(max_length=100, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f"{self.property.title} - Image {self.id}"
