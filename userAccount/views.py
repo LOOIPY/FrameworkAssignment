@@ -124,7 +124,9 @@ def user_signup(request):
         phone_number = request.POST.get('phone_number')
         profile_picture = request.FILES.get('profile_picture')
 
-
+        if password1 != password2:
+            messages.error(request, "Passwords do not match.")
+            return render(request, 'accounts/signup.html')
 
         if User.objects.filter(username=username).exists():
             messages.error(request, "Username already exists.")
