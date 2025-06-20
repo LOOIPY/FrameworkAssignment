@@ -18,6 +18,7 @@ def property_list(request):
       - 按 price 升序/降序 排序
       - 分页，每页 6 条
     """
+
     # 1. 从 GET 参数获取筛选和排序条件
     location     = request.GET.get('location', '').strip()      # 例如: "SELANGOR"
     search       = request.GET.get('search', '').strip()        # 例如: "Elmina" 或 "420000"
@@ -63,12 +64,17 @@ def property_list(request):
         # 如果没有传 price_order，就默认按最新创建（id 倒序）
         qs = qs.order_by('-id')
 
+<<<<<<< HEAD
         # 6. 动态取前三条最新房源作为推荐
 <<<<<<< HEAD
         recommended = Property.objects.order_by('-id')[:3]
 =======
         recommended = Property.objects.filter(type='sale', is_booked=False).order_by('-id')[:3]
 >>>>>>> Pei-Yi
+=======
+    # 6. 动态取前三条最新房源作为推荐
+    recommended = Property.objects.filter(type='sale', is_booked=False).order_by('-id')[:3]
+>>>>>>> upstream/Pei-Yi
 
     # 6. 用 Paginator 分页，每页 6 条
     paginator = Paginator(qs, 6)

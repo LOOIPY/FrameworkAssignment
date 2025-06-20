@@ -1,4 +1,19 @@
 {% load static %}
+<script>
+  function toggleDropdown(event) {
+    event.stopPropagation();
+    const dropdown = document.getElementById("accountDropdown");
+    dropdown.classList.toggle("show");
+  }
+
+  window.addEventListener("click", function () {
+    const dropdown = document.getElementById("accountDropdown");
+    if (dropdown && dropdown.classList.contains("show")) {
+      dropdown.classList.remove("show");
+    }
+  });
+</script>
+
 <div class="frame-229">
   <div class="rectangle-645"></div>
 
@@ -9,22 +24,20 @@
     </div>
   </a>
 
-  <div class="navbar">
-    <div class="account">
-      <img src="{% static 'images/vector2.svg' %}" alt="Account Icon" />
-      {% if user.is_authenticated %}
-        <div class="dropdown">
-          <button class="dropbtn">{{ user.username }}</button>
-          <div class="dropdown-content">
-            <a href="{% url 'my_properties' %}">My Properties</a>
-            <a href="{% url 'profile' %}">Profile</a>
-            <a href="{% url 'logout' %}">Logout</a>
-          </div>
+  <div class="account">
+    <img src="{% static 'images/vector2.svg' %}" alt="Account Icon" />
+    {% if user.is_authenticated %}
+      <div class="dropdown">
+        <button class="dropbtn" onclick="toggleDropdown(event)">{{ user.username }}</button>
+        <div class="dropdown-content" id="accountDropdown">
+          <a href="{% url 'my_properties' %}">My Properties</a>
+          <a href="{% url 'profile' %}">Profile</a>
+          <a href="{% url 'logout' %}">Logout</a>
         </div>
-      {% else %}
-        <a href="{% url 'login' %}" class="login-link">Account</a>
-      {% endif %}
-    </div>
+      </div>
+    {% else %}
+      <a href="{% url 'login' %}" class="login-link" style="padding:100px 10px 15px 10px;">Account</a>
+    {% endif %}
   </div>
 
   <a href="{% url 'saved_properties' %}" style="text-decoration:none">
@@ -50,3 +63,4 @@
     </span>
   </div>
 </div>
+

@@ -14,7 +14,7 @@ from proplistpage.models import Property  # Import from proplistpage app
 
 def rent_list(request):
     # Filter properties where type is "rent" (lowercase, as shown in debug)
-    properties = Property.objects.filter(type="rent")
+    properties = Property.objects.filter(type="rent", is_booked=False)
 
     # Get filter parameters from request
     selected_location = request.GET.get('location')
@@ -47,7 +47,7 @@ def rent_list(request):
     page_obj = paginator.get_page(page_number)
 
     # Get recommended properties (random selection of rent properties)
-    recommended = Property.objects.filter(type="rent").exclude(
+    recommended = Property.objects.filter(type="rent", is_booked=False).exclude(
         id__in=[p.id for p in page_obj]
     ).order_by('?')[:4]  # Get 4 random recommendations
 
