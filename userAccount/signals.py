@@ -9,6 +9,10 @@ from .models import UserProfile
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
         UserProfile.objects.create(user=instance)
+<<<<<<< HEAD
+=======
+    instance.profile.save()
+>>>>>>> Pei-Yi
 
 @receiver(user_logged_in)
 def ensure_profile_exists(sender, request, user, **kwargs):

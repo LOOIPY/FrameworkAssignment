@@ -10,12 +10,25 @@
 <body>
     <div class="container">
         <h2>Sign Up</h2>
+<<<<<<< HEAD
         <form method="POST" action="{% url 'signup' %}?next={{ next }}">
             {% csrf_token %}
+=======
+        <form method="POST" enctype="multipart/form-data" action="{% url 'signup' %}?next={{ next }}">
+            {% csrf_token %}
+            <p style="text-align:left; margin-left:20px">Choose Profile Picture</p>
+            <input type="file" name="profile_picture" accept="image/*" class="input-field">
+>>>>>>> Pei-Yi
             <input type="text" name="username" class="input-field" placeholder="Username" required>
             <input type="email" name="email" class="input-field" placeholder="Email" required>
             <input type="password" name="password1" class="input-field" placeholder="Password" required>
             <input type="password" name="password2" class="input-field" placeholder="Confirm Password" required>
+<<<<<<< HEAD
+=======
+
+            <input type="text" name="phone_number" class="input-field" placeholder="Phone Number">
+
+>>>>>>> Pei-Yi
             <input type="hidden" name="next" value="{{ next }}">
             <button type="submit" class="login-btn">Sign Up</button>
         </form>

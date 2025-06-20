@@ -11,7 +11,11 @@ class UserUpdateForm(forms.ModelForm):
 class ProfileUpdateForm(forms.ModelForm):
     class Meta:
         model = UserProfile
+<<<<<<< HEAD
         fields = ['phone_number']
+=======
+        fields = ['phone_number','profile_picture']
+>>>>>>> Pei-Yi
 
 class PropertyForm(forms.ModelForm):
     class Meta:

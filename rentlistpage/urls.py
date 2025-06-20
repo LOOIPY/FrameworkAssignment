@@ -10,6 +10,10 @@ app_name = 'rentlistpage'
 
 urlpatterns = [
     path('', views.rent_list, name='rent-list'),
+<<<<<<< HEAD
+=======
+    path('property/<int:property_id>/', views.rent_detail, name='rent-detail'),
+>>>>>>> Pei-Yi
 ]
 
 # Add media static file support (only in DEBUG mode)

@@ -1,5 +1,6 @@
 body {
   margin: 0;
+<<<<<<< HEAD
   overflow-x: hidden;
 }
 
@@ -15,6 +16,250 @@ body {
     background-color: #f0f0f0;
 }
 
+=======
+  padding: 0;
+  overflow-x: hidden;
+}
+.site-footer {
+  background: linear-gradient(90deg,
+    rgba(255, 229, 229, 0.52),
+    rgba(245, 255, 254, 0.52) 20%,
+    rgba(252, 243, 255, 0.52) 60%,
+    rgba(255, 244, 229, 0.52) 100%);
+  padding: 40px 20px 20px;
+  font-family: "Inter", sans-serif;
+  color: #011627;
+}
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  gap: 40px;
+}
+.footer-column {
+  flex: 1;
+  min-width: 250px;
+}
+.footer-column h4 {
+  color: #ed553b;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-column ul li a {
+  color: #111;
+  text-decoration: none;
+  line-height: 1.8;
+  font-size: 16px;
+}
+.footer-column.left .footer-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #ed553b;
+}
+.footer-column.left .footer-subtitle {
+  font-size: 16px;
+  margin-top: 10px;
+}
+.footer-column.right .card {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.footer-column.right .card img {
+  width: 60px;
+  height: 60px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+.card-title {
+  font-weight: 600;
+  color: #ed553b;
+}
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  color: #011627;
+  border-top: 1px solid #ccc;
+  padding-top: 15px;
+  position: relative;
+}
+.footer-bottom a {
+  color: #ed553b;
+  text-decoration: none;
+  margin: 0 5px;
+}
+.footer-logo {
+  width: 180px;
+  margin-top: 10px;
+}
+
+.layout-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.layout-content {
+  flex: 1;
+}
+.frame-229 {
+  width: 100%;
+  height: 235px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+.rectangle-645 {
+  background: #393280;
+  width: 100%;
+  height: 56px;
+  position: absolute;
+}
+.rectangle-7 {
+  background: #e0e0e0;
+  width: 98%;
+  height: 2px;
+  position: absolute;
+  left: 20px;
+  top: 130px;
+  transform-origin: 0 0;
+  transform: rotate(0deg) scale(1, -1);
+}
+.cart-0 {
+  color: #393280;
+  text-align: left;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  text-transform: uppercase;
+  position: absolute;
+  right: 170px;
+  top: 86px;
+  padding: 10px 10px 10px 10px;
+
+}
+
+.account {
+  color: #393280;
+  text-align: left;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  text-transform: uppercase;
+  position: absolute;
+  right: 20px;
+  padding-top:12px;
+  top: 85px;
+}
+
+.account:hover {
+  background-color: #f0f0f5;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;  /* or center, or flex-start */
+  align-items: center;
+  padding: 0 30px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #393280;
+  text-align: left;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 10px 10px 10px 10px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 120px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+  z-index: 1;
+  right: 0;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px 14px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.wishlist {
+  color: #393280;
+  text-align: left;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  text-transform: uppercase;
+  position: absolute;
+  right: 300px;
+  top: 85px;
+  padding: 20px 10px 20px 10px;
+  cursor: pointer;
+}
+
+.wishlist:hover {
+  background-color: #f0f0f5;
+}
+
+.buy-rent-new-launches-transations-advertise-guies-insights-events {
+  text-align: left;
+  font-family: "-", sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.12em;
+  font-weight: 400;
+  position: relative;
+  top: 90px;
+  left: 30px;
+}
+.buy-rent-new-launches-transations-advertise-guies-insights-events-span {
+  color: #ed553b;
+  font-family: "Inter-Medium", sans-serif;
+  font-weight: 500;
+}
+.buy-rent-new-launches-transations-advertise-guies-insights-events-span2 {
+  color: #111111;
+  font-family: "Inter-Medium", sans-serif;
+  font-weight: 500;
+}
+.buy-rent-new-launches-transations-advertise-guies-insights-events-span3 {
+  color: #d1d1d1;
+  font-family: "Inter-Medium", sans-serif;
+  font-weight: 500;
+}
+>>>>>>> Pei-Yi
 .property-listing-yinan,
 .property-listing-yinan * {
   box-sizing: border-box;
@@ -431,6 +676,11 @@ body {
   position: absolute;
   right: 170px;
   top: 109px;
+<<<<<<< HEAD
+=======
+  padding: 10px 10px 10px 10px;
+
+>>>>>>> Pei-Yi
 }
 
 .rectangle-11 {
@@ -455,9 +705,19 @@ body {
   text-transform: uppercase;
   position: absolute;
   right: 20px;
+<<<<<<< HEAD
   top: 109px;
 }
 
+=======
+  top: 100px;
+  cursor: pointer;
+}
+
+.account:hover {
+  background-color: #f0f0f5;
+}
+>>>>>>> Pei-Yi
 .group-248 {
   width: 90%;
   height: 17px;
@@ -473,6 +733,15 @@ body {
   position: absolute;
   right: 300px;
   top: 109px;
+<<<<<<< HEAD
+=======
+  padding: 10px 10px 10px 10px;
+  cursor: pointer;
+}
+
+.wishlist:hover {
+  background-color: #f0f0f5;
+>>>>>>> Pei-Yi
 }
 .group-252 {
   width: 617px;
@@ -526,7 +795,11 @@ body {
   letter-spacing: 0.12em;
   font-weight: 400;
   position: relative;
+<<<<<<< HEAD
   top: 100px;
+=======
+  top: 94px;
+>>>>>>> Pei-Yi
   left: 30px;
 }
 .buy-rent-new-launches-transations-advertise-guies-insights-events-span {
@@ -1264,6 +1537,10 @@ body {
     margin-bottom: 20px;
   }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> Pei-Yi
 /*尾页模块*/
 .frame-238,
 .frame-238 * {
@@ -1548,12 +1825,20 @@ body {
   pointer-events: none;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Pei-Yi
 
 .navbar {
   display: flex;
   justify-content: space-between;  /* or center, or flex-start */
   align-items: center;
+<<<<<<< HEAD
   padding: 0 30px;
+=======
+  padding: 10px 10px 10px 10px;
+
+>>>>>>> Pei-Yi
 }
 
 .dropdown {
@@ -1572,6 +1857,11 @@ body {
   letter-spacing: 0.12em;
   font-weight: 600;
   text-transform: uppercase;
+<<<<<<< HEAD
+=======
+  padding: 10px 10px 10px 10px;
+
+>>>>>>> Pei-Yi
 }
 
 .dropdown-content {
@@ -1598,5 +1888,101 @@ body {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+<<<<<<< HEAD
 =======
 >>>>>>> 3324ed9d86d7086a6b8d2ccef3d10699c42793ac
+=======
+
+ .site-footer {
+      background: linear-gradient(90deg,
+        rgba(255, 229, 229, 0.52),
+        rgba(245, 255, 254, 0.52) 20%,
+        rgba(252, 243, 255, 0.52) 60%,
+        rgba(255, 244, 229, 0.52) 100%);
+      padding: 40px 20px 20px;
+      font-family: "Inter", sans-serif;
+      color: #011627;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: auto;
+      gap: 40px;
+    }
+
+    .footer-column {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .footer-column h4 {
+      color: #ed553b;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-column ul li a {
+      color: #111;
+      text-decoration: none;
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    .footer-column.left .footer-title {
+      font-size: 22px;
+      font-weight: 600;
+      color: #ed553b;
+    }
+
+    .footer-column.left .footer-subtitle {
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    .footer-column.right .card {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .footer-column.right .card img {
+      width: 60px;
+      height: 60px;
+      border-radius: 6px;
+      object-fit: cover;
+    }
+
+    .card-title {
+      font-weight: 600;
+      color: #ed553b;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 14px;
+      color: #011627;
+      border-top: 1px solid #ccc;
+      padding-top: 15px;
+      position: relative;
+    }
+
+    .footer-bottom a {
+      color: #ed553b;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    .footer-logo {
+      width: 180px;
+      margin-top: 10px;
+    }
+>>>>>>> Pei-Yi

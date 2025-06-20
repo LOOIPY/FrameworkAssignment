@@ -5,18 +5,38 @@
     <meta charset="UTF-8">
     <title>Your Profile</title>
     <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+<<<<<<< HEAD
 
 </head>
 <body>
+=======
+</head>
+<body>
+<div class="layout-wrapper">
+    <main class="layout-content">
+>>>>>>> Pei-Yi
     <div class="rectangle-645"></div>
     <div class="container">
         <!-- Sidebar -->
         <div class="sidebar">
+<<<<<<< HEAD
             <br><a href="{% url 'proplistpage:property-list' %}" >« BACK</a><br>
 
             <img src="{% static 'img/profile.png' %}" alt="Profile Image"><br>
             <a href="{% url 'my_properties' %}">My Properties</a><br>
             <a href="#">Favorite Properties</a><br>
+=======
+            <br><a href="{{ referer }}">« BACK</a><br>
+            {% if user.is_authenticated and user.profile and user.profile.profile_picture %}
+                <img src="{{ user.profile.profile_picture.url }}" alt="Profile Image">
+            <br>
+            {% else %}
+                <img src="{% static 'img/profile.png' %}" alt="Default Profile Image">
+            {% endif %}
+            <br>
+            <a href="{% url 'my_properties' %}">My Properties</a><br>
+            <a href="{% url 'saved_properties' %}">Saved Properties</a><br>
+>>>>>>> Pei-Yi
             <a href="{% url 'password_change' %}">Change Password</a><br>
             <a href="{% url 'logout' %}">Logout</a>
        </div>
@@ -24,8 +44,24 @@
         <!-- Profile Form -->
         <div class="main-content">
             <h2>Profile Information</h2>
+<<<<<<< HEAD
             <form method="POST" id="profileForm">
                 {% csrf_token %}
+=======
+            <form method="POST" enctype="multipart/form-data" id="profileForm">
+                {% csrf_token %}
+                <!-- Profile Picture Upload -->
+                <label for="id_profile_picture">Profile Picture</label>
+                {% if profile_form.profile_picture.value %}
+                    <img src="{{ profile_form.profile_picture.value.url }}" alt="Current Picture" style="width: 120px; height: 120px; object-fit: cover;"><br>
+                    <div id="removePicContainer" class="hidden">
+                        <input type="checkbox" name="remove_picture" id="remove_picture">Remove Profile Picture
+
+                    </div>
+                {% endif %}
+
+                <input type="file" name="profile_picture" id="id_profile_picture" accept="image/*" class="file-input" hidden>
+>>>>>>> Pei-Yi
 
                 <label for="username">Name</label>
                 <input type="text" id="username" value="{{ request.user.username }}" readonly>
@@ -41,6 +77,7 @@
             </form>
         </div>
     </div>
+<<<<<<< HEAD
    <div class="frame-238">
     <div class="frame-100">
       <!-- 1. 底色：渐变叠加透明遮罩 -->
@@ -139,5 +176,75 @@
             saveBtn.classList.remove('hidden');
         });
     </script>
+=======
+    </main>
+   <footer class="site-footer">
+  <div class="footer-container">
+
+    <div class="footer-column left">
+      <p class="footer-title">Welcome.</p>
+      <p class="footer-subtitle">We reach out to the right property seekers for you.</p>
+        <p>© 2022 Arihant. All Rights Reserved.</p> <p style="text-decoration:underline">Privacy | Terms of Service</p>
+    <img src="{% static 'images/icon0.svg' %}" alt="Logo" class="footer-logo">
+    </div>
+
+    <div class="footer-column middle">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="{% url 'proplistpage:property-list' %}">Buy</a></li>
+        <li><a href="{% url 'rentlistpage:rent-list' %}">Rent</a></li>
+        <li>New Launches</li>
+        <li>Transactions</li>
+        <li>Advertise</li>
+        <li>Guides & Insights</li>
+        <li>Events</li>
+      </ul>
+    </div>
+
+    <div class="footer-column right">
+      <div class="card">
+        <img src="{% static 'images/image20.png' %}" alt="LoanCare">
+        <div>
+          <p class="card-title">LoanCare</p>
+          <p>Know your home loan eligibility with up to 17 banks. Try now</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="{% static 'images/image21.png' %}" alt="Transactions">
+        <div>
+          <p class="card-title">Transactions Data</p>
+          <p>Obtain the latest subsale transaction data & prices. Discover now</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
+<script>
+    const editBtn = document.getElementById('editBtn');
+    const saveBtn = document.getElementById('saveBtn');
+    const inputs = document.querySelectorAll('#profileForm input');
+    const removePicContainer = document.getElementById('removePicContainer');
+    const profilePicInput = document.getElementById('id_profile_picture');
+
+    editBtn.addEventListener('click', function () {
+        inputs.forEach(input => {
+            if (input.name !== "csrfmiddlewaretoken" && input.id !== "username") {
+                input.removeAttribute('readonly');
+                input.removeAttribute('hidden');
+            }
+        });
+        if (removePicContainer) {
+            removePicContainer.classList.remove('hidden');
+        }
+        if (profilePicInput) {
+            profilePicInput.removeAttribute('disabled');
+        }
+        editBtn.classList.add('hidden');
+        saveBtn.classList.remove('hidden');
+    });
+</script>
+
+>>>>>>> Pei-Yi
 </body>
 </html>

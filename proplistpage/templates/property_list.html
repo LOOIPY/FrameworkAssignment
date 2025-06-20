@@ -7,6 +7,7 @@
   <meta charset="UTF-8">
   <title>Property Listing</title>
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+<<<<<<< HEAD
 </head>
 <body>
 {% load static %}
@@ -84,6 +85,18 @@
 </div>
 
 <img class="apartment-1" src="{% static 'images/apartment-10.png' %}"/>
+=======
+  <link rel="stylesheet" href="{% static 'main/style.css' %}">
+</head>
+<body>
+{% load static %}
+<div class="layout-wrapper">
+    <main class="layout-content">
+<!--<div class="frame-229">-->
+        {% include 'header.html' %}
+
+<img class="apartment-1" src="{% static 'images/apartment-10.jpg' %}"/>
+>>>>>>> Pei-Yi
 <div class="banner-overlay"></div>
 <div class="banner-text"></div>
 
@@ -245,6 +258,7 @@
     {% endfor %}
   </div>
 </div>
+<<<<<<< HEAD
 <!-- 推荐区结束 -->
 
 
@@ -353,6 +367,51 @@
 <div class="rectangle-82"></div>
 <div class="view-more">View more</div>
 <img class="vector6" src="{% static 'images/vector5.svg' %}"/>
+=======
+    </main>
+<footer class="site-footer">
+  <div class="footer-container">
+
+    <div class="footer-column left">
+      <p class="footer-title">Welcome.</p>
+      <p class="footer-subtitle">We reach out to the right property seekers for you.</p>
+        <p>© 2022 Arihant. All Rights Reserved.</p> <p style="text-decoration:underline">Privacy | Terms of Service</p>
+    <img src="{% static 'images/icon0.svg' %}" alt="Logo" class="footer-logo">
+    </div>
+
+    <div class="footer-column middle">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="{% url 'proplistpage:property-list' %}">Buy</a></li>
+        <li><a href="{% url 'rentlistpage:rent-list' %}">Rent</a></li>
+        <li>New Launches</li>
+        <li>Transactions</li>
+        <li>Advertise</li>
+        <li>Guides & Insights</li>
+        <li>Events</li>
+      </ul>
+    </div>
+
+    <div class="footer-column right">
+      <div class="card">
+        <img src="{% static 'images/image20.png' %}" alt="LoanCare">
+        <div>
+          <p class="card-title">LoanCare</p>
+          <p>Know your home loan eligibility with up to 17 banks. Try now</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="{% static 'images/image21.png' %}" alt="Transactions">
+        <div>
+          <p class="card-title">Transactions Data</p>
+          <p>Obtain the latest subsale transaction data & prices. Discover now</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
+>>>>>>> Pei-Yi
 
 </body>
 </html>
