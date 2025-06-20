@@ -144,9 +144,6 @@ body {
   top: 85px;
 }
 
-.account:hover {
-  background-color: #f0f0f5;
-}
 .navbar {
   display: flex;
   justify-content: space-between;  /* or center, or flex-start */
@@ -683,9 +680,12 @@ body {
   font-weight: 600;
   text-transform: uppercase;
   position: absolute;
+  padding: 10px 10px 30000px 10px;
+  z-index: 100;
   right: 20px;
   top: 100px;
   cursor: pointer;
+
 }
 
 .account:hover {
@@ -1820,27 +1820,25 @@ body {
   display: none;
   position: absolute;
   background-color: white;
-  min-width: 120px;
-  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
   z-index: 1;
-  right: 0;
 }
 
 .dropdown-content a {
-  color: black;
-  padding: 10px 14px;
-  text-decoration: none;
+  padding: 10px 16px;
   display: block;
+  text-decoration: none;
+  color: black;
 }
 
 .dropdown-content a:hover {
-  background-color: #f0f0f0;
+  background-color: #f1f1f1;
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown-content.show {
   display: block;
 }
-
  .site-footer {
       background: linear-gradient(90deg,
         rgba(255, 229, 229, 0.52),
