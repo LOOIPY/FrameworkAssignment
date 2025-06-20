@@ -6,25 +6,49 @@
     <meta charset="UTF-8">
     <title>Sign Up</title>
     <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            const form = document.querySelector("form");
+            const password1 = form.querySelector('input[name="password1"]');
+            const password2 = form.querySelector('input[name="password2"]');
+
+            form.addEventListener("submit", function (event) {
+              if (password1.value !== password2.value) {
+                event.preventDefault();
+                alert("Passwords do not match.");
+                password2.focus();
+              }
+            });
+          });
+    </script>
 </head>
 <body>
     <div class="container">
         <h2>Sign Up</h2>
         <form method="POST" enctype="multipart/form-data" action="{% url 'signup' %}?next={{ next }}">
-            {% csrf_token %}
-            <p style="text-align:left; margin-left:20px">Choose Profile Picture</p>
-            <input type="file" name="profile_picture" accept="image/*" class="input-field">
-            <input type="text" name="username" class="input-field" placeholder="Username" required>
-            <input type="email" name="email" class="input-field" placeholder="Email" required>
-            <input type="password" name="password1" class="input-field" placeholder="Password" required>
-            <input type="password" name="password2" class="input-field" placeholder="Confirm Password" required>
+          {% csrf_token %}
+          <p style="text-align:left; margin-left:20px">Choose Profile Picture</p>
+          <input type="file" name="profile_picture" accept="image/*" class="input-field">
 
-            <input type="text" name="phone_number" class="input-field" placeholder="Phone Number">
+          <input type="text" name="username" class="input-field" placeholder="Username" required>
+          <input type="email" name="email" class="input-field" placeholder="Email" required>
 
-            <input type="hidden" name="next" value="{{ next }}">
-            <button type="submit" class="login-btn">Sign Up</button>
+          <input type="password" name="password1" class="input-field" placeholder="Password" required>
+          <input type="password" name="password2" class="input-field" placeholder="Confirm Password" required>
+
+          <input
+            type="tel"
+            name="phone_number"
+            class="input-field"
+            placeholder="Phone Number (e.g. 012-3456789)"
+            pattern="^01[0-9]-\d{7,8}$"
+            title="Enter a valid Malaysian phone number (e.g. 012-3456789)"
+            required
+          >
+
+          <input type="hidden" name="next" value="{{ next }}">
+          <button type="submit" class="login-btn">Sign Up</button>
         </form>
-
         <div class="separator">Or</div>
 
         <a href="{% url 'social:begin' 'google-oauth2' %}?next={{ next|urlencode }}"
