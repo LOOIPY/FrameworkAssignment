@@ -31,6 +31,8 @@
         <button class="dropbtn" onclick="toggleDropdown(event)">{{ user.username }}</button>
         <div class="dropdown-content" id="accountDropdown">
           <a href="{% url 'my_properties' %}">My Properties</a>
+          <a href="{% url 'checklist' %}" class="action-btn"><i class="fas fa-clipboard-list"></i> Add Checklist</a>
+          <a href="{% url 'invoice' %}" class="action-btn"><i class="fas fa-file-invoice-dollar"></i> Create Invoice</a>
           <a href="{% url 'profile' %}">Profile</a>
           <a href="{% url 'logout' %}">Logout</a>
         </div>

@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'proplistpage',
     'rentlistpage',
     'rest_framework',
-    'userAccount'
+    'userAccount',
+    'dashboard'
 ]
 
 AUTHENTICATION_BACKENDS = [

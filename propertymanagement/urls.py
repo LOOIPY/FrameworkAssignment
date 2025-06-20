@@ -21,10 +21,13 @@ from django.conf.urls.static import static
 from userAccount.views import user_signup,user_login,social_redirect_view,profile_view,change_password,verify_otp,resend_otp
 from userAccount.views import my_properties,add_my_property,edit_my_property,delete_my_property,toggle_favorite,saved_properties,ajax_toggle_favorite
 from django.contrib.auth.views import LogoutView
-
+from dashboard.views import checklist,invoice
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('proplistpage.urls')),  # Homepage and property views
+    path('', include('proplistpage.urls')),
+    path('dashboard', include('dashboard.urls')),
+    path('checklist/', checklist, name='checklist'),
+    path('invoice/', invoice, name='invoice'),
     path('accounts/',include('userAccount.urls')),
     path('accounts/login/', user_login, name='login'),
     path('accounts/signup/', user_signup, name='signup'),
