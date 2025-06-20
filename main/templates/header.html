@@ -13,7 +13,7 @@
     }
   });
 </script>
-
+<link rel="stylesheet" href="{% static 'css/saved_property.css' %}">
 <div class="frame-229">
   <div class="rectangle-645"></div>
 
@@ -36,7 +36,7 @@
         </div>
       </div>
     {% else %}
-      <a href="{% url 'login' %}" class="login-link" style="padding:100px 10px 15px 10px;">Account</a>
+      <a href="{% url 'login' %}" style="margin-top:3px; display:inline-block;padding:6px 10px 15px 10px;">Account</a>
     {% endif %}
   </div>
 
@@ -51,7 +51,7 @@
 
   <div class="buy-rent-new-launches-transations-advertise-guies-insights-events">
     <span>
-      <a href="{% url 'proplistpage:property-list' %}" style="text-decoration:none">Buy</a>
+      <a href="{% url 'proplistpage:property-list' %}" style="text-decoration:none; color:#000000;">Buy</a>
       |
       <a href="{% url 'rentlistpage:rent-list' %}" style="text-decoration:none; color: #111111;">Rent</a>
       |
