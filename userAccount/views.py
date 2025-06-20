@@ -133,7 +133,7 @@ def user_signup(request):
             return render(request, 'accounts/signup.html')
 
         user = User.objects.create_user(username=username, email=email, password=password1)
-        user.set_unusable_password()
+
         user.save()
         user.backend = 'django.contrib.auth.backends.ModelBackend'
         login(request, user)
