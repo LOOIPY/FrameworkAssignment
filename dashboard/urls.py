@@ -6,9 +6,6 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(next_page='login'), name='logout'),
     path('checklist/', views.checklist, name='checklist'),
     path('invoice/', views.invoice, name='invoice'),
-<<<<<<< HEAD
     path('maintenance/', include('maintenance.urls')),
-=======
->>>>>>> Pei-Yi
     path('', views.home, name='home'),
 ]

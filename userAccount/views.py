@@ -2,12 +2,8 @@ from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect,get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.models import User
-<<<<<<< HEAD
-from django.utils.http import url_has_allowed_host_and_scheme
-=======
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
->>>>>>> Pei-Yi
 from .forms import UserUpdateForm, ProfileUpdateForm, PropertyForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordChangeForm
@@ -15,30 +11,17 @@ from django.contrib.auth import update_session_auth_hash
 from django.core.mail import send_mail
 from .models import EmailOTP
 from django.contrib.auth import get_user_model
-<<<<<<< HEAD
-from proplistpage.models import Property
-=======
 from django.forms import inlineformset_factory
 from proplistpage.models import Property, PropertyImage
 from django.utils.http import url_has_allowed_host_and_scheme
 from django import forms
 from django.urls import reverse
->>>>>>> Pei-Yi
 
 def user_login(request):
     if request.method == "POST":
         username = request.POST.get("username", "").strip()
         password = request.POST.get("password", "").strip()
 
-<<<<<<< HEAD
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            # Step 1: Generate or update OTP
-            otp_obj, _ = EmailOTP.objects.get_or_create(user=user)
-            otp_obj.generate_code()
-
-            # Step 2: Send OTP to user's email
-=======
         # Check if user exists first
         try:
             user_obj = User.objects.get(username=username)
@@ -61,7 +44,6 @@ def user_login(request):
             otp_obj, _ = EmailOTP.objects.get_or_create(user=user)
             otp_obj.generate_code()
 
->>>>>>> Pei-Yi
             send_mail(
                 subject="Your verification code",
                 message=f"Hi {user.username},\n\nYour verification code is: {otp_obj.code}",
@@ -70,25 +52,13 @@ def user_login(request):
                 fail_silently=False,
             )
 
-<<<<<<< HEAD
-            # Step 3: Store temporary login state
             request.session['pre_2fa_user_id'] = user.id
             request.session['pre_otp_user_id'] = user.id
             request.session['next'] = request.POST.get("next") or request.GET.get("next", "")
-
-=======
-            request.session['pre_2fa_user_id'] = user.id
-            request.session['pre_otp_user_id'] = user.id
-            request.session['next'] = request.POST.get("next") or request.GET.get("next", "")
->>>>>>> Pei-Yi
             return redirect('verify_otp')
         else:
             messages.error(request, "Invalid username or password.")
 
-<<<<<<< HEAD
-    # ✅ This line must always be present outside the POST block
-=======
->>>>>>> Pei-Yi
     return render(request, "accounts/login.html", {
         'next': request.GET.get('next', '')
     })
@@ -150,11 +120,8 @@ def user_signup(request):
         email = request.POST.get('email')
         password1 = request.POST.get('password1')
         password2 = request.POST.get('password2')
-<<<<<<< HEAD
-=======
         phone_number = request.POST.get('phone_number')
         profile_picture = request.FILES.get('profile_picture')
->>>>>>> Pei-Yi
 
         if password1 != password2:
             messages.error(request, "Passwords do not match.")
@@ -165,11 +132,6 @@ def user_signup(request):
             return render(request, 'accounts/signup.html')
 
         user = User.objects.create_user(username=username, email=email, password=password1)
-<<<<<<< HEAD
-        user.backend = 'django.contrib.auth.backends.ModelBackend'
-        login(request, user)
-
-=======
         user.set_unusable_password()
         user.save()
         user.backend = 'django.contrib.auth.backends.ModelBackend'
@@ -182,7 +144,6 @@ def user_signup(request):
             profile.profile_picture = profile_picture
         profile.save()
 
->>>>>>> Pei-Yi
         next_url = request.POST.get('next') or '/'
         return redirect(next_url)
 
@@ -194,22 +155,6 @@ def social_redirect_view(request):
 
 @login_required
 def profile_view(request):
-<<<<<<< HEAD
-    if request.method == 'POST':
-        user_form = UserUpdateForm(request.POST, instance=request.user)
-        profile_form = ProfileUpdateForm(request.POST, instance=request.user.profile)
-        if user_form.is_valid() and profile_form.is_valid():
-            user_form.save()
-            profile_form.save()
-            return redirect('profile')  # same view
-    else:
-        user_form = UserUpdateForm(instance=request.user)
-        profile_form = ProfileUpdateForm(instance=request.user.profile)
-
-    return render(request, 'accounts/profile.html', {
-        'user_form': user_form,
-        'profile_form': profile_form
-=======
     profile = request.user.profile
 
     if request.method == 'POST':
@@ -245,7 +190,6 @@ def profile_view(request):
         'user_form': user_form,
         'profile_form': profile_form,
         'referer': safe_referer,
->>>>>>> Pei-Yi
     })
 
 @login_required
@@ -268,31 +212,6 @@ def my_properties(request):
     properties = Property.objects.filter(user=request.user)
     return render(request, 'accounts/my_properties.html', {'properties': properties})
 
-<<<<<<< HEAD
-def add_my_property(request):
-    if request.method == 'POST':
-        form = PropertyForm(request.POST, request.FILES)
-        if form.is_valid():
-            prop = form.save(commit=False)
-            prop.user = request.user
-            prop.save()
-            return redirect('my_properties')
-    else:
-        form = PropertyForm()
-    return render(request, 'accounts/add_my_property.html', {'form': form, 'title': 'Add New Property'})
-
-def edit_my_property(request, pk):
-    prop = get_object_or_404(Property, pk=pk, user=request.user)
-    if request.method == 'POST':
-        form = PropertyForm(request.POST, request.FILES, instance=prop)
-        if form.is_valid():
-            form.save()
-            return redirect('my_properties')
-    else:
-        form = PropertyForm(instance=prop)
-    return render(request, 'accounts/edit_my_property.html', {'form': form})
-
-=======
 PropertyImageFormSet = inlineformset_factory(
     Property,
     PropertyImage,
@@ -349,14 +268,10 @@ def edit_my_property(request, pk):
         'formset': formset,
         'property': prop,
     })
->>>>>>> Pei-Yi
 def delete_my_property(request, pk):
     prop = get_object_or_404(Property, pk=pk, user=request.user)
     if request.method == 'POST':
         prop.delete()
-<<<<<<< HEAD
-        return redirect('my_properties')
-=======
         return redirect('my_properties')
 
 @login_required
@@ -403,4 +318,3 @@ def ajax_toggle_favorite(request):
         profile.favorites.add(property)
 
     return JsonResponse({'favorited': not is_favorited})
->>>>>>> Pei-Yi

@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-from django.shortcuts import render
-
-def rent_list(request):
-
-    return render(request, 'rent_list.html', )
-=======
 # rentlistpage/views.py
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator
@@ -72,4 +65,3 @@ def rent_detail(request, property_id):
     }
 
     return render(request, 'rent_detail.html', context)
->>>>>>> Pei-Yi

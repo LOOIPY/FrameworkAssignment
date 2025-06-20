@@ -26,11 +26,7 @@ def property_list(request):
     page_number  = request.GET.get('page')                      # 当前页码
 
     # 2. 初始 QuerySet：所有 Property
-<<<<<<< HEAD
-    qs = Property.objects.all()
-=======
     qs = Property.objects.filter(type='sale', is_booked=False)
->>>>>>> Pei-Yi
 
     # 3. 如果下拉里选了 location，就做精确匹配（choices 已限制，直接 __exact 或 __iexact 均可）
     if location:
@@ -64,17 +60,12 @@ def property_list(request):
         # 如果没有传 price_order，就默认按最新创建（id 倒序）
         qs = qs.order_by('-id')
 
-<<<<<<< HEAD
         # 6. 动态取前三条最新房源作为推荐
-<<<<<<< HEAD
-        recommended = Property.objects.order_by('-id')[:3]
-=======
         recommended = Property.objects.filter(type='sale', is_booked=False).order_by('-id')[:3]
->>>>>>> Pei-Yi
-=======
+
     # 6. 动态取前三条最新房源作为推荐
     recommended = Property.objects.filter(type='sale', is_booked=False).order_by('-id')[:3]
->>>>>>> upstream/Pei-Yi
+
 
     # 6. 用 Paginator 分页，每页 6 条
     paginator = Paginator(qs, 6)

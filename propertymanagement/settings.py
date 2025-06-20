@@ -44,24 +44,15 @@ INSTALLED_APPS = [
     'proplistpage',
     'rentlistpage',
     'rest_framework',
-<<<<<<< HEAD
     'userAccount',
     'maintenance'
-=======
-    'userAccount'
->>>>>>> Pei-Yi
 ]
 
 AUTHENTICATION_BACKENDS = [
     'social_core.backends.google.GoogleOAuth2',
     'social_core.backends.github.GithubOAuth2',
-<<<<<<< HEAD
     'django.contrib.auth.backends.ModelBackend',
     'userAccount.backends.EmailOrUsernameModelBackend'
-=======
-    'userAccount.backends.EmailOrUsernameModelBackend',
-    'django.contrib.auth.backends.ModelBackend',
->>>>>>> Pei-Yi
 ]
 
 MIDDLEWARE = [
@@ -100,12 +91,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'propertymanagement.wsgi.application'
 
-<<<<<<< HEAD
-=======
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
-
->>>>>>> Pei-Yi
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 

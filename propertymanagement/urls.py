@@ -19,19 +19,12 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from userAccount.views import user_signup,user_login,social_redirect_view,profile_view,change_password,verify_otp,resend_otp
-<<<<<<< HEAD
-from userAccount.views import my_properties,add_my_property,edit_my_property,delete_my_property
-=======
 from userAccount.views import my_properties,add_my_property,edit_my_property,delete_my_property,toggle_favorite,saved_properties,ajax_toggle_favorite
->>>>>>> Pei-Yi
 from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-<<<<<<< HEAD
-=======
     path('', include('proplistpage.urls')),  # Homepage and property views
->>>>>>> Pei-Yi
     path('accounts/',include('userAccount.urls')),
     path('accounts/login/', user_login, name='login'),
     path('accounts/signup/', user_signup, name='signup'),
@@ -43,11 +36,6 @@ urlpatterns = [
     path('resend-otp/', resend_otp, name='resend_otp'),
     path('social-auth/', include('social_django.urls', namespace='social')),
     path('redirect-after-social-login/', social_redirect_view, name='social_redirect'),
-<<<<<<< HEAD
-    path('admin/', admin.site.urls),
-    path('', include('proplistpage.urls')),  # Homepage and property views
-=======
->>>>>>> Pei-Yi
     path('loan-calculator/', include('loan_calculator.urls')),
     path('payment/', include('payment.urls')),
     path('rent/', include('rentlistpage.urls')),
@@ -55,15 +43,10 @@ urlpatterns = [
     path('property/add/', add_my_property, name='add_my_property'),
     path('property/<int:pk>/edit/', edit_my_property, name='edit_my_property'),
     path('property/<int:pk>/delete/', delete_my_property, name='delete_my_property'),
-<<<<<<< HEAD
-    path('maintenance/', include('maintenance.urls')),
-]
-=======
     path('property/<int:property_id>/toggle_favorite/', toggle_favorite, name='toggle_favorite'),
     path('saved/', saved_properties, name='saved_properties'),
     path('ajax/toggle-favorite/', ajax_toggle_favorite, name='ajax_toggle_favorite'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
->>>>>>> Pei-Yi
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

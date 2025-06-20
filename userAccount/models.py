@@ -2,19 +2,10 @@
 from django.contrib.auth.models import User
 from django.db import models
 import random
-<<<<<<< HEAD
-=======
-from proplistpage.models import Property
->>>>>>> Pei-Yi
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
     phone_number = models.CharField(max_length=15, blank=True)
-<<<<<<< HEAD
-=======
-    profile_picture = models.ImageField(upload_to='profile_pics/', blank=True)
-    favorites = models.ManyToManyField(Property, related_name='favorited_by', blank=True)
->>>>>>> Pei-Yi
 
 class EmailOTP(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)

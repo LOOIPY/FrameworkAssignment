@@ -24,12 +24,9 @@ urlpatterns = [
     path('property/add/', views.add_my_property, name='add_my_property'),
     path('property/<int:pk>/edit/', views.edit_my_property, name='edit_my_property'),
     path('property/<int:pk>/delete/', views.delete_my_property, name='delete_my_property'),
-<<<<<<< HEAD
-=======
     path('property/<int:property_id>/toggle_favorite/', views.toggle_favorite, name='toggle_favorite'),
     path('saved/', views.saved_properties, name='saved_properties'),
     path('ajax/toggle-favorite/', views.ajax_toggle_favorite, name='ajax_toggle_favorite'),
->>>>>>> Pei-Yi
 ]
 
 # Add media static file support (only in DEBUG mode)
