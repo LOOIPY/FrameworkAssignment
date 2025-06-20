@@ -1,13 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>View Appointments</title>
+  <link rel="stylesheet" href="{% static 'main/style.css' %}">
+</head>
+<body>
+  {% include 'header.html' %}
 
-<h2>Appointments</h2>
-<table>
-  <tr><th>Request</th><th>Staff</th><th>Date</th><th>Status</th></tr>
-  {% for a in appointments %}
-    <tr>
-      <td>{{ a.request.title }}</td>
-      <td>{{ a.staff_assigned }}</td>
-      <td>{{ a.appointment_date }}</td>
-      <td>{{ a.status }}</td>
-    </tr>
-  {% endfor %}
-</table>
+  <h2>Your Appointments</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Category</th>
+        <th>Date</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for appointment in appointments %}
+        <tr>
+          <td>{{ appointment.title }}</td>
+          <td>{{ appointment.category }}</td>
+          <td>{{ appointment.date }}</td>
+          <td>{{ appointment.status }}</td>
+          <td>
+            <a href="">Edit</a> |
+            <a href="">Delete</a>
+          </td>
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="5">No appointments yet.</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  {% include 'footer.html' %}
+</body>
+</html>

@@ -1,24 +1,17 @@
-{# app/templates/property_detail.html #}
 {% load static %}
 <!DOCTYPE html>
 <html lang="zh">
 <head>
   <meta charset="UTF-8">
   <title>{{ property.title }} – 房源详情</title>
-<<<<<<< HEAD
-  <link rel="stylesheet" href="{% static 'css/style.css' %}">
-  <link rel="stylesheet" href="{% static 'loan_calculator/style.css' %}">
-  <link rel="stylesheet" href="{% static 'main/style.css' %}">
-=======
   <link rel="stylesheet" href="{% static 'main/style.css' %}">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <link rel="stylesheet" href="{% static 'loan_calculator/style.css' %}">
   <link rel="stylesheet" href="{% static 'main/style.css' %}">
   <link rel="stylesheet" href="{% static 'css/whatsapp.css' %}">
->>>>>>> Pei-Yi
 
   <style>
-    /* 你原先写的一些局部样式可以保留在这里 */
+    /* Custom styles for property details page */
     body {
       margin: 0;
       padding: 0;
@@ -27,31 +20,13 @@
       color: #333;
       line-height: 1.6;
     }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+
     .detail-container {
       max-width: 1000px;
-<<<<<<< HEAD
-      margin: 32px auto;
+      margin: 200px auto;
       padding: 0 16px;
-=======
-      margin: 200px auto auto auto;
-      padding: 0 16px;
-
     }
 
-    .layout-wrapper {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    .layout-content {
-      flex: 1;
->>>>>>> Pei-Yi
-    }
     .back-link {
       display: inline-block;
       margin-bottom: 16px;
@@ -59,148 +34,62 @@
       font-weight: 500;
       transition: color 0.2s ease;
     }
+
     .back-link:hover {
       color: #2f2f7d;
     }
+
     .detail-top-card {
       background: #ffffff;
       border-radius: 10px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-      overflow: hidden;
       margin-bottom: 24px;
     }
-    .top-image-wrapper {
-      position: relative;
-    }
+
     .main-image {
       width: 100%;
-      display: block;
-      object-fit: cover;
       height: 500px;
+      object-fit: cover;
     }
+
     .map-image {
       width: 30%;
-      display: block;
-      margin-top: 10px;
-      border-top: 1px solid #e0e0e0;
-      object-fit: cover;
       height: 180px;
+      object-fit: cover;
+      border-top: 1px solid #e0e0e0;
     }
+
     .top-info {
       padding: 24px 32px;
     }
+
     .top-info h1 {
       margin: 0;
       font-size: 28px;
       font-weight: 600;
       color: #2f2f7d;
     }
-    .top-info .price {
+
+    .price {
       margin: 12px 0;
       font-size: 22px;
       font-weight: 600;
       color: #e64c3c;
     }
-    .top-info .address {
+
+    .address {
       margin: 0;
       font-size: 16px;
       color: #555;
     }
-    .top-info .short-desc {
+
+    .short-desc {
       margin-top: 16px;
       font-size: 16px;
       color: #444;
     }
-    .detail-info-card {
-      background: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-      padding: 24px 32px;
-      margin-bottom: 24px;
-    }
-    .detail-info-card h2 {
-      margin-top: 0;
-      margin-bottom: 16px;
-      font-size: 24px;
-      color: #2f2f7d;
-      border-left: 4px solid #e64c3c;
-      padding-left: 12px;
-    }
-    .detail-info-card .detail-list {
-      list-style: disc;
-      padding-left: 20px;
-      color: #333;
-      font-size: 16px;
-    }
-    .detail-info-card .detail-list li {
-      margin-bottom: 8px;
-    }
-    .detail-gallery-card {
-      background: #ffffff;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-      padding: 20px 24px;
-      margin: 40px auto;
-      max-width: 1000px;
-    }
-    .detail-gallery {
-      display: flex;
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      gap: 12px;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-    }
-    .detail-gallery::-webkit-scrollbar {
-      height: 0;
-    }
-    .gallery-item {
-      flex: 0 0 auto;
-      width: 280px;
-      position: relative;
-      overflow: hidden;
-      border-radius: 6px;
-      background: #f0f0f0;
-    }
-    .gallery-item img {
-      display: block;
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      transition: transform 0.3s ease, filter 0.3s ease;
-      filter: brightness(0.95);
-    }
-    .gallery-item img:hover {
-      transform: scale(1.05);
-      filter: brightness(1);
-    }
-    .gallery-item .caption {
-      position: absolute;
-      bottom: 8px;
-      left: 8px;
-      background: rgba(0, 0, 0, 0.6);
-      color: #fff;
-      padding: 4px 8px;
-      border-radius: 4px;
-      font-size: 14px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    @media (max-width: 600px) {
-      .gallery-item {
-        width: 200px;
-      }
-    }
-<<<<<<< HEAD
-  </style>
-</head>
-<body>
-  <div class="detail-container">
 
-    <!-- —— 1. “返回列表” 链接 —— -->
-    <a href="{% url 'proplistpage:property-list' %}" class="back-link">« BACK TO LIST</a>
-=======
+    /* For buttons */
     .favorite-btn {
       padding: 8px 14px;
       font-size: 14px;
@@ -228,459 +117,178 @@
     .favorite-btn.remove:hover {
       background-color: #d63a2b;
     }
+
+    .detail-gallery {
+      display: flex;
+      overflow-x: auto;
+      gap: 12px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .gallery-item {
+      width: 280px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 6px;
+      background: #f0f0f0;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+      filter: brightness(0.95);
+    }
+
+    .gallery-item img:hover {
+      transform: scale(1.05);
+      filter: brightness(1);
+    }
+
+    .gallery-item .caption {
+      position: absolute;
+      bottom: 8px;
+      left: 8px;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
 
 <div class="layout-wrapper">
+  <main class="layout-content">
+    {% include 'header.html' %}
 
-    <main class="layout-content">
+    <div class="detail-container">
 
-        {% include 'header.html' %}
-  <div class="detail-container">
+      <!-- Back Link -->
+      <a href="{% url 'proplistpage:property-list' %}" class="back-link">« BACK TO LIST</a>
 
-    <!-- —— 1. “返回列表” 链接 —— -->
-<!--    <a href="{% url 'proplistpage:property-list' %}" class="back-link">« BACK TO LIST</a>-->
->>>>>>> Pei-Yi
-
-    <!-- —— 2. 详情页顶部卡片：主图 + 地图 + 基本信息 —— -->
-    <div class="detail-top-card">
-      {% if property.image %}
-        <div class="top-image-wrapper">
-          <img src="{{ property.image.url }}" alt="{{ property.title }}" class="main-image">
-          <!-- 这里插入一个“地图占位图” -->
-          <img src="{% static 'images/map_placeholder.jpeg' %}" alt="地图定位示意" class="map-image">
-        </div>
-      {% else %}
-        <div class="top-image-wrapper">
-          <div style="width:100%; height:450px; background:#ddd;"></div>
-          <img src="{% static 'images/map_placeholder.jpeg' %}" alt="地图定位示意" class="map-image">
-        </div>
-      {% endif %}
-
-      <div class="top-info">
-        <h1>{{ property.title }}</h1>
-        <p class="price">RM {{ property.price|floatformat:2 }}</p>
-<<<<<<< HEAD
-=======
-        {% if user.is_authenticated %}
-          <button
-            id="favoriteBtn"
-            class="favorite-btn {% if property in user.profile.favorites.all %}remove{% else %}add{% endif %}"
-            onclick="toggleFavorite({{ property.id }})">
-            {% if property in user.profile.favorites.all %}
-              ❤️ Remove from Favorite
-            {% else %}
-              🤍 Add to Favorite
-            {% endif %}
-          </button>
+      <!-- Property Detail Top Card -->
+      <div class="detail-top-card">
+        {% if property.image %}
+          <div class="top-image-wrapper">
+            <img src="{{ property.image.url }}" alt="{{ property.title }}" class="main-image">
+            <img src="{% static 'images/map_placeholder.jpeg' %}" alt="地图定位示意" class="map-image">
+          </div>
         {% else %}
-          <p><a href="{% url 'login' %}" class="favorite-btn add">Log in to save</a></p>
+          <div class="top-image-wrapper">
+            <div style="width:100%; height:450px; background:#ddd;"></div>
+            <img src="{% static 'images/map_placeholder.jpeg' %}" alt="地图定位示意" class="map-image">
+          </div>
         {% endif %}
 
->>>>>>> Pei-Yi
-        <!-- 这里假设你在模型里为 Property 添加了一个 address 字段 -->
-        {% if property.address %}
-          <p class="address">{{ property.address }}</p>
-        {% endif %}
-        <p class="short-desc">{{ property.description }}</p>
+        <div class="top-info">
+          <h1>{{ property.title }}</h1>
+          <p class="price">RM {{ property.price|floatformat:2 }}</p>
+          {% if user.is_authenticated %}
+            <button id="favoriteBtn" class="favorite-btn {% if property in user.profile.favorites.all %}remove{% else %}add{% endif %}" onclick="toggleFavorite({{ property.id }})">
+              {% if property in user.profile.favorites.all %}
+                ❤️ Remove from Favorite
+              {% else %}
+                🤍 Add to Favorite
+              {% endif %}
+            </button>
+          {% else %}
+            <p><a href="{% url 'login' %}" class="favorite-btn add">Log in to save</a></p>
+          {% endif %}
+          {% if property.address %}
+            <p class="address">{{ property.address }}</p>
+          {% endif %}
+          <p class="short-desc">{{ property.description }}</p>
+        </div>
       </div>
-    </div>  {# .detail-top-card 结束 #}
 
-    <!-- —— 3. 详细信息卡片 —— -->
-    <div class="detail-info-card">
-      <h2>DETAILS</h2>
+      <!-- Details Information Card -->
+      <div class="detail-info-card">
+        <h2>DETAILS</h2>
+        {% if property.detail %}
+          <ul class="detail-list">
+            {% for line in property.detail.splitlines %}
+              {% if line %}
+                <li>{{ line }}</li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        {% else %}
+          <p style="color:#777;">暂无详细信息。</p>
+        {% endif %}
+      </div>
 
-      {% if property.detail %}
-        <ul class="detail-list">
-          {% for line in property.detail.splitlines %}
-            {% if line %}
-              <li>{{ line }}</li>
-            {% endif %}
+      <!-- Gallery Card -->
+      <div class="detail-gallery-card">
+        <h2>MORE PICTURES</h2>
+        <div class="detail-gallery">
+          {% for img in property.extra_images.all %}
+            <div class="gallery-item">
+              <img src="{{ img.image.url }}" alt="{{ img.caption }}">
+              {% if img.caption %}
+                <div class="caption">{{ img.caption }}</div>
+              {% endif %}
+            </div>
           {% endfor %}
-        </ul>
-      {% else %}
-        <p style="color:#777;">暂无详细信息。</p>
-      {% endif %}
-    </div>  {# .detail-info-card 结束 #}
-
-    <!-- —— 4. “更多图片” 画廊卡片 —— -->
-    <div class="detail-gallery-card">
-      <h2>MORE PICTURES</h2>
-      <div class="detail-gallery">
-        {% for img in property.extra_images.all %}
-          <div class="gallery-item">
-            <img src="{{ img.image.url }}" alt="{{ img.caption }}">
-            {% if img.caption %}
-              <div class="caption">{{ img.caption }}</div>
-            {% endif %}
-          </div>
-        {% endfor %}
-        {% if not property.extra_images.all %}
-          <p style="color:#777;">暂无附加图片。</p>
-        {% endif %}
-      </div>
-    </div>  {# .detail-gallery-card 结束 #}
-
-  </div>  {# .detail-container 结束 #}
-
-<<<<<<< HEAD
-
-
-
-
-
-
-=======
->>>>>>> Pei-Yi
-  <!-- ——— LOAN CALCULATOR SECTION ——— -->
-    {% if property.type == 'sale' %}
-    <div class="container loan-container">
-      <div class="card">
-        <h1>Loan Calculator</h1>
-        <form id="loanForm">
-          {% csrf_token %}
-          <input type="hidden" name="property" value="{{ property.id }}">
-
-          <label for="id_loan_percentage">Loan Percentage:
-            <span id="loan_percentage_output">{{ form.data.loan_percentage|default:70 }}</span>%
-          </label>
-          <input type="range" name="loan_percentage" id="id_loan_percentage"
-                 min="0" max="100" step="5"
-                 value="{{ form.data.loan_percentage|default:70 }}"
-                 oninput="loan_percentage_output.textContent = this.value">
-
-          <label for="id_loan_years">Loan Tenure:
-            <span id="loan_years_output">{{ form.data.loan_years|default:30 }}</span> years
-          </label>
-          <input type="range" name="loan_years" id="id_loan_years"
-                 min="1" max="35" step="1"
-                 value="{{ form.data.loan_years|default:30 }}"
-                 oninput="loan_years_output.textContent = this.value">
-
-          <label for="id_interest_rate">Interest Rate (%):</label>
-          <input type="number" name="interest_rate" id="id_interest_rate"
-                 value="{{ form.data.interest_rate|default:3 }}"
-                 step="0.01" min="0" max="100">
-        </form>
-      </div>
-
-      <div class="card result-section" id="result-section">
-        <h3>{{ result.property }}</h3>
-        <div class="circular-chart">RM {{ result.monthly_payment }}</div>
-        <p class="result">Principal: <span class="highlight">RM {{ result.principal }}</span></p>
-        <p class="result">Interest: <span class="highlight">RM {{ result.interest }}</span></p>
-        <p class="result">Monthly Repayment: <span class="highlight">RM {{ result.monthly_payment }}</span></p>
-        <button type="button" class="button-reset" onclick="resetLoanCalculator()">Reset</button>
-      </div>
-    </div>
-    {% endif %}
-
-    <!-- ——— PAYMENT SECTION (Always shown) ——— -->
-    <div class="container payment-container">
-      <div class="card">
-        <h2>Payment Info</h2>
-        <p>{{ payment_info.label }}: <strong>RM {{ payment_info.amount|floatformat:2 }}</strong></p>
-
-        <button id="proceedBtn" class="button-reset">Proceed to Payment</button>
-
-        <div id="paymentMethods" style="display: none; margin-top: 20px;">
-          <h3>Select your payment method:</h3>
-
-          <!-- Credit Card -->
-          <h4>Credit Card</h4>
-          <div class="payment-method">
-            <a href="{% url 'credit_card_payment' property.id %}">
-              <img src="{% static 'main/images/visa.png' %}" class="payment-icon" alt="Visa">
-            </a>
-            <a href="{% url 'credit_card_payment' property.id %}">
-              <img src="{% static 'main/images/mastercard.png' %}" class="payment-icon" alt="MasterCard">
-            </a>
-          </div>
-
-          <!-- Online Banking -->
-          <h4>Online Banking</h4>
-          <div class="payment-method">
-            <img src="{% static 'main/images/fpx.png' %}" class="payment-icon" id="fpxIcon" alt="FPX">
-          </div>
-          <div id="bankOptions" style="display: none;">
-            <a href="{% url 'online_banking_login' 'maybank' property.id %}">
-              <img src="{% static 'main/images/maybank.png' %}" class="payment-logo" alt="Maybank">
-            </a>
-            <a href="{% url 'online_banking_login' 'rhb' property.id %}">
-              <img src="{% static 'main/images/rhb.png' %}" class="payment-logo" alt="RHB">
-            </a>
-            <a href="{% url 'online_banking_login' 'publicbank' property.id %}">
-              <img src="{% static 'main/images/publicbank.png' %}" class="payment-logo" alt="pbb">
-            </a>
-            <a href="{% url 'online_banking_login' 'cimb' property.id %}">
-              <img src="{% static 'main/images/cimb.png' %}" class="payment-logo" alt="cimb">
-            </a>
-            <a href="{% url 'online_banking_login' 'uob' property.id %}">
-              <img src="{% static 'main/images/uob.png' %}" class="payment-logo" alt="uob">
-            </a>
-            <a href="{% url 'online_banking_login' 'ocbc' property.id %}">
-              <img src="{% static 'main/images/ocbc.png' %}" class="payment-logo" alt="ocbc">
-            </a>
-            <a href="{% url 'online_banking_login' 'ambank' property.id %}">
-              <img src="{% static 'main/images/ambank.png' %}" class="payment-logo" alt="RHB">
-            </a>
-          </div>
-
-          <!-- E-Wallet -->
-          <h4>E-Wallet</h4>
-          <div class="payment-method">
-            <a href="{% url 'e_wallet_payment' property.id 'grabpay' %}">
-              <img src="{% static 'main/images/grabpay.png' %}" class="payment-icon" alt="GrabPay">
-            </a>
-            <a href="{% url 'e_wallet_payment' property.id 'touchngo' %}">
-              <img src="{% static 'main/images/touchngo.png' %}" class="payment-icon" alt="Touch 'n Go">
-            </a>
-          </div>
+          {% if not property.extra_images.all %}
+            <p style="color:#777;">暂无附加图片。</p>
+          {% endif %}
         </div>
       </div>
+
     </div>
 
-<<<<<<< HEAD
-  <!--</div> {# .detail-container 结束 #}-->
+    {% include 'footer.html' %}
 
-<script>
-
-=======
-    <!-- WhatsApp Floating Button -->
-    <a href="https://chat.whatsapp.com/FcEXEgY7TSTKzVll3Rjk3L"
-       class="whatsapp-float"
-       target="_blank"
-       rel="noopener noreferrer">
-        <svg class="whatsapp-icon" viewBox="0 0 24 24">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
-        </svg>
-    </a>
-    </main>
-  <!--</div> {# .detail-container 结束 #}-->
-<footer class="site-footer">
-  <div class="footer-container">
-
-    <div class="footer-column left">
-      <p class="footer-title">Welcome.</p>
-      <p class="footer-subtitle">We reach out to the right property seekers for you.</p>
-        <p>© 2022 Arihant. All Rights Reserved.</p> <p style="text-decoration:underline">Privacy | Terms of Service</p>
-    <img src="{% static 'images/icon0.svg' %}" alt="Logo" class="footer-logo">
-    </div>
-
-    <div class="footer-column middle">
-      <h4>Company</h4>
-      <ul>
-        <li><a href="{% url 'proplistpage:property-list' %}">Buy</a></li>
-        <li><a href="{% url 'rentlistpage:rent-list' %}">Rent</a></li>
-        <li>New Launches</li>
-        <li>Transactions</li>
-        <li>Advertise</li>
-        <li>Guides & Insights</li>
-        <li>Events</li>
-      </ul>
-    </div>
-
-    <div class="footer-column right">
-      <div class="card">
-        <img src="{% static 'images/image20.png' %}" alt="LoanCare">
-        <div>
-          <p class="card-title">LoanCare</p>
-          <p>Know your home loan eligibility with up to 17 banks. Try now</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="{% static 'images/image21.png' %}" alt="Transactions">
-        <div>
-          <p class="card-title">Transactions Data</p>
-          <p>Obtain the latest subsale transaction data & prices. Discover now</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
+  </main>
 </div>
 
-</body>
-</html>
 <script>
-
-
-        window.addEventListener('scroll', function() {
-            const button = document.querySelector('.whatsapp-float');
-            if (window.scrollY > 300) {
-                button.style.opacity = '1';
-                button.style.visibility = 'visible';
-            } else {
-                button.style.opacity = '0.8';
-            }
-        });
-
-
-
->>>>>>> Pei-Yi
-    document.getElementById("fpxIcon").addEventListener("click", () => {
-        const bankOptions = document.getElementById("bankOptions");
-        bankOptions.style.display = bankOptions.style.display === "none" ? "block" : "none";
-    });
-
-
-    document.getElementById("proceedBtn").addEventListener("click", () => {
-        document.getElementById("paymentMethods").style.display = "block";
-        document.getElementById("proceedBtn").style.display = "none";
-    });
-
-
-
-    document.addEventListener("DOMContentLoaded", () => {
-        const loanPercentage = document.getElementById('id_loan_percentage');
-        const loanYears = document.getElementById('id_loan_years');
-        if (loanPercentage && loanYears) {
-            document.getElementById('loan_percentage_output').textContent = loanPercentage.value;
-            document.getElementById('loan_years_output').textContent = loanYears.value;
-        }
-    });
-
-    function resetLoanCalculator() {
-    // Clear inputs
-    document.getElementById('id_loan_percentage').value = 70;
-    document.getElementById('loan_percentage_output').textContent = 70;
-
-    document.getElementById('id_loan_years').value = 30;
-    document.getElementById('loan_years_output').textContent = 30;
-
-    document.getElementById('id_interest_rate').value = '3';
-
-    calculateLoan();
-    // Hide result section
-    //const resultSection = document.getElementById('result-section');
-    //if (resultSection) {
-    //    resultSection.style.display = 'none';
-    //}
-}
-
-    // Optional: hide result if not recalculated
-    document.addEventListener("DOMContentLoaded", () => {
-        if (!{{ result|yesno:"true,false" }}) {
-            const resultSection = document.getElementById('result-section');
-            if (resultSection) resultSection.style.display = 'none';
-        }
-    });
-</script>
-
-<script>
-function getCookie(name) {
+  function getCookie(name) {
     let cookieValue = null;
     if (document.cookie && document.cookie !== '') {
-        const cookies = document.cookie.split(';');
-        for (let i = 0; i < cookies.length; i++) {
-            const cookie = cookies[i].trim();
-            if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                break;
-            }
+      const cookies = document.cookie.split(';');
+      for (let i = 0; i < cookies.length; i++) {
+        let cookie = cookies[i].trim();
+        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+          cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+          break;
         }
+      }
     }
     return cookieValue;
-}
+  }
 
-function calculateLoan() {
-    const propertyId = "{{ property.id }}";
-    const loanPercentage = document.getElementById('id_loan_percentage').value;
-    const loanYears = document.getElementById('id_loan_years').value;
-    const interestRate = document.getElementById('id_interest_rate').value;
+  function toggleFavorite(propertyId) {
+    const csrftoken = getCookie('csrftoken');
+    const btn = document.getElementById("favoriteBtn");
 
-    fetch("{% url 'calculate_loan_api' %}", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "X-CSRFToken": getCookie('csrftoken')
-        },
-        body: JSON.stringify({
-            property_id: propertyId,
-            loan_percentage: loanPercentage,
-            loan_years: loanYears,
-            interest_rate: interestRate
-        })
+    fetch("{% url 'userAccount:ajax_toggle_favorite' %}", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-CSRFToken': csrftoken
+      },
+      body: JSON.stringify({ property_id: propertyId })
     })
     .then(response => response.json())
     .then(data => {
-        if (data.error) {
-            alert(data.error);
-            return;
-        }
-
-        document.querySelector('.circular-chart').textContent = 'RM ' + data.monthly_payment;
-        document.querySelector('.result-section').style.display = 'block';
-        document.querySelector('.result-section h3').textContent = data.property;
-        document.querySelector('.result-section .result:nth-of-type(1) .highlight').textContent = 'RM ' + data.principal;
-        document.querySelector('.result-section .result:nth-of-type(2) .highlight').textContent = 'RM ' + data.interest;
-        document.querySelector('.result-section .result:nth-of-type(3) .highlight').textContent = 'RM ' + data.monthly_payment;
+      if (data.favorited) {
+        btn.classList.remove('add');
+        btn.classList.add('remove');
+        btn.innerHTML = '❤️ Remove from Favorite';
+      } else {
+        btn.classList.remove('remove');
+        btn.classList.add('add');
+        btn.innerHTML = '🤍 Add to Favorite';
+      }
     })
-    .catch(error => console.error('Error:', error));
-}
-
-// Attach input listeners
-document.addEventListener("DOMContentLoaded", () => {
-    const inputs = ['id_loan_percentage', 'id_loan_years', 'id_interest_rate'];
-    inputs.forEach(id => {
-        const el = document.getElementById(id);
-        if (el) {
-            el.addEventListener('input', calculateLoan);
-        }
-    });
-
-    // Auto-load once on page load
-    calculateLoan();
-});
+    .catch(error => console.error('Favorite toggle error:', error));
+  }
 </script>
 
-<<<<<<< HEAD
 </body>
 </html>
-=======
-<script>
-function getCookie(name) {
-  let cookieValue = null;
-  if (document.cookie && document.cookie !== '') {
-    const cookies = document.cookie.split(';');
-    for (let cookie of cookies) {
-      cookie = cookie.trim();
-      if (cookie.substring(0, name.length + 1) === (name + '=')) {
-        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-        break;
-      }
-    }
-  }
-  return cookieValue;
-}
-
-function toggleFavorite(propertyId) {
-  const csrftoken = getCookie('csrftoken');
-  const btn = document.getElementById("favoriteBtn");
-
-  fetch("{% url 'userAccount:ajax_toggle_favorite' %}", {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'X-CSRFToken': csrftoken
-    },
-    body: JSON.stringify({ property_id: propertyId })
-  })
-  .then(response => response.json())
-  .then(data => {
-    if (data.favorited) {
-      btn.classList.remove('add');
-      btn.classList.add('remove');
-      btn.innerHTML = '❤️ Remove from Favorite';
-    } else {
-      btn.classList.remove('remove');
-      btn.classList.add('add');
-      btn.innerHTML = '🤍 Add to Favorite';
-    }
-  })
-  .catch(error => console.error('Favorite toggle error:', error));
-}
-</script>
-
->>>>>>> Pei-Yi

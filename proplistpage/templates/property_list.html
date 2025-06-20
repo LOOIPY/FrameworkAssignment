@@ -7,85 +7,6 @@
   <meta charset="UTF-8">
   <title>Property Listing</title>
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
-<<<<<<< HEAD
-</head>
-<body>
-{% load static %}
-
-<div class="frame-229">
-<div class="rectangle-645"></div>
-    <div class="cart-0" > <img src="{% static 'images/vector1.svg' %}"/> Cart:(0$)</div>
-    <div class="navbar">
-      <div class="account">
-          <img src="{% static 'images/vector2.svg' %}"/>
-        {% if user.is_authenticated %}
-          <div class="dropdown">
-            <button class="dropbtn">{{ user.username }}</button>
-            <div class="dropdown-content">
-              <a href="{% url 'my_properties' %}">My Properties</a>
-              <a href="{% url 'profile' %}">Profile</a>
-              <a href="{% url 'logout' %}">Logout</a>
-            </div>
-          </div>
-        {% else %}
-            <a href="{% url 'login' %}"><span>Account</span></a>
-        {% endif %}
-      </div>
-    </div>
-    <div class="wishlist"><img src="{% static 'images/vector3.svg' %}"/> Wishlist</div>
-
-    <div class="rectangle-7"></div>
-
-<div class="buy-rent-new-launches-transations-advertise-guies-insights-events">
-<span>
-<span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span">
-          <a href="{% url 'proplistpage:property-list' %}" style="text-decoration:none">Buy</a>
-        </span>
-<span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span2"></span>
-<span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span3">
-          |
-        </span>
-<span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span2">
-          <a href="{% url 'rentlistpage:rent-list' %}" style="text-decoration:none; color: #111111;
-          font-family: Inter-Medium, sans-serif;font-weight: 500">Rent</a>
-
-        </span>
-<span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span3">
-          |
-        </span>
-<span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span2">
-          New Launches
-        </span>
-<span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span3">
-          |
-        </span>
-<span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span2">
-          transations
-        </span>
-<span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span3">
-          |
-        </span>
-<span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span2">
-          Advertise
-        </span>
-<span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span3">
-          |
-        </span>
-<span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span2">
-          Guides&amp;insights
-        </span>
-<span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span3">
-          |
-        </span>
-<span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span2">
-          events
-        </span>
-</span>
-</div>
-</div>
-
-<img class="apartment-1" src="{% static 'images/apartment-10.png' %}"/>
-=======
   <link rel="stylesheet" href="{% static 'main/style.css' %}">
 </head>
 <body>
@@ -96,7 +17,6 @@
         {% include 'header.html' %}
 
 <img class="apartment-1" src="{% static 'images/apartment-10.jpg' %}"/>
->>>>>>> Pei-Yi
 <div class="banner-overlay"></div>
 <div class="banner-text"></div>
 
@@ -258,116 +178,6 @@
     {% endfor %}
   </div>
 </div>
-<<<<<<< HEAD
-<!-- 推荐区结束 -->
-
-
-<!--<div class="group-307">
-<div class="group-271">
-<div class="group-258">
-
-<div class="rectangle-125"></div>
-<div class="rectangle-134"></div>
-
-<div class="rectangle-126"></div>
-<div class="rectangle-135"></div>
-
-<div class="rectangle-127"></div>
-<div class="rectangle-136"></div>
-</div>
-</div>
-</div>    -->
-
- <div class="frame-238">
-    <div class="frame-100">
-      <!-- 1. 底色：渐变叠加透明遮罩 -->
-      <div class="rectangle-3"></div>
-
-      <!-- 2. 模块内容组 -->
-      <div class="group-89">
-        <!-- 2.1 欢迎文案 -->
-        <div class="welcome-we-reach-out-to-the-right-property-seekers-for-you">
-          Welcome. We reach out to the right property seekers for you.
-        </div>
-        <!-- 2.2 左侧菜单项 -->
-        <div class="company">Company</div>
-        <div class="latest-news">Latest news</div>
-
-        <!-- 2.3 导航行：Buy / Rent / New Launches / … -->
-        <div class="buy-rent-new-launches-transations-advertise-guies-insights-events1">
-          <span>
-            <span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span">
-                <a href="{% url 'proplistpage:property-list' %}" style="text-decoration:none; color: #ed553b;">Buy</a><br><br></span>
-            <span class="buy-rent-new-launches-transations-advertise-guies-insights-events-span2">
-                <a href="{% url 'rentlistpage:rent-list' %}" style="text-decoration:none; color: #000000;">Rent</a><br><br>
-              New Launches<br><br>
-              transations<br><br>
-              Advertise<br><br>
-              Guies&amp;insights<br><br>
-              events
-            </span>
-          </span>
-        </div>
-
-        <!-- 2.4 左下角卡片（样例中两个大卡片） -->
-        <div class="group-51">
-          <!-- 卡片1：LoanCare -->
-          <div class="group-49">
-            <img class="image" src="{% static 'images/image20.png' %}" alt="LoanCare">
-            <div class="group-48">
-              <div class="loan-care">LoanCare</div>
-              <div class="know-your-home-loan-eligibility-with-up-to-17-banks-try-now">
-                Know your home loan eligibility with up to 17 banks<br>Try now
-              </div>
-            </div>
-          </div>
-          <!-- 卡片2：Transactions Data -->
-          <div class="group-50">
-            <img class="image2" src="{% static 'images/image21.png' %}" alt="Transactions Data">
-            <div class="group-482">
-              <div class="transactions-data">Transactions Data</div>
-              <div class="obtain-the-latest-subsale-property-transaction-data-prices-discover-now">
-                Obtain the latest subsale property transaction data &amp; prices<br>Discover now
-              </div>
-              <div class="group-47">
-                <div class="_15-april-2022">15 April 2022</div>
-                <div class="ellipse-1"></div>
-              </div>
-              <div class="group-483">
-                <div class="_15-april-20222">15 April 2022</div>
-                <div class="ellipse-12"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 2.5 最下方版权等信息 -->
-        <div class="_2022-arihant-all-rights-reserved-privacy-terms-of-service">
-          <span>
-            <span class="_2022-arihant-all-rights-reserved-privacy-terms-of-service-span">
-              © 2022 Arihant. All Rights Reserved.
-            </span>
-            <span class="_2022-arihant-all-rights-reserved-privacy-terms-of-service-span2">
-              Privacy
-            </span>
-            <span class="_2022-arihant-all-rights-reserved-privacy-terms-of-service-span">
-              | Terms of Service
-            </span>
-          </span>
-        </div>
-
-        <!-- 2.6 右侧大图标（可能是LOGO什么的） -->
-        <img class="icon" src="{% static 'images/icon0.svg' %}" alt="Icon">
-      </div>
-    </div>
-  </div>
-  <!-- —————— 尾页模块结束 —————— -->
-
-
-<div class="rectangle-82"></div>
-<div class="view-more">View more</div>
-<img class="vector6" src="{% static 'images/vector5.svg' %}"/>
-=======
     </main>
 <footer class="site-footer">
   <div class="footer-container">
@@ -411,7 +221,6 @@
   </div>
 </footer>
 </div>
->>>>>>> Pei-Yi
 
 </body>
 </html>

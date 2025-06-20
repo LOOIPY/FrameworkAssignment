@@ -14,54 +14,54 @@
   });
 </script>
 
-<div class="frame-229">
-  <div class="rectangle-645"></div>
+<header class="site-header">
+  <div class="header-container">
+    <!-- Logo and Branding -->
+    <div class="header-left">
 
-  <a href="{% url 'booking_list' %}" style="text-decoration:none">
-    <div class="bookinglist">
-      <img src="{% static 'images/vector1.svg' %}" alt="Booking Icon" />
-      BookingList
     </div>
-  </a>
 
-  <div class="account">
-    <img src="{% static 'images/vector2.svg' %}" alt="Account Icon" />
-    {% if user.is_authenticated %}
-      <div class="dropdown">
-        <button class="dropbtn" onclick="toggleDropdown(event)">{{ user.username }}</button>
-        <div class="dropdown-content" id="accountDropdown">
-          <a href="{% url 'my_properties' %}">My Properties</a>
-          <a href="{% url 'my_requests' %}">Maintenance Requests</a>
-          <a href="{% url 'profile' %}">Profile</a>
-          <a href="{% url 'logout' %}">Logout</a>
+    <!-- Navigation Links -->
+    <div class="header-center">
+      <nav>
+        <ul class="nav-links">
+          <li><a href="{% url 'proplistpage:property-list' %}" class="nav-link">Buy</a></li>
+          <li><a href="{% url 'rentlistpage:rent-list' %}" class="nav-link">Rent</a></li>
+          <li><a href="#" class="nav-link">New Launches</a></li>
+          <li><a href="#" class="nav-link">Transactions</a></li>
+          <li><a href="#" class="nav-link">Advertise</a></li>
+          <li><a href="#" class="nav-link">Guides & Insights</a></li>
+          <li><a href="#" class="nav-link">Events</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- User Dropdown / Account Options -->
+    <div class="header-right">
+      <div class="account">
+        <img src="{% static 'images/vector2.svg' %}" alt="Account Icon" class="account-icon" />
+        {% if user.is_authenticated %}
+        <div class="dropdown">
+          <button class="dropbtn" onclick="toggleDropdown(event)">{{ user.username }}</button>
+          <div class="dropdown-content" id="accountDropdown">
+            <a href="{% url 'my_properties' %}">My Properties</a>
+            <a href="{% url 'maintenance:submit_request' %}">Submit Maintenance Request</a>
+            <a href="{% url 'maintenance:add_appointment' %}">Add Appointment</a>
+            <a href="{% url 'maintenance:view_appointments' %}">View Appointments</a>
+            <a href="{% url 'profile' %}">Profile</a>
+            <a href="{% url 'logout' %}">Logout</a>
+          </div>
         </div>
+        {% else %}
+        <a href="{% url 'login' %}" class="login-link">Account</a>
+        {% endif %}
       </div>
-    {% else %}
-      <a href="{% url 'login' %}" class="login-link" style="padding:100px 10px 15px 10px;">Account</a>
-    {% endif %}
-  </div>
 
-  <a href="{% url 'saved_properties' %}" style="text-decoration:none">
-    <div class="wishlist">
-      <img src="{% static 'images/vector3.svg' %}" alt="Wishlist Icon" />
-      Wishlist
+      <!-- Wishlist Link -->
+      <a href="{% url 'saved_properties' %}" class="wishlist">
+        <img src="{% static 'images/vector3.svg' %}" alt="Wishlist Icon" class="wishlist-icon" />
+        Wishlist
+      </a>
     </div>
-  </a>
-
-  <div class="rectangle-7"></div>
-
-  <div class="buy-rent-new-launches-transations-advertise-guies-insights-events">
-    <span>
-      <a href="{% url 'proplistpage:property-list' %}" style="text-decoration:none">Buy</a>
-      |
-      <a href="{% url 'rentlistpage:rent-list' %}" style="text-decoration:none; color: #111111;">Rent</a>
-      |
-      New Launches |
-      transations |
-      Advertise |
-      Guides&amp;insights |
-      events
-    </span>
   </div>
-</div>
-
+</header>

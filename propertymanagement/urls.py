@@ -24,7 +24,7 @@ from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('proplistpage.urls')),  # Homepage and property views
+    path('', include('proplistpage.urls')),  # Homepage and property view
     path('accounts/',include('userAccount.urls')),
     path('accounts/login/', user_login, name='login'),
     path('accounts/signup/', user_signup, name='signup'),
@@ -46,6 +46,7 @@ urlpatterns = [
     path('property/<int:property_id>/toggle_favorite/', toggle_favorite, name='toggle_favorite'),
     path('saved/', saved_properties, name='saved_properties'),
     path('ajax/toggle-favorite/', ajax_toggle_favorite, name='ajax_toggle_favorite'),
+    path('maintenance/', include('maintenance.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
