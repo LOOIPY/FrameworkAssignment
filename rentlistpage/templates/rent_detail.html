@@ -9,7 +9,8 @@
   <link rel="stylesheet" href="{% static 'main/style.css' %}">
   <link rel="stylesheet" href="{% static 'loan_calculator/style.css' %}">
   <link rel="stylesheet" href="{% static 'css/whatsapp.css' %}">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
   <style>
     /* Rental-specific styling */
     body {
@@ -232,7 +233,19 @@
         grid-template-columns: repeat(2, 1fr);
       }
     }
+.map-container {
+    width: 30%;
+    height: 180px;
+    margin-top: 10px;
+    border-top: 1px solid #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+  }
 
+  #propertyMap {
+    width: 100%;
+    height: 100%;
+  }
   </style>
 </head>
 <body>
@@ -244,21 +257,21 @@
 <!--    <a href="{% url 'rentlistpage:rent-list' %}" class="back-link">« BACK TO RENTAL LIST</a>-->
 
     <!-- —— 2. Detail Top Card: Main Image + Map + Basic Info —— -->
-    <div class="detail-top-card">
-      {% if property.image %}
-        <div class="top-image-wrapper">
-          <img src="{{ property.image.url }}" alt="{{ property.title }}" class="main-image">
-          <!-- Map placeholder -->
-          <img src="{% static 'images/map_placeholder.jpeg' %}" alt="Location Map" class="map-image">
-        </div>
-      {% else %}
-        <div class="top-image-wrapper">
-          <div style="width:100%; height:450px; background:#ddd; display:flex; align-items:center; justify-content:center; color:#666;">
-            No Image Available
-          </div>
-          <img src="{% static 'images/map_placeholder.jpeg' %}" alt="Location Map" class="map-image">
-        </div>
-      {% endif %}
+<div class="detail-top-card">
+  <div class="top-image-wrapper">
+    {% if property.image %}
+      <img src="{{ property.image.url }}" alt="{{ property.title }}" class="main-image">
+    {% else %}
+      <div style="width:100%; height:450px; background:#ddd; display:flex; align-items:center; justify-content:center; color:#666;">
+        No Image Available
+      </div>
+    {% endif %}
+
+    <!-- Interactive Map (always present) -->
+    <div class="map-container">
+      <div id="propertyMap"></div>
+    </div>
+  </div>
 
       <div class="top-info">
         <h1>{{ property.title }}</h1>
@@ -531,5 +544,82 @@
 
 </script>
 
+<script>
+// Initialize the map with geocoding
+function initializeMap() {
+  // Get location from your database location field
+  const locationName = "{% if property.location %}{{ property.location }}{% else %}Kuala Lumpur, Malaysia{% endif %}";
+
+  // Default coordinates for fallback
+  const defaultLat = 3.1390;
+  const defaultLng = 101.6869;
+
+  // Initialize map with default location first
+  const map = L.map('propertyMap').setView([defaultLat, defaultLng], 13);
+
+  // Add OpenStreetMap tiles (free)
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors',
+    maxZoom: 19
+  }).addTo(map);
+
+  // Geocode the location name to get coordinates
+  geocodeLocation(locationName, map);
+}
+
+// Function to convert location name to coordinates using Nominatim (free)
+function geocodeLocation(locationName, map) {
+  // Add "Malaysia" to the search if not already included
+  const searchQuery = locationName.toLowerCase().includes('malaysia') ?
+    locationName : locationName + ', Malaysia';
+
+  // Use Nominatim geocoding service (free, no API key needed)
+  const geocodeUrl = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(searchQuery)}&limit=1`;
+
+  fetch(geocodeUrl)
+    .then(response => response.json())
+    .then(data => {
+      if (data && data.length > 0) {
+        const lat = parseFloat(data[0].lat);
+        const lng = parseFloat(data[0].lon);
+
+        // Update map view to the geocoded location
+        map.setView([lat, lng], 15);
+
+        // Add marker at the geocoded location
+        const marker = L.marker([lat, lng]).addTo(map);
+
+        // Add popup with property info
+        marker.bindPopup(`
+          <b>{{ property.title }}</b><br>
+          ${locationName}<br>
+          <small>Price: RM {{ property.price|floatformat:2 }}</small>
+        `).openPopup();
+
+      } else {
+        // If geocoding fails, add marker at default location
+        console.log('Geocoding failed for:', locationName);
+        addDefaultMarker(map);
+      }
+    })
+    .catch(error => {
+      console.error('Geocoding error:', error);
+      addDefaultMarker(map);
+    });
+}
+
+// Fallback function to add marker at default location
+function addDefaultMarker(map) {
+  const marker = L.marker([3.1390, 101.6869]).addTo(map);
+  marker.bindPopup(`
+    <b>{{ property.title }}</b><br>
+    Location not found - showing default<br>
+    <small>Price: RM {{ property.price|floatformat:2 }}</small>
+  `);
+}
+
+// Initialize map when page loads
+document.addEventListener('DOMContentLoaded', initializeMap);
+</script>
 </body>
 </html>
