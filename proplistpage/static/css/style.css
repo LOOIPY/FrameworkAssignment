@@ -1370,7 +1370,6 @@ body {
   z-index: 2;               /* 高于 .recommend-overlay */
   font-family: "Inter-ExtraBold", sans-serif;
   font-size: 36px;
-  text-transform: lowercase;    /* 全小写 */
   color: #ffffff;               /* 白色文字，在暗色背景上更显眼 */
   text-align: center;
   margin-bottom: 24px;

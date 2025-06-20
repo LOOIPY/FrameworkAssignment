@@ -5,14 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbe879b4-7f3a-4d43-8c08-0bbe4a7aaa96" name="Changes" comment="Fix saved_properties">
+      <change beforePath="$PROJECT_DIR$/.idea/FrameworkAssignment-Pei-Yi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FrameworkAssignment-Pei-Yi.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/templates/dashboard/home.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/propertymanagement/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/propertymanagement/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/propertymanagement/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/propertymanagement/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proplistpage/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/proplistpage/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proplistpage/templates/property_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/proplistpage/templates/property_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rentlistpage/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/rentlistpage/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,12 +48,12 @@
     &quot;author&quot;: &quot;LOOIPY&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/LOOIPY/FrameworkAssignment",
-    "accountId": "1329c35a-cb07-40d7-b897-bca89e1cedca"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/LOOIPY/FrameworkAssignment.git&quot;,
+    &quot;accountId&quot;: &quot;e6967aa4-5716-464a-a178-ccc6b80b75e9&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -70,6 +69,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;Pei-Yi&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/DESMOND YAP WEN XUAN/FrameworkAssignment&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
@@ -171,7 +171,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-f78a9d071105-aa17d162503b-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-243.26574.90" />
+        <option value="bundled-python-sdk-4f4e415b4190-aa17d162503b-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-243.26053.29" />
       </set>
     </attachedChunks>
   </component>

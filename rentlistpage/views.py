@@ -39,10 +39,9 @@ def rent_list(request):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
-    # Get recommended properties (random selection of rent properties)
-    recommended = Property.objects.filter(type="rent", is_booked=False).exclude(
-        id__in=[p.id for p in page_obj]
-    ).order_by('?')[:4]  # Get 4 random recommendations
+    # Get recommended properties - FIX: Get IDs properly from the page object
+    current_page_ids = [p.id for p in page_obj.object_list]  # Use object_list
+    recommended = Property.objects.filter(type="rent", is_booked=False).order_by('?')[:4]
 
     context = {
         'properties': page_obj,
