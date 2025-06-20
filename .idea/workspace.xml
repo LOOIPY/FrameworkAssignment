@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fbe879b4-7f3a-4d43-8c08-0bbe4a7aaa96" name="Changes" comment="Fix Account bug">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="fbe879b4-7f3a-4d43-8c08-0bbe4a7aaa96" name="Changes" comment="Fix something about my module">
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/main/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/main/static/main/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proplistpage/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/proplistpage/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proplistpage/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/proplistpage/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,7 +234,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750051432312</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Fix something about my module">
+      <option name="closed" value="true" />
+      <created>1750394311345</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1750394311345</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -259,6 +262,7 @@
     <MESSAGE value="Merge branch PeiYi" />
     <MESSAGE value="Added Saved Property page which is the wishlist" />
     <MESSAGE value="Fix Account bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix Account bug" />
+    <MESSAGE value="Fix something about my module" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix something about my module" />
   </component>
 </project>
