@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Maintenance Requests</title>
+    <link rel="stylesheet" href="{% static 'main/style.css' %}">
+</head>
+<body>
+
+    {% include 'header.html' %}
+
+    <h2>Maintenance Requests</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Priority</th>
+                <th>Requested Date</th>
+                <th>Created At</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for request in requests %}
+                <tr>
+                    <td>{{ request.title }}</td>
+                    <td>{{ request.description }}</td>
+                    <td>{{ request.category }}</td>
+                    <td>{{ request.priority }}</td>
+                    <td>{{ request.requested_date }}</td>
+                    <td>{{ request.created_at }}</td>
+                    <td>
+                        <a href="#">View</a> | <a href="#">Edit</a> | <a href="#">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {% include 'footer.html' %}
+
+</body>
+</html>
