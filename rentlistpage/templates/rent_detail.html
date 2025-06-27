@@ -434,47 +434,7 @@
     </a>
   </div>  {# .detail-container ends #}
 
-<footer class="site-footer">
-  <div class="footer-container">
-
-    <div class="footer-column left">
-      <p class="footer-title">Welcome.</p>
-      <p class="footer-subtitle">We reach out to the right property seekers for you.</p>
-        <p>© 2022 Arihant. All Rights Reserved.</p> <p style="text-decoration:underline">Privacy | Terms of Service</p>
-    <img src="{% static 'images/icon0.svg' %}" alt="Logo" class="footer-logo">
-    </div>
-
-    <div class="footer-column middle">
-      <h4>Company</h4>
-      <ul>
-        <li><a href="{% url 'proplistpage:property-list' %}">Buy</a></li>
-        <li><a href="{% url 'rentlistpage:rent-list' %}">Rent</a></li>
-        <li><a href="{% url 'proplistpage:new-launches' %}">New Launches</a></li>
-        <li>Transactions</li>
-        <li><a href="{% url 'proplistpage:advertise' %}">Advertise</a></li>
-        <li><a href="{% url 'proplistpage:guides-insights' %}">Guides & Insights</a></li>
-        <li>Events</li>
-      </ul>
-    </div>
-
-    <div class="footer-column right">
-      <div class="card">
-        <img src="{% static 'images/image20.png' %}" alt="LoanCare">
-        <div>
-          <p class="card-title">LoanCare</p>
-          <p>Know your home loan eligibility with up to 17 banks. Try now</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="{% static 'images/image21.png' %}" alt="Transactions">
-        <div>
-          <p class="card-title">Transactions Data</p>
-          <p>Obtain the latest subsale transaction data & prices. Discover now</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
+{% include 'footer.html' %}
 
 <script>
   window.addEventListener('scroll', function() {

@@ -1,10 +1,12 @@
 {% load static %}
 <footer class="site-footer">
-  <div class="footer-container">
+ <div class="footer-container">
 
     <div class="footer-column left">
       <p class="footer-title">Welcome.</p>
       <p class="footer-subtitle">We reach out to the right property seekers for you.</p>
+        <p>© 2022 Arihant. All Rights Reserved.</p> <p style="text-decoration:underline">Privacy | Terms of Service</p>
+    <img src="{% static 'images/icon0.svg' %}" alt="Logo" class="footer-logo">
     </div>
 
     <div class="footer-column middle">
@@ -12,11 +14,11 @@
       <ul>
         <li><a href="{% url 'proplistpage:property-list' %}">Buy</a></li>
         <li><a href="{% url 'rentlistpage:rent-list' %}">Rent</a></li>
-        <li><a href="#">New Launches</a></li>
-        <li><a href="#">Transactions</a></li>
+        <li><a href="{% url 'proplistpage:new-launches' %}">New Launches</a></li>
+        <li>Transactions</li>
         <li><a href="{% url 'proplistpage:advertise' %}">Advertise</a></li>
         <li><a href="{% url 'proplistpage:guides-insights' %}">Guides & Insights</a></li>
-        <li><a href="#">Events</a></li>
+        <li>Events</li>
       </ul>
     </div>
 
@@ -36,10 +38,5 @@
         </div>
       </div>
     </div>
-  </div>
-
-  <div class="footer-bottom">
-    <p>© 2022 Arihant. All Rights Reserved. <a href="#">Privacy</a> | <a href="#">Terms of Service</a></p>
-    <img src="{% static 'images/icon0.svg' %}" alt="Logo" class="footer-logo">
   </div>
 </footer>

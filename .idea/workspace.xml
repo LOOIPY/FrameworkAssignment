@@ -4,18 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fbe879b4-7f3a-4d43-8c08-0bbe4a7aaa96" name="Changes" comment="new launches">
-      <change afterPath="$PROJECT_DIR$/proplistpage/templates/advertise.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proplistpage/templates/guides_insights.html" afterDir="false" />
+    <list default="true" id="fbe879b4-7f3a-4d43-8c08-0bbe4a7aaa96" name="Changes" comment="advertise and guides">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/templates/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/propertymanagement/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/propertymanagement/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proplistpage/templates/new_launches.html" beforeDir="false" afterPath="$PROJECT_DIR$/proplistpage/templates/new_launches.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proplistpage/templates/property_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/proplistpage/templates/property_detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proplistpage/templates/property_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/proplistpage/templates/property_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proplistpage/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/proplistpage/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proplistpage/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/proplistpage/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rentlistpage/templates/rent_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/rentlistpage/templates/rent_detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rentlistpage/templates/rent_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/rentlistpage/templates/rent_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/userAccount/templates/accounts/add_my_property.html" beforeDir="false" afterPath="$PROJECT_DIR$/userAccount/templates/accounts/add_my_property.html" afterDir="false" />
@@ -315,7 +309,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751014122185</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="advertise and guides">
+      <option name="closed" value="true" />
+      <created>1751016731296</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1751016731296</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -341,6 +343,7 @@
     <MESSAGE value="Fix saved_properties" />
     <MESSAGE value="Updates to rent list" />
     <MESSAGE value="new launches" />
-    <option name="LAST_COMMIT_MESSAGE" value="new launches" />
+    <MESSAGE value="advertise and guides" />
+    <option name="LAST_COMMIT_MESSAGE" value="advertise and guides" />
   </component>
 </project>
