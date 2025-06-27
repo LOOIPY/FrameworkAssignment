@@ -4,8 +4,17 @@
 <head>
   <meta charset="UTF-8">
   <title>Saved Properties</title>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'main/style.css' %}">
   <link rel="stylesheet" href="{% static 'css/saved_property.css' %}">
     <style>
+      .body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+
+        }
         .site-footer {
           background: linear-gradient(90deg,
             rgba(255, 229, 229, 0.52),
@@ -107,17 +116,13 @@
         .layout-content {
           flex: 1;
         }
-        .account {
 
-          margin-top: 12px;
-          margin-right: 60px;
-          display:inline-block;
-        }
 
 
     </style>
 </head>
 <body>
+
 <div class="layout-wrapper">
 <main class="layout-content">
     {% include 'header.html' %}

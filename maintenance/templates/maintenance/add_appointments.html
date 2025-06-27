@@ -4,11 +4,30 @@
 <head>
   <meta charset="UTF-8">
   <title>Add Appointment</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <link rel="stylesheet" href="{% static 'main/style.css' %}">
+  <style>
+  .container {
+  max-width: 1000px;
+  margin-top:150px;
+  margin-left:30px;
+}
+    .layout-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.layout-content {
+  flex: 1;
+}
+</style>
 </head>
 <body>
   {% include 'header.html' %}
-
+<div class="layout-wrapper">
+    <main class="layout-content">
+        <div class="container">
   <h2>Add Appointment</h2>
 
   <form method="post">
@@ -16,7 +35,10 @@
     {{ form.as_p }}
     <button type="submit">Add Appointment</button>
   </form>
+        </div>
+    </main>
 
   {% include 'footer.html' %}
+</div>
 </body>
 </html>

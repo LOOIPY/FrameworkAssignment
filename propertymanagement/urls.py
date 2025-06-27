@@ -20,11 +20,19 @@ from django.conf import settings
 from django.conf.urls.static import static
 from userAccount.views import user_signup,user_login,social_redirect_view,profile_view,change_password,verify_otp,resend_otp
 from userAccount.views import my_properties,add_my_property,edit_my_property,delete_my_property,toggle_favorite,saved_properties,ajax_toggle_favorite
+from maintenance.views import submit_request,view_appointments,settings_view,view_requests,add_appointment,view_appointments
 from django.contrib.auth.views import LogoutView
 from dashboard.views import checklist,invoice
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('proplistpage.urls')),
+    path('maintenance/',include('maintenance.urls')),
+    path('submit/', submit_request, name='submit_request'),
+    path('appointments/', view_appointments, name='view_appointments'),
+    path('settings/', settings_view, name='maintenance_settings'),
+    path('requests/', view_requests, name='view_requests'),
+    path('add/', add_appointment, name='add_appointment'),
+    path('view/', view_appointments, name='view_appointments'),
     path('dashboard', include('dashboard.urls')),
     path('checklist/', checklist, name='checklist'),
     path('invoice/', invoice, name='invoice'),
