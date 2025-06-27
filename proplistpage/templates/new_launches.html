@@ -1,0 +1,151 @@
+<!-- new_launches.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>New Launches - Property Listing</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'main/style.css' %}">
+</head>
+<body>
+{% load static %}
+<div class="layout-wrapper">
+    <main class="layout-content">
+        {% include 'header.html' %}
+
+<img class="apartment-1" src="{% static 'images/apartment-10.jpg' %}"/>
+<div class="banner-overlay"></div>
+<div class="banner-text"></div>
+
+<div class="look-for-something">New Launches</div>
+<div class="find-malaysia-property-for-sale">
+    Latest properties just launched in Malaysia
+</div>
+
+<div class="group-307">
+<div class="group-271">
+<div class="group-258">
+<div class="rectangle-122"></div>
+<div class="rectangle-13"></div>
+<div class="rectangle-123"></div>
+<div class="rectangle-132"></div>
+<div class="rectangle-124"></div>
+<div class="rectangle-133"></div>
+</div>
+</div>
+</div>
+
+<div style="text-align: center; padding: 20px; background: blue;">
+    <p style="color: #666; font-size: 16px;">Showing the 10 most recently added properties</p>
+</div>
+
+<section class="cards-section" style="background: #f8f8f8; padding: 24px 0;">
+<div class="property-container">
+    {% for property in properties %}
+      <a href="{% url 'proplistpage:property-detail' property.id %}" class="property-card" style="text-decoration: none; color: inherit;">
+        <div class="img-wrapper">
+          {% if property.image %}
+            <img src="{{ property.image.url }}" alt="{{ property.title }}" />
+          {% else %}
+            <div style="width:100%; height:180px; background: #f0f0f0;"></div>
+          {% endif %}
+
+          <!-- Add "NEW" badge for recent properties -->
+          <div class="new-badge" style="position: absolute; top: 10px; right: 10px; background: #ff4444; color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: bold;">
+            NEW
+          </div>
+        </div>
+
+        <h3 class="title">{{ property.title }}</h3>
+
+        <p class="description">
+          {{ property.description|truncatewords:20 }}
+          <br/>
+          POSITION：{{ property.location }}
+          <br/>
+          <small style="color: #666;">Added: {{ property.created_at|date:"M d, Y" }}</small>
+        </p>
+
+        <div class="price">RM {{ property.price|floatformat:2 }}</div>
+        <div class="details">Details</div>
+      </a>
+     {% empty %}
+        <p style="grid-column: 1 / -1; text-align:center; color:#666;">
+          No new launches available at this time
+        </p>
+    {% endfor %}
+</div>
+
+<!-- Remove pagination since we're only showing top 10 -->
+
+</section>
+
+<!-- Keep the recommend section -->
+<div class="recommend-wrapper">
+  <div class="recommend-overlay"></div>
+  <h2 class="recommend-title">Recommend</h2>
+  <div class="recommend-container">
+    {% for rec in recommended %}
+      <a href="{% url 'proplistpage:property-detail' rec.id %}" class="recommend-card-link">
+        <div class="recommend-card">
+          {% if rec.image %}
+            <img src="{{ rec.image.url }}" alt="{{ rec.title }}" class="recommend-image" />
+          {% else %}
+            <div class="recommend-placeholder"></div>
+          {% endif %}
+          <div class="recommend-footer">
+            <span class="recommend-name">{{ rec.title }}</span>
+            <span class="recommend-price">RM {{ rec.price|floatformat:2 }}</span>
+          </div>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+</div>
+    </main>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-column left">
+      <p class="footer-title">Welcome.</p>
+      <p class="footer-subtitle">We reach out to the right property seekers for you.</p>
+        <p>© 2022 Arihant. All Rights Reserved.</p> <p style="text-decoration:underline">Privacy | Terms of Service</p>
+    <img src="{% static 'images/icon0.svg' %}" alt="Logo" class="footer-logo">
+    </div>
+
+    <div class="footer-column middle">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="{% url 'proplistpage:property-list' %}">Buy</a></li>
+        <li><a href="{% url 'rentlistpage:rent-list' %}">Rent</a></li>
+        <li><a href="{% url 'proplistpage:new-launches' %}">New Launches</a></li>
+        <li>Transactions</li>
+        <li>Advertise</li>
+        <li>Guides & Insights</li>
+        <li>Events</li>
+      </ul>
+    </div>
+
+    <div class="footer-column right">
+      <div class="card">
+        <img src="{% static 'images/image20.png' %}" alt="LoanCare">
+        <div>
+          <p class="card-title">LoanCare</p>
+          <p>Know your home loan eligibility with up to 17 banks. Try now</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="{% static 'images/image21.png' %}" alt="Transactions">
+        <div>
+          <p class="card-title">Transactions Data</p>
+          <p>Obtain the latest subsale transaction data & prices. Discover now</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
+
+</body>
+</html>

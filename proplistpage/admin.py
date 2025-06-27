@@ -13,7 +13,7 @@ class PropertyImageInline(admin.TabularInline):
 
 @admin.register(Property)
 class PropertyAdmin(admin.ModelAdmin):
-    list_display = ('title', 'location', 'price','type')
+    list_display = ('title', 'location', 'price','type', 'created_at')
     inlines = [PropertyImageInline]
     # 这样在 Property 后台页面就能看到一个“PropertyImage”表格，方便上传多张细节图
     list_filter = ['type']

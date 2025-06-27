@@ -109,3 +109,22 @@ def property_detail(request, pk):
 
 
                    })
+
+
+def new_launches_view(request):
+    # Get top 10 newest properties ordered by created_at (newest first)
+    new_properties = Property.objects.all().order_by('-created_at')[:10]
+
+    # Add recommended properties (you can customize this logic)
+    recommended = Property.objects.all().order_by('?')[:4]  # Random 4 properties
+    # OR use a different logic like:
+    # recommended = Property.objects.filter(is_featured=True)[:4]  # if you have a featured field
+    # recommended = Property.objects.all().order_by('-price')[:4]  # Most expensive
+
+    context = {
+        'properties': new_properties,
+        'recommended': recommended,  # Add this line
+        'page_title': 'New Launches',
+        'is_new_launches': True,
+    }
+    return render(request, 'new_launches.html', context)
