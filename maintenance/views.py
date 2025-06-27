@@ -10,7 +10,7 @@ def submit_request(request):
             maintenance_request = form.save(commit=False)
             maintenance_request.created_by = request.user
             maintenance_request.save()
-            return redirect('maintenance:view_requests')  # Redirect to view requests after submission
+            return redirect('view_requests')  # Redirect to view requests after submission
     else:
         form = MaintenanceRequestForm()
     return render(request, 'maintenance/submit_request.html', {'form': form})
@@ -40,7 +40,7 @@ def add_appointment(request):
             appointment = form.save(commit=False)
             appointment.user = request.user  # Assuming you have a user field on the Appointment model
             appointment.save()
-            return redirect('maintenance:view_appointments')  # Redirect to the view appointments page
+            return redirect('view_appointments')  # Redirect to the view appointments page
     else:
         form = AppointmentForm()
 
