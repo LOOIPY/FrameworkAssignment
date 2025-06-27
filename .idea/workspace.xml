@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fbe879b4-7f3a-4d43-8c08-0bbe4a7aaa96" name="Changes" comment="migrate on user for payment">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/templates/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/footer.html" afterDir="false" />
-    </list>
+    <list default="true" id="fbe879b4-7f3a-4d43-8c08-0bbe4a7aaa96" name="Changes" comment="footer update last" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -331,7 +328,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751018264042</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="footer update last">
+      <option name="closed" value="true" />
+      <created>1751018413902</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1751018413902</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -361,6 +366,7 @@
     <MESSAGE value="updated footer on every page" />
     <MESSAGE value="updates on payment" />
     <MESSAGE value="migrate on user for payment" />
-    <option name="LAST_COMMIT_MESSAGE" value="migrate on user for payment" />
+    <MESSAGE value="footer update last" />
+    <option name="LAST_COMMIT_MESSAGE" value="footer update last" />
   </component>
 </project>
