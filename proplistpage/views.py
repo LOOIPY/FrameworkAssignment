@@ -114,11 +114,8 @@ def new_launches_view(request):
     # Get top 10 newest properties ordered by created_at (newest first)
     new_properties = Property.objects.all().order_by('-created_at')[:10]
 
-    # Add recommended properties (you can customize this logic)
+    # Add recommended properties
     recommended = Property.objects.all().order_by('?')[:4]  # Random 4 properties
-    # OR use a different logic like:
-    # recommended = Property.objects.filter(is_featured=True)[:4]  # if you have a featured field
-    # recommended = Property.objects.all().order_by('-price')[:4]  # Most expensive
 
     context = {
         'properties': new_properties,
@@ -139,7 +136,7 @@ def advertise_view(request):
         budget = request.POST.get('budget')
         message = request.POST.get('message')
 
-        # Send email (optional - configure your email settings first)
+        # Send email
         try:
             email_message = f"""
             New Advertising Request:
@@ -157,7 +154,7 @@ def advertise_view(request):
                 'New Advertising Request - MyPropertizz',
                 email_message,
                 settings.DEFAULT_FROM_EMAIL,
-                ['your-admin@email.com'],  # Replace with your admin email
+                ['your-admin@email.com'],
                 fail_silently=True,
             )
             messages.success(request,

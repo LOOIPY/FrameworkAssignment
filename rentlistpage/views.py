@@ -1,9 +1,7 @@
-# rentlistpage/views.py
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator
 from django.db.models import Q
 from proplistpage.models import Property  # Import from proplistpage app
-
 
 def rent_list(request):
     # Filter properties where type is "rent" (lowercase, as shown in debug)
