@@ -9,6 +9,8 @@ import qrcode
 import base64
 from io import BytesIO
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import get_user_model
+from django.contrib.auth.models import User
 
 @login_required
 def credit_card_payment(request, property_id):
@@ -40,6 +42,7 @@ def credit_card_payment(request, property_id):
             })
 
         Booking.objects.create(
+            user=request.user,
             property=property,
             total_payment=amount,
             date=timezone.now(),
@@ -53,7 +56,7 @@ def credit_card_payment(request, property_id):
 
 @login_required
 def booking_list(request):
-    bookings = Booking.objects.all()
+    bookings = Booking.objects.filter(user=request.user)
     return render(request, 'payment/booking_list.html', {'bookings': bookings})
 
 @login_required
@@ -79,6 +82,7 @@ def fpx_confirmation(request, bank_name, property_id):
 
     if request.method == 'POST' and property_obj:
         Booking.objects.create(
+            user=request.user,
             property=property_obj,
             total_payment=amount,
             date=timezone.now(),
@@ -112,6 +116,7 @@ def e_wallet_payment(request, property_id, wallet_name):
 
     if request.method == 'POST' and property_obj:
         Booking.objects.create(
+            user=request.user,
             property=property_obj,
             total_payment=amount,
             date=timezone.now(),
@@ -127,5 +132,3 @@ def e_wallet_payment(request, property_id, wallet_name):
         'qr_code_base64': qr_code_base64,
         'property_id': property_id
     })
-
-# Create your views here.
