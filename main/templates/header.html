@@ -15,7 +15,9 @@
 </script>
 <link rel="stylesheet" href="{% static 'css/saved_property.css' %}">
 <div class="frame-229">
-  <div class="rectangle-645"></div>
+  <div class="rectangle-645">
+    <span style="color: white; font-size: 24px; font-weight: bold; margin: 10px; position: absolute;">MyPropertizz</span>
+</div>
 
   <a href="{% url 'booking_list' %}" style="text-decoration:none">
     <div class="bookinglist">
@@ -59,9 +61,11 @@
       |
       <a href="{% url 'proplistpage:new-launches' %}" style="text-decoration:none; color: #111111;">New Launches</a>
       |
-      Transations |
-      Advertise |
-      Guides&amp;insights
+      Transations
+      |
+      <a href="{% url 'proplistpage:advertise' %}" style="text-decoration:none; color: #111111;">Advertise</a>
+      |
+      <a href="{% url 'proplistpage:guides-insights' %}" style="text-decoration:none; color: #111111;">Guides & Insights</a>
     </span>
   </div>
 </div>

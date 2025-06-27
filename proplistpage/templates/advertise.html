@@ -1,0 +1,223 @@
+<!-- advertise.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Advertise With Us - MyPropertizz</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'main/style.css' %}">
+  <style>
+    .advertise-container {
+      max-width: 800px;
+      margin: 140px auto 0;
+      padding: 40px 20px;
+      background: white;
+    }
+    .advertise-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .advertise-header h1 {
+      color: #393280;
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+    .advertise-header p {
+      color: #666;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    .advertise-form {
+      background: #f8f8f8;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      color: #393280;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+    .form-group textarea {
+      height: 120px;
+      resize: vertical;
+    }
+    .form-row {
+      display: flex;
+      gap: 20px;
+    }
+    .form-row .form-group {
+      flex: 1;
+    }
+    .submit-btn {
+      background: #393280;
+      color: white;
+      padding: 15px 40px;
+      border: none;
+      border-radius: 6px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.3s;
+    }
+    .submit-btn:hover {
+      background: #2d2560;
+    }
+    .benefits-section {
+      margin: 60px 0;
+      padding: 40px;
+      background: linear-gradient(135deg, #393280, #5d4fb3);
+      border-radius: 10px;
+      color: white;
+    }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .benefit-item {
+      text-align: center;
+    }
+    .benefit-item h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .benefit-item p {
+      opacity: 0.9;
+      line-height: 1.6;
+    }
+    .alert {
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 6px;
+      background: #d4edda;
+      border: 1px solid #c3e6cb;
+      color: #155724;
+    }
+  </style>
+</head>
+<body>
+{% load static %}
+<div class="layout-wrapper">
+    <main class="layout-content">
+        {% include 'header.html' %}
+
+        <div class="advertise-container">
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+
+            <div class="advertise-header">
+                <h1>Advertise With MyPropertizz</h1>
+                <p>Reach thousands of property seekers and boost your business with our targeted advertising solutions. Fill out the form below and our team will contact you with customized advertising packages.</p>
+            </div>
+
+            <div class="benefits-section">
+                <h2 style="text-align: center; margin-bottom: 10px;">Why Advertise With Us?</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <h3>🎯 Targeted Audience</h3>
+                        <p>Reach qualified property buyers and investors actively searching for properties</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3>📈 High Traffic</h3>
+                        <p>Get maximum exposure with our growing user base and high search rankings</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3>💼 Flexible Packages</h3>
+                        <p>Choose from various advertising options that fit your budget and goals</p>
+                    </div>
+                </div>
+            </div>
+
+            <form method="post" class="advertise-form">
+                {% csrf_token %}
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company/Agency Name</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="ad_type">Advertisement Type *</label>
+                        <select id="ad_type" name="ad_type" required>
+                            <option value="">Select Advertisement Type</option>
+                            <option value="banner">Banner Advertisement</option>
+                            <option value="featured_listing">Featured Property Listing</option>
+                            <option value="homepage_spotlight">Homepage Spotlight</option>
+                            <option value="newsletter">Newsletter Sponsorship</option>
+                            <option value="social_media">Social Media Promotion</option>
+                            <option value="custom">Custom Package</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="budget">Monthly Budget Range</label>
+                        <select id="budget" name="budget">
+                            <option value="">Select Budget Range</option>
+                            <option value="under_500">Under RM 500</option>
+                            <option value="500_1000">RM 500 - RM 1,000</option>
+                            <option value="1000_2500">RM 1,000 - RM 2,500</option>
+                            <option value="2500_5000">RM 2,500 - RM 5,000</option>
+                            <option value="5000_plus">RM 5,000+</option>
+                            <option value="discuss">Let's Discuss</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Additional Details/Requirements</label>
+                    <textarea id="message" name="message" placeholder="Tell us about your advertising goals, target audience, preferred ad placement, campaign duration, or any specific requirements..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Advertising Request</button>
+            </form>
+
+            <div style="text-align: center; margin-top: 40px; padding: 30px; background: #f0f0f0; border-radius: 10px;">
+                <h3 style="color: #393280; margin-bottom: 15px;">Need More Information?</h3>
+                <p style="color: #666; margin-bottom: 15px;">Our advertising specialists are ready to help you create the perfect campaign.</p>
+                <p style="color: #393280; font-weight: bold;">📧 advertising@mypropertizz.com | 📞 +60 3-1234 5678</p>
+            </div>
+        </div>
+    </main>
+
+    {% include 'footer.html' %}
+</div>
+</body>
+</html>

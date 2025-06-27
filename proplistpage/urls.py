@@ -12,6 +12,8 @@ urlpatterns = [
     path('', views.property_list, name='property-list'),
     path('property/<int:pk>/', views.property_detail, name='property-detail'),
     path('new-launches/', views.new_launches_view, name='new-launches'),
+    path('advertise/', views.advertise_view, name='advertise'),
+    path('guides-insights/', views.guides_insights_view, name='guides-insights'),
 ]
 
 # Add media static file support (only in DEBUG mode)

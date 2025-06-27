@@ -1,0 +1,344 @@
+<!-- guides_insights.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Guides & Insights - MyPropertizz</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'main/style.css' %}">
+  <style>
+    .guides-container {
+      max-width: 1200px;
+      margin: 140px auto 0;
+      padding: 40px 20px;
+    }
+    .guides-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .guides-header h1 {
+      color: #393280;
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+    .guides-header p {
+      color: #666;
+      font-size: 20px;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .guides-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+    .guide-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+    .guide-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+    .guide-image {
+      height: 200px;
+      background: linear-gradient(45deg, #393280, #5d4fb3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 48px;
+    }
+    .guide-content {
+      padding: 25px;
+    }
+    .guide-content h3 {
+      color: #393280;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+    .guide-content p {
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+    .guide-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #999;
+      font-size: 14px;
+    }
+    .category-section {
+      margin-bottom: 60px;
+    }
+    .category-title {
+      color: #393280;
+      font-size: 32px;
+      margin-bottom: 30px;
+      text-align: center;
+      position: relative;
+    }
+    .category-title::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: #393280;
+      margin: 10px auto;
+    }
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 40px 0;
+    }
+    .tip-card {
+      background: #f8f8f8;
+      padding: 25px;
+      border-radius: 10px;
+      border-left: 4px solid #393280;
+    }
+    .tip-card h4 {
+      color: #393280;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+    .tip-card p {
+      color: #666;
+      line-height: 1.5;
+    }
+    .market-stats {
+      background: linear-gradient(135deg, #393280, #5d4fb3);
+      color: white;
+      padding: 40px;
+      border-radius: 15px;
+      margin: 40px 0;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .stat-item {
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .stat-label {
+      opacity: 0.9;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+{% load static %}
+<div class="layout-wrapper">
+    <main class="layout-content">
+        {% include 'header.html' %}
+
+        <div class="guides-container">
+            <div class="guides-header">
+                <h1>Property Guides & Market Insights</h1>
+                <p>Your complete resource for making informed property decisions in Malaysia. Get expert advice, market trends, and insider tips.</p>
+            </div>
+
+            <!-- Market Overview Section -->
+            <div class="market-stats">
+                <h2 style="text-align: center; margin-bottom: 20px;">Malaysia Property Market 2025</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">12.5%</div>
+                        <div class="stat-label">Average Price Growth</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">45,000+</div>
+                        <div class="stat-label">Properties Listed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">RM 450K</div>
+                        <div class="stat-label">Average Property Price</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">8.2%</div>
+                        <div class="stat-label">Rental Yield</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Buying Guide Section -->
+            <div class="category-section">
+                <h2 class="category-title">🏠 Property Buying Guides</h2>
+                <div class="guides-grid">
+                    <div class="guide-card">
+                        <div class="guide-image">🏡</div>
+                        <div class="guide-content">
+                            <h3>First-Time Buyer's Complete Guide</h3>
+                            <p>Everything you need to know about buying your first property in Malaysia, from budgeting to legal procedures.</p>
+                            <div class="guide-meta">
+                                <span>15 min read</span>
+                                <span>Updated: June 2025</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="guide-card">
+                        <div class="guide-image">💰</div>
+                        <div class="guide-content">
+                            <h3>Home Loan & Financing Options</h3>
+                            <p>Compare mortgage rates, understand loan eligibility, and learn about government housing schemes.</p>
+                            <div class="guide-meta">
+                                <span>12 min read</span>
+                                <span>Updated: June 2025</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="guide-card">
+                        <div class="guide-image">📋</div>
+                        <div class="guide-content">
+                            <h3>Legal Documentation & SPA</h3>
+                            <p>Navigate the legal aspects of property purchase, from Letter of Offer to Sale & Purchase Agreement.</p>
+                            <div class="guide-meta">
+                                <span>18 min read</span>
+                                <span>Updated: May 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Investment Insights Section -->
+            <div class="category-section">
+                <h2 class="category-title">📈 Investment Insights</h2>
+                <div class="guides-grid">
+                    <div class="guide-card">
+                        <div class="guide-image">🎯</div>
+                        <div class="guide-content">
+                            <h3>High-Yield Investment Areas</h3>
+                            <p>Discover the best locations for property investment in KL, Selangor, and Penang with growth potential.</p>
+                            <div class="guide-meta">
+                                <span>20 min read</span>
+                                <span>Updated: June 2025</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="guide-card">
+                        <div class="guide-image">📊</div>
+                        <div class="guide-content">
+                            <h3>Market Trends & Forecasts</h3>
+                            <p>Latest market analysis, price trends, and expert predictions for Malaysia's property market.</p>
+                            <div class="guide-meta">
+                                <span>10 min read</span>
+                                <span>Updated: June 2025</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="guide-card">
+                        <div class="guide-image">🏢</div>
+                        <div class="guide-content">
+                            <h3>Commercial vs Residential Investment</h3>
+                            <p>Compare returns, risks, and strategies for different types of property investments.</p>
+                            <div class="guide-meta">
+                                <span>16 min read</span>
+                                <span>Updated: May 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Tips Section -->
+            <div class="category-section">
+                <h2 class="category-title">💡 Quick Tips & Tricks</h2>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <h4>💵 Negotiation Strategy</h4>
+                        <p>Research comparable sales, understand seller motivation, and always leave room for counteroffers.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>🔍 Property Inspection</h4>
+                        <p>Check for structural issues, water damage, electrical problems, and neighborhood infrastructure.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>📍 Location Analysis</h4>
+                        <p>Consider transport links, schools, shopping centers, and future development plans in the area.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>💼 Investment Timing</h4>
+                        <p>Monitor interest rates, government policies, and market cycles to time your investment right.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Market Analysis Section -->
+            <div class="category-section">
+                <h2 class="category-title">📊 Area-Specific Guides</h2>
+                <div class="guides-grid">
+                    <div class="guide-card">
+                        <div class="guide-image">🏙️</div>
+                        <div class="guide-content">
+                            <h3>Kuala Lumpur Property Guide</h3>
+                            <p>Complete guide to KL's property hotspots, from KLCC to Mont Kiara, with price analysis and growth projections.</p>
+                            <div class="guide-meta">
+                                <span>25 min read</span>
+                                <span>Updated: June 2025</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="guide-card">
+                        <div class="guide-image">🌆</div>
+                        <div class="guide-content">
+                            <h3>Selangor Investment Opportunities</h3>
+                            <p>Explore emerging areas in Selangor, from Petaling Jaya to Cyberjaya, with detailed market insights.</p>
+                            <div class="guide-meta">
+                                <span>22 min read</span>
+                                <span>Updated: June 2025</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="guide-card">
+                        <div class="guide-image">🏖️</div>
+                        <div class="guide-content">
+                            <h3>Penang Property Market</h3>
+                            <p>Island living and mainland opportunities, covering Georgetown heritage properties to modern developments.</p>
+                            <div class="guide-meta">
+                                <span>20 min read</span>
+                                <span>Updated: May 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Newsletter Signup -->
+            <div style="background: #f8f8f8; padding: 40px; border-radius: 15px; text-align: center; margin-top: 60px;">
+                <h3 style="color: #393280; margin-bottom: 15px;">📧 Stay Updated with Market Insights</h3>
+                <p style="color: #666; margin-bottom: 25px;">Get weekly property market updates, new guides, and exclusive investment tips delivered to your inbox.</p>
+                <div style="display: flex; max-width: 400px; margin: 0 auto; gap: 10px;">
+                    <input type="email" placeholder="Enter your email" style="flex: 1; padding: 12px; border: 1px solid #ddd; border-radius: 6px;">
+                    <button style="background: #393280; color: white; padding: 12px 20px; border: none; border-radius: 6px; cursor: pointer;">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    {% include 'footer.html' %}
+</div>
+</body>
+</html>

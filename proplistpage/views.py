@@ -1,14 +1,13 @@
-# views.py
-
-# proplistpage/views.py
-# app/views.py
-
 from django.shortcuts import render, get_object_or_404
 from django.db.models import Q
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from .models import Property
 from loan_calculator.forms import LoanCalculatorForm
 from payment.utils import calculate_payment
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from django.core.mail import send_mail
+from django.conf import settings
 
 def property_list(request):
     """
@@ -128,3 +127,48 @@ def new_launches_view(request):
         'is_new_launches': True,
     }
     return render(request, 'new_launches.html', context)
+
+def advertise_view(request):
+    if request.method == 'POST':
+        # Get form data
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        company = request.POST.get('company')
+        ad_type = request.POST.get('ad_type')
+        budget = request.POST.get('budget')
+        message = request.POST.get('message')
+
+        # Send email (optional - configure your email settings first)
+        try:
+            email_message = f"""
+            New Advertising Request:
+
+            Name: {name}
+            Email: {email}
+            Phone: {phone}
+            Company: {company}
+            Ad Type: {ad_type}
+            Budget: {budget}
+            Message: {message}
+            """
+
+            send_mail(
+                'New Advertising Request - MyPropertizz',
+                email_message,
+                settings.DEFAULT_FROM_EMAIL,
+                ['your-admin@email.com'],  # Replace with your admin email
+                fail_silently=True,
+            )
+            messages.success(request,
+                             'Thank you! Your advertising request has been submitted. We will contact you soon.')
+        except:
+            messages.success(request, 'Thank you! Your request has been submitted.')
+
+        return redirect('proplistpage:advertise')
+
+    return render(request, 'advertise.html')
+
+
+def guides_insights_view(request):
+    return render(request, 'guides_insights.html')
