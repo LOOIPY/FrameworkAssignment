@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fbe879b4-7f3a-4d43-8c08-0bbe4a7aaa96" name="Changes" comment="updated footer on every page">
+    <list default="true" id="fbe879b4-7f3a-4d43-8c08-0bbe4a7aaa96" name="Changes" comment="migrate on user for payment">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/templates/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/payment/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/payment/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -318,7 +315,23 @@
       <option name="project" value="LOCAL" />
       <updated>1751017352904</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="updates on payment">
+      <option name="closed" value="true" />
+      <created>1751018123779</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1751018123779</updated>
+    </task>
+    <task id="LOCAL-00019" summary="migrate on user for payment">
+      <option name="closed" value="true" />
+      <created>1751018264042</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1751018264042</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -346,6 +359,8 @@
     <MESSAGE value="new launches" />
     <MESSAGE value="advertise and guides" />
     <MESSAGE value="updated footer on every page" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated footer on every page" />
+    <MESSAGE value="updates on payment" />
+    <MESSAGE value="migrate on user for payment" />
+    <option name="LAST_COMMIT_MESSAGE" value="migrate on user for payment" />
   </component>
 </project>
